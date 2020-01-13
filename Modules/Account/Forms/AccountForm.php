@@ -9,8 +9,9 @@ class AccountForm extends Form
 
     public function buildForm()
     {
-        $this->add('first_name', 'text')->add('email', 'email')
-        		->add('submit', 'submit', ['label' => 'Save form']);
+        $this->add('first_name', 'text')
+        	->add('email', 'email')
+        	->add('submit', 'submit');
     }
 
 }

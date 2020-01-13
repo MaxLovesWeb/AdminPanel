@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
     
-	Route::resource('users', 'UserController')->except('create', 'store', 'show');
+	Route::resource('users', 'UserController')->only('edit', 'update', 'destroy');
 	Route::get('users/{user}/confirm-delete', 'UserController@showDestroyForm')->name('users.confirm-delete');
 
 });

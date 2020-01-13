@@ -4,7 +4,7 @@ namespace Modules\Account\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 
 use Modules\Account\Entities\Account;
 use Modules\Account\Tables\AccountDatatable;
@@ -12,13 +12,15 @@ use App\User;
 use Modules\Account\Http\Resources\AccountDatatableResource;
 use Kris\LaravelFormBuilder\FormBuilder;
 use Modules\Account\Forms\AccountForm;
+use App\Forms\UserForm;
 
 class AccountController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('can:update,account')->only('update');
+        //$this->middleware('can:update,account')->only('update', 'edit');
+        $this->authorizeResource(Account::class, 'account', ['except' => 'index']);
     }
 
     /**
@@ -54,13 +56,21 @@ class AccountController extends Controller
     public function edit(Account $account, FormBuilder $formBuilder)
     {
 
-        $form = $formBuilder->create(AccountForm::class, [
+        $accountForm = $formBuilder->create(AccountForm::class, [
             'method' => 'PUT',
             'url' => route('accounts.update', $account),
             'model' => $account
         ]);
 
-        return view('account::edit', compact('account', 'form'));
+        $userForm = $formBuilder->create(UserForm::class, [
+            'method' => 'PUT',
+            'url' => route('users.update', $account),
+            'model' => $account->user
+        ]);
+
+        $userForm->remove('password');
+
+        return view('account::edit', compact('account', 'accountForm', 'userForm'));
     }
 
     /**

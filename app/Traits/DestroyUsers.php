@@ -5,23 +5,12 @@ namespace App\Traits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use App\Forms\DestroyUserForm;
+use App\Forms\UserForm;
 use Kris\LaravelFormBuilder\FormBuilder;
 use App\User;
-use Illuminate\Foundation\Auth\RedirectsUsers;
-use App\Providers\RouteServiceProvider;
 
 trait DestroyUsers
 {
-
-    use RedirectsUsers;
-
-    /**
-     * Where to redirect users after delete action.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
     
     /**
      * Show the user's destroy form.
@@ -31,12 +20,28 @@ trait DestroyUsers
      */
     public function showDestroyForm(User $user, FormBuilder $formBuilder)
     {
-        $form = $formBuilder->create(DestroyUserForm::class, [
-            'method' => 'DELETE',
-            'url' => route('users.destroy', $user)
-        ], ['data' => $user]);
+        $form = $this->buildDestroyForm($user, $formBuilder);
 
         return view('users.destroy', compact('user', 'form'));
+    }
+
+    /**
+     * Build user's destroy form.
+     * @param  $user
+     * @param  $formBuilder
+     * @return \Kris\LaravelFormBuilder\Form
+     */
+    protected function buildDestroyForm($user, $formBuilder)
+    {
+        $form = $formBuilder->create(UserForm::class, [
+            'method' => 'DELETE',
+            'url' => route('users.destroy', $user),
+            'model' => $user
+        ]);
+
+        $form->modify('submit', 'submit', ['label' => 'Delete']);
+
+        return $form;
     }
 
     /**
@@ -56,8 +61,8 @@ trait DestroyUsers
         $user->delete();
 
         return $this->deleted($request)
-                        ?: redirect($this->redirectPath());
-        
+                        ?: redirect(RouteServiceProvider::HOME)
+                            ->with('success', trans('delete-user-success'));
     }
 
     /**

@@ -36,6 +36,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+        $this->mapBreadcrumbsRoutes();
     }
 
     /**
@@ -65,5 +67,21 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Account', '/Routes/api.php'));
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapBreadcrumbsRoutes()
+    {
+        if (class_exists('Breadcrumbs')) {
+            //require module_path('Account', '/Routes/breadcrumbs.php');
+            Route::middleware('web')->group(module_path('Account', '/Routes/breadcrumbs.php'));
+        }
+        
     }
 }

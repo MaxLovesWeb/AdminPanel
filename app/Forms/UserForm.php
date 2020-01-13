@@ -4,21 +4,20 @@ namespace App\Forms;
 
 use Kris\LaravelFormBuilder\Form;
 
-class DestroyUserForm extends Form
+class UserForm extends Form
 {
 
     public function buildForm()
     {
         $this
+            ->add('name', 'text')
         	->add('email', 'email')
         	->add('password', 'password')
-        	->add('submit', 'submit', ['label' => 'Delete']);
+        	->add('submit', 'submit');
 
-        $this->modify('email', 'email', [
-		    'default_value' => $this->getData('data')->email
-		]);
-
-
+        $this->modify('password', 'password', [
+            'value' => '',
+        ]);
     }
 
 }
