@@ -5,7 +5,7 @@ namespace Modules\Account\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
 
-class AccountResource extends JsonResource
+class AccountDatatableResource extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -33,6 +33,7 @@ class AccountResource extends JsonResource
             
             'user' => $this->getUser(),
             'roles' => $this->getRoles(),
+            'account' => $this->resource,
         ];
     }
 

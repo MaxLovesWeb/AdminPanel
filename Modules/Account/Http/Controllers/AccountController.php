@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 use Modules\Account\Entities\Account;
 use Modules\Account\Tables\AccountDatatable;
 use App\User;
-use Modules\Account\Http\Resources\AccountResource;
+use Modules\Account\Http\Resources\AccountDatatableResource;
 use Kris\LaravelFormBuilder\FormBuilder;
 use Modules\Account\Forms\AccountForm;
 
@@ -31,7 +31,7 @@ class AccountController extends Controller
     {
         if($request->wantsJson()){
 
-            $data = AccountResource::collection(
+            $data = AccountDatatableResource::collection(
                 Account::with('user')->get()
             );
 
