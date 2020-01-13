@@ -19,6 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->group(function () {
+    
+	Route::resource('users', 'UserController')->except('create', 'store', 'show');
+	Route::get('users/{user}/confirm-delete', 'UserController@showDestroyForm')->name('users.confirm-delete');
+
+});
