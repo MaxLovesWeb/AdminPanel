@@ -18,9 +18,9 @@ trait DestroyUsers
      * @param  FormBuilder $formBuilder
      * @return \Illuminate\Http\Response
      */
-    public function showDestroyForm(User $user, FormBuilder $formBuilder)
+    public function showDestroyUserForm(User $user, FormBuilder $formBuilder)
     {
-        $form = $this->buildDestroyForm($user, $formBuilder);
+        $form = $this->buildDestroyUserForm($user, $formBuilder);
 
         return view('users.destroy', compact('user', 'form'));
     }
@@ -31,7 +31,7 @@ trait DestroyUsers
      * @param  $formBuilder
      * @return \Kris\LaravelFormBuilder\Form
      */
-    protected function buildDestroyForm($user, $formBuilder)
+    protected function buildDestroyUserForm($user, $formBuilder)
     {
         $form = $formBuilder->create(UserForm::class, [
             'method' => 'DELETE',
@@ -45,33 +45,12 @@ trait DestroyUsers
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Account  $account
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user, Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required|in:'.$user->email, 
-            'password' => 'password', //'password:web'
-        ]);
-
-        $user->delete();
-
-        return $this->deleted($request)
-                        ?: redirect(RouteServiceProvider::HOME)
-                            ->with('success', trans('delete-user-success'));
-    }
-
-    /**
      * The user has been deleted.
      *
      * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    protected function deleted(Request $request)
+    protected function userDeleted(Request $request)
     {
         if ( is_null(Auth::user()) ) {
 

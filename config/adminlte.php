@@ -295,34 +295,40 @@ return [
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'location' => 'vendor/datatables/datatables.min.js',
+
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'location' => 'vendor/datatables/DataTables-1.10.18/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'location' => 'vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css',
                 ],
 
                 //buttons
 
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js',
+                    'location' => 'vendor/datatables/Buttons-1.5.6/js/buttons.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css',
+                    'location' => 'vendor/datatables/Buttons-1.5.6/css/buttons.bootstrap4.min.css',
                 ],
 
-                [
+               /* [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js',
@@ -394,19 +400,24 @@ return [
                     'asset' => false,
                     'location' => '//cdn.datatables.net/keytable/2.5.1/js/dataTables.keyTable.min.js',
                 ],
+                */
 
                 //responsive
 
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css',
+                    'location' => 'vendor/datatables/Responsive-2.2.2/css/responsive.dataTables.min.css',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js',
+                    'location' => 'vendor/datatables/Responsive-2.2.2/js/dataTables.responsive.min.js',
                 ],
+
+                /*
 
                 //rowGroup
 
@@ -460,11 +471,13 @@ return [
                     'location' => '//cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js',
                 ],
 
+                */
+
             ],
         ],
         [
             'name' => 'Select2',
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',

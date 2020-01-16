@@ -165,6 +165,8 @@
 
                 {{ Breadcrumbs::render() }}
 
+                @include('flash::message')
+
                 <div class="{{config('adminlte.classes_content', 'container-fluid')}}">
                     @yield('content')
                 </div>
@@ -192,6 +194,9 @@
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script>
+        //$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
     @stack('js')
     @yield('js')
 @stop

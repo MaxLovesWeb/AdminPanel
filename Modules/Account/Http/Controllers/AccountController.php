@@ -3,41 +3,47 @@
 namespace Modules\Account\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
+use App\User;
 use Modules\Account\Entities\Account;
 use Modules\Account\Tables\AccountDatatable;
-use App\User;
 use Modules\Account\Http\Resources\AccountDatatableResource;
-use Kris\LaravelFormBuilder\FormBuilder;
-use Modules\Account\Forms\AccountForm;
-use App\Forms\UserForm;
+
+use Modules\Account\Traits\CreateAccounts;
+use Modules\Account\Traits\ReadAccounts;
+use Modules\Account\Traits\UpdateAccounts;
+use Modules\Account\Traits\DeleteAccounts;
+
+use Modules\Account\Http\Requests\CreateAccountFormRequest;
+use Modules\Account\Http\Requests\UpdateAccountFormRequest;
+use Modules\Account\Http\Requests\DeleteAccountFormRequest;
 
 class AccountController extends Controller
 {
+    use CreateAccounts, ReadAccounts, UpdateAccounts, DeleteAccounts;
 
     public function __construct()
     {
-        //$this->middleware('can:update,account')->only('update', 'edit');
-        $this->authorizeResource(Account::class, 'account', ['except' => 'index']);
+        $this->authorizeResource(Account::class);
     }
 
     /**
      * Display a listing of the resource.
      * @param AccountDatatable $datatable
      * @param Request $request
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index(AccountDatatable $datatable, Request $request)
     {
         if($request->wantsJson()){
 
-            $data = AccountDatatableResource::collection(
+            $accounts = AccountDatatableResource::collection(
                 Account::with('user')->get()
             );
 
-            return $datatable->with('data', $data)->ajax();
+            return $datatable->with('data', $accounts)->ajax();
         }
 
         $table = [
@@ -49,44 +55,101 @@ class AccountController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     * @param  Account $account
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Account $account = null)
+    {
+        $account = $account ?? Auth::user()->account;
+
+        $form = $this->buildShowAccountForm($account);
+
+        //$userForm = $this->buildShowUserForm($account->user, $formBuilder);
+
+       // $form->compose($userForm);
+        
+        return $this->accountViewed($account) 
+                        ?: view('account::show', compact('account', 'form'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $form = $this->buildCreateAccountForm();
+
+        return view('account::create', compact('form'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param  CreateAccountFormRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(CreateAccountFormRequest $request)
+    {
+        $account = $this->createAccount($request->user(), $request->validated());
+
+        return $this->accountCreated($account, $request) 
+                        ?: redirect()->route('accounts.edit', $account);
+    }
+
+    /**
      * Show the form for editing Account.
      * @param Account $account
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
-    public function edit(Account $account, FormBuilder $formBuilder)
+    public function edit(Account $account)
     {
+        $form = $this->buildUpdateAccountForm($account);
 
-        $accountForm = $formBuilder->create(AccountForm::class, [
-            'method' => 'PUT',
-            'url' => route('accounts.update', $account),
-            'model' => $account
-        ]);
-
-        $userForm = $formBuilder->create(UserForm::class, [
-            'method' => 'PUT',
-            'url' => route('users.update', $account),
-            'model' => $account->user
-        ]);
-
-        $userForm->remove('password');
-
-        return view('account::edit', compact('account', 'accountForm', 'userForm'));
+        return view('account::edit', compact('account', 'form'));
     }
 
     /**
      * Update the account data.
      * @param Account $account
-     * @param Request $request
-     * @return Response
+     * @param UpdateAccountFormRequest $request
+     * @return \Illuminate\Http\Response
      */
-    public function update(Account $account, Request $request)
+    public function update(Account $account, UpdateAccountFormRequest $request)
     {
+        $this->updateAccount($account, $request->validated());
 
-        $validated = $request->validate(Account::$rules);
+        return $this->accountUpdated($account, $request) 
+                        ?: redirect()->route('accounts.edit', $account);
+    }
 
-        $account->update($validated);
+    /**
+     * Show the account destroy form.
+     * @param  Account $account
+     * @return \Illuminate\Http\Response
+     */
+    public function confirmDelete(Account $account = null)
+    {
+        $account = $account ?? Auth::user()->account;
 
-        return redirect()->route('accounts.edit', $account);
+        $form = $this->buildDeleteAccountForm($account);
+
+        return view('account::destroy', compact('account', 'form'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * @param  Account $account
+     * @param  DeleteAccountFormRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Account $account, DeleteAccountFormRequest $request)
+    {
+        $this->deleteAccount($account);
+
+        return $this->accountDeleted($request) 
+                        ?: redirect()->route('accounts.index');
     }
 
 }

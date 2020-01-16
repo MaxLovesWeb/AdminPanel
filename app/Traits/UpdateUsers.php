@@ -12,18 +12,6 @@ use App\User;
 trait UpdateUsers
 {
 
-    /**
-     * Show the user's update form.
-     * @param  User $user
-     * @param  FormBuilder $formBuilder
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user, FormBuilder $formBuilder)
-    {
-        $form = $this->buildUpdateForm($user, $formBuilder);
-
-        return view('users.edit', compact('user', 'form'));
-    }
 
     /**
      * Build user's destroy form.
@@ -31,7 +19,7 @@ trait UpdateUsers
      * @param  FormBuilder $formBuilder
      * @return \Kris\LaravelFormBuilder\Form
      */
-    protected function buildUpdateForm($user, $formBuilder)
+    protected function buildUpdateUserForm($user, $formBuilder)
     {
 
         $form = $formBuilder->create(UserForm::class, [
@@ -44,35 +32,14 @@ trait UpdateUsers
     }
 
     /**
-     * Update the specified resource in storage.
-     *  
-     * @param User $user
-     * @param Request $request
-     * @return Response
-     */
-    public function update(User $user, Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required|unique:users,name,'.$user->id, 
-            'email' => 'required|unique:users,email,'.$user->id, 
-            'password' => 'password', //'password:web'
-        ]);
-
-        $user->update($request->only('name', 'email'));
-
-        return $this->updated($request)
-                        ?: redirect(RouteServiceProvider::HOME);
-    }
-
-    /**
      * The user has been updated.
      *
      * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    protected function updated(Request $request)
+    protected function userUpdated(Request $request)
     {
-        return back()->with('success', trans('update-user-success'));
+        
     }
 
 

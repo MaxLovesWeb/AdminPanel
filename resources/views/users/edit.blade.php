@@ -20,7 +20,7 @@
 
 <div class="row">
 
-    <div class="col-lg">
+    <div class="col-lg-6">
 
     	@card(['type' => 'default'])
 
@@ -31,8 +31,19 @@
 
         
         @endcard
+        
+    </div>
+    <div class="col-lg-6">
 
-        	
+        @card(['type' => 'default'])
+
+
+            <div class="form-group">
+                <button class="form-control"><a href="{{ route('users.confirm-delete', $user) }}">{{ __('Delete User ?') }} </a></button>
+            </div>
+
+        
+        @endcard
         
     </div>
 

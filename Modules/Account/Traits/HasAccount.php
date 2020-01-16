@@ -3,22 +3,18 @@
 namespace Modules\Account\Traits;
 
 use Modules\Account\Entities\Account;
+use Modules\Account\Entities\AccountFactory;
 
 trait HasAccount
 {
 
     public static function bootHasAccount()
     {
-        //parent::boot();
-        static::created(function($model)
+        static::created(function ($model)
         {
-            $account = [
-                'first_name' => $model->name,
-                'email' => $model->email,
-            ];
-
-            $model->account()->create($account);
+            $model->account()->create();    
         });
+
         static::deleting(function ($model)
         {
             $model->account()->delete();    

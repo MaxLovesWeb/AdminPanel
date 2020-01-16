@@ -40,10 +40,9 @@ class Account extends Model
         'nationality' => 'string',
     ];
 
-
     public static $rules = [
-        'user_id' => 'required|integer|exist:users,id',
-        'first_name' => 'required|string|max:150',
+        //'user_id' => 'required|integer|exist:users,id', // if 
+        'first_name' => 'nullable|string|max:150',
         'last_name' => 'nullable|string|max:150',
         'phone' => 'nullable',
         'email' => 'nullable|email',
@@ -56,6 +55,24 @@ class Account extends Model
         'biography'=> 'string|nullable|string|max:150',
         'nationality' => 'string|nullable|string|max:150',
     ];
+
+    public static $messages = [];
+    
+
+    public static $default = [
+        'first_name' => 'John Doe'
+    ];
+
+    /**
+     * Create a new Eloquent model instance.
+     *
+     * @param  array  $attributes
+     * @return void
+     */
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct(array_merge(self::$default, $attributes));
+    }
 
     /**
      * Account belong to user model
