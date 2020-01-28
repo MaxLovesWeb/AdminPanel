@@ -29,12 +29,12 @@ trait CreateAccounts
      * Create One account for user.
      *
      * @param  User $user
-     * @param  array  $data
+     * @param  array  $validated
      * @return \Illuminate\Http\Response
      */
-    protected function createAccount(User $user, array $attributes = [])
+    protected function createAccount(User $user, array $validated)
     {
-        return $user->account()->create($attributes);
+        return $user->account()->create($validated);
     }
 
     /**
@@ -45,9 +45,12 @@ trait CreateAccounts
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    protected function validateCreateAccount(Request $request)
+    protected function validateCreateAccount(array $attributes)
     {
-        $this->getCreateAccountCredentials($request)->validate(Account::$rules);
+
+        $validator = Validator::make($attributes, Account::$rules);
+
+        return $validator->validate();
     }
 
     /**

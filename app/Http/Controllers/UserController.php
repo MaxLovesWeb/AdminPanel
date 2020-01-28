@@ -2,35 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
-use Illuminate\Http\Request;
 use App\User;
-use App\Traits\DestroyUsers;
+use Illuminate\Http\Request;
+
+use App\Traits\CreateUsers;
+use App\Traits\ReadUsers;
 use App\Traits\UpdateUsers;
-use App\Traits\ShowUsers;
-use App\Providers\RouteServiceProvider;
+use App\Traits\DestroyUsers;
+
 use App\Tables\UserDatatable;
 use App\Http\Resources\UserDatatableResource;
-use Kris\LaravelFormBuilder\FormBuilder;
-use App\Forms\UserForm;
 
 class UserController extends Controller
 {
 
-    use ShowUsers, UpdateUsers, DestroyUsers;
+    //users crud actions
+    use CreateUsers, ReadUsers, UpdateUsers, DestroyUsers;
 
-    
 	public function __construct()
 	{
-        //$this->authorizeResource(User::class);
+        $this->authorizeResource(User::class);
 	}
 
-	// accountController@index
-    public function indexAction(UserDatatable $datatable, Request $request)
+    /**
+     * Display a listing of the resource.
+     * @param UserDatatable $datatable
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function index(UserDatatable $datatable, Request $request)
     {
         if($request->wantsJson()){
 
-            $data = UserDatatableResource::collection(User::all());
+            $users = User::all();
+
+            $data = UserDatatableResource::collection($users);
 
             return $datatable->with('data', $data)->ajax();
         }
@@ -45,31 +51,27 @@ class UserController extends Controller
 
     /**
      * Display the specified resource.
-     *
      * @param  User  $user
-     * @param  FormBuilder $formBuilder
-     * @param  Request $request
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user, FormBuilder $formBuilder, Request $request)
+    public function show(User $user)
     {
-        $form = $this->buildShowUserForm($user, $formBuilder);
+        $form = $this->buildShowUserForm($user);
 
-        return $this->userViewed($request) ?: 
+        return $this->userViewed($user) ?: 
                         view('users.show', compact('user', 'form'));
     }
 
     /**
      * Show the user's update form.
      * @param  User $user
-     * @param  FormBuilder $formBuilder
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, FormBuilder $formBuilder)
+    public function edit(User $user)
     {
-        $form = $this->buildUpdateUserForm($user, $formBuilder);
+        $userForm = $this->buildUpdateUserForm($user);
 
-        return view('users.edit', compact('user', 'form'));
+        return view('users.edit', compact('user', 'userForm'));
     }
 
     /**
@@ -77,7 +79,7 @@ class UserController extends Controller
      *  
      * @param User $user
      * @param Request $request
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function update(User $user, Request $request)
     {
@@ -89,8 +91,34 @@ class UserController extends Controller
 
         $user->update($request->only('name', 'email'));
 
-        return $this->userUpdated($request) ?:
-                    redirect('users.edit')->with('success', trans('update-user-success'));
+        flash(trans('update-user-success'))->success();
+
+        return $this->userUpdated($user) ?: redirect('users.edit', $user);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $form = $this->buildCreateUserForm();
+
+        return view('users.create', compact('form'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $account = $this->createAccount($request->user(), $request->validated());
+
+        return $this->accountCreated($account, $request) 
+                        ?: redirect()->route('accounts.edit', $account);
     }
 
 
@@ -99,7 +127,7 @@ class UserController extends Controller
      *
      * @param  User  $account
      * @param  Request  $request
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function destroy(User $user, Request $request)
     {
@@ -110,8 +138,9 @@ class UserController extends Controller
 
         $user->delete();
 
-        return $this->userDeleted($request) ?: 
-                    redirect('users.index')->with('success', trans('delete-user-success'));
+        flash(trans('delete-user-success'))->success();
+
+        return $this->userDeleted() ?: redirect('users.index');
     }
 
 }

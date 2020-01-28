@@ -29,6 +29,16 @@ trait ReadAccounts
     }
 
     /**
+     * Get Auth user account.
+     *
+     * @return Account
+     */
+    protected function getAuthAccount()
+    {
+        return Auth::user()->account;
+    }
+
+    /**
      * The account has been viewed.
      *
      * @param  Account $account

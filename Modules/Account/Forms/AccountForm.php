@@ -11,8 +11,8 @@ class AccountForm extends Form
 
     public function buildForm()
     {
-        $this->add(self::INPUTS_ARRAY.'[first_name]', 'text', ['label' => 'First Name'])
-        	->add(self::INPUTS_ARRAY.'[last_name]', 'text', ['label' => 'Last Name'])
+        $this->add('first_name', 'text', ['label' => 'First Name'])
+        	->add('last_name', 'text', ['label' => 'Last Name'])
         	->add('submit', 'submit');
     }
 

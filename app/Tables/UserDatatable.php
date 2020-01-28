@@ -38,15 +38,11 @@ class UserDatatable extends DataTable
                 'searchable' => true, 'orderable' => true
             ],
             [
-                'data' => 'user.email', 'name'=> 'roles',  'title' => __('users.table.columns.roles'),
-                'searchable' => true, 'orderable' => false, 'type' => 'html'
-            ],
-            [
-                'data' => 'user.created_at', 'name'=> 'created_at',  'title' => __('users.table.columns.created_at'),
+                'data' => 'user.created_at', 'visible' => false, 'name'=> 'created_at',  'title' => __('users.table.columns.created_at'),
                 'searchable' => false, 'orderable' => true
             ],
             [
-                'data' => 'user.updated_at', 'name'=> 'updated_at', 'title' => __('users.table.columns.updated_at'),
+                'data' => 'user.updated_at', 'visible' => false, 'name'=> 'updated_at', 'title' => __('users.table.columns.updated_at'),
                 'searchable' => false, 'orderable' => true
             ],
             [

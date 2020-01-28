@@ -15,25 +15,23 @@ trait DestroyUsers
     /**
      * Show the user's destroy form.
      * @param  User $user
-     * @param  FormBuilder $formBuilder
      * @return \Illuminate\Http\Response
      */
-    public function showDestroyUserForm(User $user, FormBuilder $formBuilder)
+    public function showDestroyUserForm(User $user)
     {
-        $form = $this->buildDestroyUserForm($user, $formBuilder);
+        $form = $this->buildDestroyUserForm($user);
 
         return view('users.destroy', compact('user', 'form'));
     }
 
     /**
      * Build user's destroy form.
-     * @param  $user
-     * @param  $formBuilder
+     * @param  User $user
      * @return \Kris\LaravelFormBuilder\Form
      */
-    protected function buildDestroyUserForm($user, $formBuilder)
+    protected function buildDestroyUserForm(User $user)
     {
-        $form = $formBuilder->create(UserForm::class, [
+        $form = \FormBuilder::create(UserForm::class, [
             'method' => 'DELETE',
             'url' => route('users.destroy', $user),
             'model' => $user
@@ -47,10 +45,9 @@ trait DestroyUsers
     /**
      * The user has been deleted.
      *
-     * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    protected function userDeleted(Request $request)
+    protected function userDeleted()
     {
         if ( is_null(Auth::user()) ) {
 

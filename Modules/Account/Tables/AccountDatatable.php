@@ -3,13 +3,16 @@
 namespace Modules\Account\Tables;
 
 use Yajra\DataTables\Services\DataTable;
-use Modules\Account\Http\Resources\Account as AccountResource;
 
 class AccountDatatable extends DataTable
 {
 
     protected $htmlColumns = [
-        'roles', 'actions'
+        'roles', 'permissions', 'actions'
+    ];
+
+    public $relations = [
+        'user', 'roles', 'permissions'
     ];
 
     /**
@@ -19,6 +22,8 @@ class AccountDatatable extends DataTable
     public function ajax()
     {
         return \DataTables::of($this->attributes['data'])
+                    ->addColumn('roles', 'account::partials.table-roles')
+                    ->addColumn('permissions', 'account::partials.table-permissions')
                     ->addColumn('actions', 'account::partials.table-actions')
                     ->rawColumns($this->htmlColumns)->make(true);
     }
@@ -27,15 +32,15 @@ class AccountDatatable extends DataTable
     {
         return [
             [
-                'data' => 'user.id', 'name'=> 'id', 'visible' => false, 'title' => __('account::table.columns.id'),
+                'data' => 'user.id', 'name'=> 'user.id', 'visible' => false, 'title' => __('account::table.columns.id'),
                 'searchable' => false, 'orderable' => true
             ],
             [
-                'data' => 'user.name', 'name'=> 'name',  'title' => __('account::table.columns.name'),
+                'data' => 'user.name', 'name'=> 'user.name',  'title' => __('account::table.columns.name'),
                 'searchable' => true, 'orderable' => true
             ],
             [
-                'data' => 'user.email', 'name'=> 'email',  'title' => __('account::table.columns.email'),
+                'data' => 'user.email', 'name'=> 'user.email',  'title' => __('account::table.columns.email'),
                 'searchable' => true, 'orderable' => true
             ],
             [
@@ -43,11 +48,15 @@ class AccountDatatable extends DataTable
                 'searchable' => true, 'orderable' => false, 'type' => 'html'
             ],
             [
-                'data' => 'user.created_at', 'name'=> 'created_at',  'title' => __('account::table.columns.created_at'),
+                'data' => 'permissions', 'name'=> 'permissions',  'title' => __('account::table.columns.permissions'),
+                'searchable' => true, 'orderable' => false, 'type' => 'html'
+            ],
+            [
+                'data' => 'user.created_at', 'name'=> 'user.created_at',  'title' => __('account::table.columns.created_at'),
                 'searchable' => false, 'orderable' => true
             ],
             [
-                'data' => 'user.updated_at', 'name'=> 'updated_at', 'title' => __('account::table.columns.updated_at'),
+                'data' => 'user.updated_at', 'name'=> 'user.updated_at', 'title' => __('account::table.columns.updated_at'),
                 'searchable' => false, 'orderable' => true
             ],
             [

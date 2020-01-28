@@ -15,26 +15,17 @@ class AccountDatatableResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-
-            'id' => (int) $this->id,
-            'first_name' => (string) $this->first_name,
-            'last_name' => (string) $this->last_name,
-            'phone' => $this->phone,
-            'email' => $this->email,
-            'gender' => (string) $this->gender,
-            'title' => (string) $this->title,
-            'birthDate' => $this->birthDate,
-            'birthPlace'=> $this->birthPlace,
-            'faxNumber' => $this->faxNumber,
-            'jobTitle'=> $this->jobTitle,
-            'biography'=> $this->biography,
-            'nationality' => $this->nationality,
-            
+        return [                     
+            'account' => $this->getAccount(),
             'user' => $this->getUser(),
             'roles' => $this->getRoles(),
-            'account' => $this->resource,
+            'permissions' => $this->getPermissions(),
         ];
+    }
+
+    protected function getAccount()
+    {
+        return $this->resource;
     }
 
     // Relations
@@ -55,6 +46,15 @@ class AccountDatatableResource extends JsonResource
         }, new Collection());
 
         return $roles;
+    }
+
+    protected function getPermissions()
+    {
+        $permissions = $this->whenLoaded('permissions', function () {
+            return $this->resource->permissions;
+        }, new Collection());
+
+        return $permissions;
     }
 
 }

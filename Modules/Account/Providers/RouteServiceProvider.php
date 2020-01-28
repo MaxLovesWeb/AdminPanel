@@ -3,6 +3,7 @@
 namespace Modules\Account\Providers;
 
 use Illuminate\Support\Facades\Route;
+use Modules\Account\Entities\Account;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
@@ -24,6 +25,10 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
+
+        //Route::bind('account', function ($account) {
+         //   return $account ?? Auth::user()->account;
+        //});
     }
 
     /**

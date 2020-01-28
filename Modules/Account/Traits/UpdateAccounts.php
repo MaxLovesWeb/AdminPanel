@@ -41,36 +41,37 @@ trait UpdateAccounts
     /**
      * Validate the create account request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  array $attributes
      * @return void
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    protected function validateUpdateAccount(Request $request)
+    protected function validateUpdateAccount(array $attributes)
     {
-        $this->getUpdateAccountCredentials($request)->validate(Account::$rules);
+        $validator = Validator::make($attributes, Account::$rules);
+
+        return $validator->validate();
     }
 
     /**
      * Update account.
      *
      * @param  Account $account
-     * @param  array  $attributes
+     * @param  array  $validated
      * @return bool
      */
-    protected function updateAccount(Account $account, array $attributes)
+    protected function updateAccount(Account $account, array $validated)
     {
-        return $account->fill($attributes)->save();
+        return $account->fill($validated)->save();
     }
 
     /**
      * The user account has been updated.
      *
      * @param  Account $account
-     * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    protected function accountUpdated(Account $account, Request $request)
+    protected function accountUpdated(Account $account)
     {
         flash(trans('update-account-success'))->success()->important();
     }

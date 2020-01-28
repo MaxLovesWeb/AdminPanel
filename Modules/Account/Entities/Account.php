@@ -2,12 +2,40 @@
 
 namespace Modules\Account\Entities;
 
-use App\User;
+use App\Traits\BelongsToUser;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Account\Traits\HasPermissions;
+use Modules\Account\Traits\HasRoles;
 
 class Account extends Model
 {
 
+    use BelongsToUser, HasPermissions, HasRoles;
+
+    /**
+     * The attributes that are not mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [
+        'id',
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'user_id',
         'first_name',
@@ -24,6 +52,11 @@ class Account extends Model
         'nationality',
     ];
 
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
     protected $casts = [
         'user_id' => 'integer',
         'first_name' => 'string',
@@ -38,51 +71,37 @@ class Account extends Model
         'jobTitle'=> 'string',
         'biography'=> 'string',
         'nationality' => 'string',
+        'created_at'    => 'datetime',
+        'updated_at'    => 'datetime',
     ];
 
+    /**
+     * Get the validation rules.
+     *
+     * @var array
+     */
     public static $rules = [
-        //'user_id' => 'required|integer|exist:users,id', // if 
+        //'user_id' => 'required|integer|exist:users,id',
         'first_name' => 'nullable|string|max:150',
         'last_name' => 'nullable|string|max:150',
-        'phone' => 'nullable',
+        'phone' => 'nullable|string',
         'email' => 'nullable|email',
-        'gender' => 'string|nullable|string|max:150',
-        'title' => 'string|nullable|string|max:150',
+        'gender' => 'string|nullable|max:150',
+        'title' => 'string|nullable|max:150',
         'birthDate'=> 'nullable|date',
-        'birthPlace'=> 'string|nullable|string|max:150',
-        'faxNumber'=> 'string|nullable|string|max:150',
-        'jobTitle'=> 'string|nullable|string|max:150',
-        'biography'=> 'string|nullable|string|max:150',
-        'nationality' => 'string|nullable|string|max:150',
+        'birthPlace'=> 'string|nullable|max:150',
+        'faxNumber'=> 'string|nullable|max:150',
+        'jobTitle'=> 'string|nullable|max:150',
+        'biography'=> 'string|nullable|max:150',
+        'nationality' => 'string|nullable|max:150',
     ];
 
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @var array
+     */
     public static $messages = [];
-    
-
-    public static $default = [
-        'first_name' => 'John Doe'
-    ];
-
-    /**
-     * Create a new Eloquent model instance.
-     *
-     * @param  array  $attributes
-     * @return void
-     */
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct(array_merge(self::$default, $attributes));
-    }
-
-    /**
-     * Account belong to user model
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
 
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use Modules\Account\Entities\Account;
+use Modules\Account\Entities\Permissions;
 use Modules\Account\Tables\AccountDatatable;
 use Modules\Account\Http\Resources\AccountDatatableResource;
 
@@ -26,7 +27,7 @@ class AccountController extends Controller
 
     public function __construct()
     {
-        $this->authorizeResource(Account::class);
+       // $this->authorizeResource(Account::class);
     }
 
     /**
@@ -39,11 +40,11 @@ class AccountController extends Controller
     {
         if($request->wantsJson()){
 
-            $accounts = AccountDatatableResource::collection(
-                Account::with('user')->get()
+            $data = AccountDatatableResource::collection(
+                Account::with( $datatable->relations )->get()
             );
 
-            return $datatable->with('data', $accounts)->ajax();
+            return $datatable->with('data', $data)->ajax();
         }
 
         $table = [
@@ -59,22 +60,19 @@ class AccountController extends Controller
      * @param  Account $account
      * @return \Illuminate\Http\Response
      */
-    public function show(Account $account = null)
+    public function show(Account $account)
     {
-        $account = $account ?? Auth::user()->account;
-
         $form = $this->buildShowAccountForm($account);
 
-        //$userForm = $this->buildShowUserForm($account->user, $formBuilder);
-
-       // $form->compose($userForm);
+        $this->accountViewed($account);
         
-        return $this->accountViewed($account) 
-                        ?: view('account::show', compact('account', 'form'));
+        return view('account::show', compact('account', 'form'));
     }
 
     /**
      * Show the form for creating a new resource.
+     * 
+     * (account created with auth process)
      *
      * @return \Illuminate\Http\Response
      */
@@ -118,10 +116,11 @@ class AccountController extends Controller
      */
     public function update(Account $account, UpdateAccountFormRequest $request)
     {
-        $this->updateAccount($account, $request->validated());
+        $this->updateAccount($account, $request->all());
 
-        return $this->accountUpdated($account, $request) 
-                        ?: redirect()->route('accounts.edit', $account);
+        $this->accountUpdated($account);
+
+        return redirect()->route('accounts.edit', $account);
     }
 
     /**
@@ -148,8 +147,9 @@ class AccountController extends Controller
     {
         $this->deleteAccount($account);
 
-        return $this->accountDeleted($request) 
-                        ?: redirect()->route('accounts.index');
+        $this->accountDeleted($request);
+
+        return redirect()->route('accounts.index');
     }
 
 }

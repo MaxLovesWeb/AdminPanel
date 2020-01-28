@@ -32,8 +32,5 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::include('bootstrap4.datatable', 'datatable');
 
-        Blade::include('bootstrap4.fields.input', 'input');
-        Blade::component('bootstrap4.fields.select', 'select');
-
     }
 }

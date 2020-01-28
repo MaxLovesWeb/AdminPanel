@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,11 +12,13 @@
 |
 */
 
-Route::middleware('auth')->group(function () {
+//Route::middleware('auth')->group(function () {
     
-	Route::resource('accounts', 'AccountController')->except('create', 'store', 'show');
-	Route::get('accounts/{account?}', 'AccountController@show')->name('accounts.show');
+	Route::resource('accounts', 'AccountController')->except('create', 'store');
+	//Route::get('accounts/{account?}', 'AccountController@show')->name('accounts.show');
 	Route::get('account/confirm-delete', 'AccountController@confirmDelete')->name('accounts.confirm-delete');
+
+	//Route::get('account/{account?}/edit', 'AccountController@edit')->name('accounts.edit');
 
 	/*Route::get('users', 'AccountController@index')->name('accounts.index');
 
@@ -31,5 +34,12 @@ Route::middleware('auth')->group(function () {
 
 	Route::delete('users/{user}/account', 'AccountController@destroy')->name('accounts.delete');
 	*/
-});
+//});
 
+//Route::middleware('auth')->group(function () {
+    
+	//Route::resource('roles', 'RoleController');//->only('index', 'show');
+	//Route::get('roles/{role}/confirm-delete', 'RoleController@confirmDelete')->name('roles.confirm-delete');
+
+	//Route::resource('accounts.roles', 'AccountRoleController');
+//});

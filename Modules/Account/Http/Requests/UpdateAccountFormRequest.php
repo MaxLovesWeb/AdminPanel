@@ -19,23 +19,13 @@ class UpdateAccountFormRequest extends FormRequest
     }
 
     /**
-     * Get data to be validated from the request.
-     *
-     * @return array
-     */
-    public function validationData()
-    {
-        return $this->input(AccountForm::INPUTS_ARRAY);
-    }
-
-    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
      */
     public function rules()
     {
-        return [];// Account::$rules;
+        return Account::$rules;
     }
 
     /**
