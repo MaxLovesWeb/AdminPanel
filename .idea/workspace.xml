@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8907fd-c578-4a26-be38-61fafe887419" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/AddressCreated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/AddressCreating.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/AddressDeleted.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/AddressDeleting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/AddressEditing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/AddressSyncRelations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/AddressViewed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Addresses/Events/UserUpdated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,33 +28,90 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressDeleted.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="119">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
               <folding>
-                <element signature="e#45#83#0#PHP" expanded="true" />
+                <element signature="e#48#76#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressCreating.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="20" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#44#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressDeleting.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="e#48#86#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressSyncRelations.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="26" />
+              <folding>
+                <element signature="e#48#86#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/UserUpdated.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            <state relative-caret-position="68">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressViewed.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressEditing.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
               <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
+                <element signature="e#44#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressCreated.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="e#44#82#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,15 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/role/create.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/CreateRole.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/role/edit.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/DestroyRole.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/EditRole.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Forms/DestroyRole.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/role/show.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/forms/destroy.blade.php" />
-        <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleCreated.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleDeleting.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Events/Users/UserCreating.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleCreating.php" />
@@ -154,6 +209,15 @@
         <option value="$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserDeleted.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserCreated.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserCreating.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/AddressCreating.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserDeleting.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserEditing.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserSyncRelations.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserViewed.php" />
+        <option value="$PROJECT_DIR$/Modules/Addresses/Events/UserUpdated.php" />
       </list>
     </option>
   </component>
@@ -325,12 +389,6 @@
             <path>
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="Modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -344,15 +402,28 @@
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="Modules" type="462c0819:PsiDirectoryNode" />
               <item name="Account" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Events" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="Modules" type="462c0819:PsiDirectoryNode" />
               <item name="Account" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="Seeders" type="462c0819:PsiDirectoryNode" />
+              <item name="Events" type="462c0819:PsiDirectoryNode" />
+              <item name="Users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Addresses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Addresses" type="462c0819:PsiDirectoryNode" />
+              <item name="Events" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
@@ -410,7 +481,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Account/Providers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Addresses/Events" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -421,11 +492,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\admin\Modules\Addresses\Events" />
       <recent name="D:\laragon\www\admin\Modules\Account\Providers" />
       <recent name="D:\laragon\www\admin\Modules\Account\Tables\Roles" />
       <recent name="D:\laragon\www\admin\Modules\Account\Tables\Users" />
       <recent name="D:\laragon\www\admin\Modules\Account\Tables\Permissions" />
-      <recent name="D:\laragon\www\admin\Modules\Account\Http\Controllers\Auth" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\laragon\www\admin\Modules\Addresses\Database\Migrations" />
@@ -478,12 +549,12 @@
       <workItem from="1581764054389" duration="14619000" />
       <workItem from="1581802112887" duration="1365000" />
       <workItem from="1581843644574" duration="15425000" />
-      <workItem from="1581928843003" duration="8317000" />
+      <workItem from="1581928843003" duration="9018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288099000" />
+    <option name="totallyTimeSpent" value="288800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -526,62 +597,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/UserRoles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/HasPermissions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/UserPermissions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/UserDataTableFilter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Fluent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/HasColumns.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Columns/Action.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Account/Resources/views/role/datatable/actions.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Column.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3496">
@@ -869,13 +884,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding>
+            <element signature="e#7#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#45#83#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1756">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -886,13 +908,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressCreated.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="391">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
           <folding>
-            <element signature="e#7#38#0#PHP" expanded="true" />
+            <element signature="e#44#82#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressDeleted.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding>
+            <element signature="e#48#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressCreating.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#44#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressDeleting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#48#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressSyncRelations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#48#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressEditing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#44#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/AddressViewed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Addresses/Events/UserUpdated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
         </state>
       </provider>
     </entry>
