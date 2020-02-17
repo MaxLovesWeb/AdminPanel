@@ -1,118 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a8907fd-c578-4a26-be38-61fafe887419" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_09_095608_create_accounts_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_23_211052_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_23_211052_create_permissions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_085624_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_085624_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_091532_create_has_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_091532_create_has_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/AccountTableSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/RoleTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/RoleTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/UserTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/factories/AccountFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/factories/RoleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/factories/RoleFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Entities/Account.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Entities/Permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Entities/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Entities/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Entities/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Forms/AccountForm.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Controllers/AccountController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Controllers/AccountRoleController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Controllers/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Requests/CreateAccountFormRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Requests/DeleteAccountFormRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Requests/UpdateAccountFormRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/AbilitiesResource.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/AccountDatatableResource.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionGroupResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionGroupResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/RoleDatatableResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Resources/RoleDatatableResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/ViewComposers/PermissionsComposer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/ViewComposers/PermissionsComposer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Policies/AccountPolicy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/ViewServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/ViewServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/lang/en/permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/lang/en/permissions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/lang/en/table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/destroy.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/layouts/master.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/all-permissions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/table-actions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/table-permissions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/table-roles.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/layouts/master.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/partials/table-actions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Tables/AccountDatatable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Tables/RoleDatatable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Tests/Feature/AccountControllerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/CreateAccounts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/CreateRoles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/DeleteAccounts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/DeleteRoles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/HasAccount.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/HasPermissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Traits/HasPermissions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/HasRoles.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Traits/HasRoles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/ReadAccounts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/ReadRoles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/UpdateAccounts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/UpdateRoles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tables/UserDatatable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/BelongsToUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/CreateUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/DestroyUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/ReadUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/UpdateUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/datatables-buttons.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/datatables-buttons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules_statuses.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules_statuses.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/datatable.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bootstrap4/datatable.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/fields/input.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/fields/select.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/destroy.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/layouts/master.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/partials/table-actions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/destroy.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/layouts/master.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/partials/table-actions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/layouts/master.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/partials/table-actions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/role/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="3a8907fd-c578-4a26-be38-61fafe887419" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,26 +15,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Tables/AdminDatatable.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1207">
-              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/helpers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -424,34 +294,6 @@
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Tables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -461,6 +303,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Account/Tables/Roles" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -530,16 +373,15 @@
       <workItem from="1581764054389" duration="14619000" />
       <workItem from="1581802112887" duration="1365000" />
       <workItem from="1581843644574" duration="15425000" />
-      <workItem from="1581928843003" duration="5537000" />
+      <workItem from="1581928843003" duration="5922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285319000" />
+    <option name="totallyTimeSpent" value="285704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30402684" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -933,17 +775,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tables/AdminDatatable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tables/AdminDatatable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
         </state>
       </provider>
     </entry>
