@@ -24,7 +24,6 @@
                                     <a class="nav-link active" id="tabs-address-tab" data-toggle="pill" href="#tabs-address" role="tab" aria-controls="tabs-address" aria-selected="true">Address</a>
                                 </li>
 
-
                             </ul>
 
                             <div class="tab-content" id="address-data-content-below-tabContent">
@@ -40,7 +39,9 @@
 
                             </div>
                         </div>
-
+                        <div class="col-8">
+                            {!! Mapper::render() !!}
+                        </div>
                     </div>
                 </div>
             </div><!-- /.card -->
@@ -49,4 +50,3 @@
 
 
 @endsection
-

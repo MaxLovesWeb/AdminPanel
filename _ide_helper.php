@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 6.15.1 on 2020-02-17 12:36:33.
+ * Generated for Laravel 6.15.1 on 2020-02-17 19:04:41.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -15577,6 +15577,1076 @@ namespace Barryvdh\Debugbar {
  
 }
 
+namespace Cornford\Googlmapper\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class MapperFacade {
+        
+        /**
+         * Renders and returns Google Map code.
+         *
+         * @param integer $item
+         * @return string 
+         * @static 
+         */ 
+        public static function render($item = -1)
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->render($item);
+        }
+        
+        /**
+         * Renders and returns Google Map javascript code.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function renderJavascript()
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->renderJavascript();
+        }
+        
+        /**
+         * Locate a location and return a Location instance.
+         *
+         * @param string $location
+         * @throws MapperArgumentException
+         * @throws MapperSearchException
+         * @throws MapperSearchResponseException
+         * @throws MapperSearchResultException
+         * @throws MapperSearchKeyException
+         * @throws MapperSearchLimitException
+         * @throws MapperException
+         * @return \Cornford\Googlmapper\Location 
+         * @static 
+         */ 
+        public static function location($location)
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->location($location);
+        }
+        
+        /**
+         * Add a new map.
+         *
+         * @param float $latitude
+         * @param float $longitude
+         * @param array $options
+         * @return self 
+         * @static 
+         */ 
+        public static function map($latitude, $longitude, $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->map($latitude, $longitude, $options);
+        }
+        
+        /**
+         * Add a new street view map.
+         *
+         * @param float $latitude
+         * @param float $longitude
+         * @param integer $heading
+         * @param integer $pitch
+         * @param array $options
+         * @return self 
+         * @static 
+         */ 
+        public static function streetview($latitude, $longitude, $heading, $pitch, $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->streetview($latitude, $longitude, $heading, $pitch, $options);
+        }
+        
+        /**
+         * Add a new map marker.
+         *
+         * @param float $latitude
+         * @param float $longitude
+         * @param array $options
+         * @throws MapperException
+         * @return self 
+         * @static 
+         */ 
+        public static function marker($latitude, $longitude, $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->marker($latitude, $longitude, $options);
+        }
+        
+        /**
+         * Add a new map information window.
+         *
+         * @param float $latitude
+         * @param float $longitude
+         * @param string $content
+         * @param array $options
+         * @throws MapperException
+         * @return self 
+         * @static 
+         */ 
+        public static function informationWindow($latitude, $longitude, $content = '', $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->informationWindow($latitude, $longitude, $content, $options);
+        }
+        
+        /**
+         * Add a new map polyline.
+         *
+         * @param array $coordinates
+         * @param array $options
+         * @throws MapperException
+         * @return self 
+         * @static 
+         */ 
+        public static function polyline($coordinates = [], $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->polyline($coordinates, $options);
+        }
+        
+        /**
+         * Add a new map polygon.
+         *
+         * @param array $coordinates
+         * @param array $options
+         * @throws MapperException
+         * @return self 
+         * @static 
+         */ 
+        public static function polygon($coordinates = [], $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->polygon($coordinates, $options);
+        }
+        
+        /**
+         * Add a new map rectangle.
+         *
+         * @param array $coordinates
+         * @param array $options
+         * @throws MapperException
+         * @return self 
+         * @static 
+         */ 
+        public static function rectangle($coordinates = [], $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->rectangle($coordinates, $options);
+        }
+        
+        /**
+         * Add a new map circle.
+         *
+         * @param array $coordinates
+         * @param array $options
+         * @throws MapperException
+         * @return self 
+         * @static 
+         */ 
+        public static function circle($coordinates = [], $options = [])
+        {
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->circle($coordinates, $options);
+        }
+        
+        /**
+         * Is mapping enabled?
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function isEnabled()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->isEnabled();
+        }
+        
+        /**
+         * Enable mapping.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableMapping()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->enableMapping();
+        }
+        
+        /**
+         * Disable mapping.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableMapping()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->disableMapping();
+        }
+        
+        /**
+         * Set the Google Maps key.
+         *
+         * @param string $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setKey($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setKey($value);
+        }
+        
+        /**
+         * Get the Google Maps key.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getKey()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getKey();
+        }
+        
+        /**
+         * Set the Google Maps region.
+         *
+         * @param string $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setRegion($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setRegion($value);
+        }
+        
+        /**
+         * Get the Google Maps region.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getRegion()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getRegion();
+        }
+        
+        /**
+         * Set the Google Maps language.
+         *
+         * @param string $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setLanguage($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setLanguage($value);
+        }
+        
+        /**
+         * Get the Google Maps language.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getLanguage()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getLanguage();
+        }
+        
+        /**
+         * Get the map async status.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getAsync()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getAsync();
+        }
+        
+        /**
+         * Enable async for maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableAsync()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->enableAsync();
+        }
+        
+        /**
+         * Disable async for maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableAsync()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->disableAsync();
+        }
+        
+        /**
+         * Get the marker status.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getMarker()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getMarker();
+        }
+        
+        /**
+         * Enable markers for maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableMarkers()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->enableMarkers();
+        }
+        
+        /**
+         * Disable markers for maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableMarkers()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->disableMarkers();
+        }
+        
+        /**
+         * Get the map center status.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getCenter()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getCenter();
+        }
+        
+        /**
+         * Enable center of maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableCenter()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->enableCenter();
+        }
+        
+        /**
+         * Disable center of maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableCenter()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->disableCenter();
+        }
+        
+        /**
+         * Get the map locate user status.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getLocate()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getLocate();
+        }
+        
+        /**
+         * Enable locate user position on maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableLocate()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->enableLocate();
+        }
+        
+        /**
+         * Disable locate user position on maps.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableLocate()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->disableLocate();
+        }
+        
+        /**
+         * Get the map UI status.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getUi()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getUi();
+        }
+        
+        /**
+         * Enable maps ui.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableUi()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->enableUi();
+        }
+        
+        /**
+         * Disable maps ui.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableUi()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->disableUi();
+        }
+        
+        /**
+         * Set map zoom level.
+         *
+         * @param integer $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setZoom($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setZoom($value);
+        }
+        
+        /**
+         * Get map zoom level.
+         *
+         * @return integer 
+         * @static 
+         */ 
+        public static function getZoom()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getZoom();
+        }
+        
+        /**
+         * Set map scroll wheel zoom.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setScrollWheelZoom($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setScrollWheelZoom($value);
+        }
+        
+        /**
+         * Get map scroll wheel zoom.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getScrollWheelZoom()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getScrollWheelZoom();
+        }
+        
+        /**
+         * Set map zoom control.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setZoomControl($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setZoomControl($value);
+        }
+        
+        /**
+         * Get map zoom control.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getZoomControl()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getZoomControl();
+        }
+        
+        /**
+         * Set map type control.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setMapTypeControl($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setMapTypeControl($value);
+        }
+        
+        /**
+         * Get map type control.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getMapTypeControl()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getMapTypeControl();
+        }
+        
+        /**
+         * Set map scale control.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setScaleControl($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setScaleControl($value);
+        }
+        
+        /**
+         * Get map scale control.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getScaleControl()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getScaleControl();
+        }
+        
+        /**
+         * Set map street view control.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setStreetViewControl($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setStreetViewControl($value);
+        }
+        
+        /**
+         * Get map street view control.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getStreetViewControl()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getStreetViewControl();
+        }
+        
+        /**
+         * Set map rotate control.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setRotateControl($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setRotateControl($value);
+        }
+        
+        /**
+         * Get map rotate control.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getRotateControl()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getRotateControl();
+        }
+        
+        /**
+         * Set map fullscreen control.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setFullscreenControl($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setFullscreenControl($value);
+        }
+        
+        /**
+         * Get map fullscreen control.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getFullscreenControl()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getFullscreenControl();
+        }
+        
+        /**
+         * Set map type.
+         *
+         * @param string $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setType($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setType($value);
+        }
+        
+        /**
+         * Get map type.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getType()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getType();
+        }
+        
+        /**
+         * Set map heading.
+         *
+         * @param integer|double $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setHeading($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setHeading($value);
+        }
+        
+        /**
+         * Get map heading.
+         *
+         * @return integer 
+         * @static 
+         */ 
+        public static function getHeading()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getHeading();
+        }
+        
+        /**
+         * Set map tilt.
+         *
+         * @param integer|double $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setTilt($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setTilt($value);
+        }
+        
+        /**
+         * Get map tilt.
+         *
+         * @return integer 
+         * @static 
+         */ 
+        public static function getTilt()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getTilt();
+        }
+        
+        /**
+         * Set map marker icon.
+         *
+         * @param string $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setIcon($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setIcon($value);
+        }
+        
+        /**
+         * Get map marker icon.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getIcon()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getIcon();
+        }
+        
+        /**
+         * Set map marker animation.
+         *
+         * @param string $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setAnimation($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setAnimation($value);
+        }
+        
+        /**
+         * Get map marker animation.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getAnimation()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getAnimation();
+        }
+        
+        /**
+         * Get the cluster status.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getCluster()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getCluster();
+        }
+        
+        /**
+         * Enable cluster.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function enableCluster()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->enableCluster();
+        }
+        
+        /**
+         * Disable cluster.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function disableCluster()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->disableCluster();
+        }
+        
+        /**
+         * Set map cluster icon.
+         *
+         * @param string $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setClustersIcon($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setClustersIcon($value);
+        }
+        
+        /**
+         * Get map clusters icon.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getClustersIcon()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getClustersIcon();
+        }
+        
+        /**
+         * Set map cluster grid.
+         *
+         * @param integer $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setClustersGrid($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setClustersGrid($value);
+        }
+        
+        /**
+         * Get map cluster grid.
+         *
+         * @return integer 
+         * @static 
+         */ 
+        public static function getClustersGrid()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getClustersGrid();
+        }
+        
+        /**
+         * Set map cluster zoom.
+         *
+         * @param integer|null $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setClustersZoom($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setClustersZoom($value);
+        }
+        
+        /**
+         * Get map cluster grid.
+         *
+         * @return integer|null 
+         * @static 
+         */ 
+        public static function getClustersZoom()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getClustersZoom();
+        }
+        
+        /**
+         * Set map cluster center.
+         *
+         * @param boolean $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setClustersCenter($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setClustersCenter($value);
+        }
+        
+        /**
+         * Get map cluster center.
+         *
+         * @return boolean 
+         * @static 
+         */ 
+        public static function getClustersCenter()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getClustersCenter();
+        }
+        
+        /**
+         * Set map cluster size.
+         *
+         * @param integer $value
+         * @throws MapperArgumentException
+         * @return void 
+         * @static 
+         */ 
+        public static function setClustersSize($value)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        $instance->setClustersSize($value);
+        }
+        
+        /**
+         * Get map cluster size.
+         *
+         * @return integer 
+         * @static 
+         */ 
+        public static function getClustersSize()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getClustersSize();
+        }
+        
+        /**
+         * Get the mapping items.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getItems()
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getItems();
+        }
+        
+        /**
+         * Get a mapping item by reference.
+         *
+         * @param integer $item
+         * @return array|boolean 
+         * @static 
+         */ 
+        public static function getItem($item)
+        {
+            //Method inherited from \Cornford\Googlmapper\MapperBase            
+                        /** @var \Cornford\Googlmapper\Mapper $instance */
+                        return $instance->getItem($item);
+        }
+         
+    }
+ 
+}
+
 namespace DaveJamesMiller\Breadcrumbs\Facades { 
 
     /**
@@ -21829,6 +22899,8 @@ namespace  {
     class View extends \Illuminate\Support\Facades\View {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
+
+    class Mapper extends \Cornford\Googlmapper\Facades\MapperFacade {}
 
     class Breadcrumbs extends \DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs {}
 

@@ -2,41 +2,17 @@
 
 namespace Modules\Addresses\Http\Controllers;
 
+use Mapper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 
-use Modules\Account\Entities\Role;
-
-use Modules\Account\Events\Roles\RoleCreated;
-use Modules\Account\Events\Roles\RoleCreating;
-use Modules\Account\Events\Roles\RoleDeleted;
-use Modules\Account\Events\Roles\RoleDeleting;
-use Modules\Account\Events\Roles\RoleEditing;
-use Modules\Account\Events\Roles\RoleSyncRelations;
-use Modules\Account\Events\Roles\RoleUpdated;
-use Modules\Account\Events\Roles\RoleViewed;
-
-use Modules\Account\Forms\Roles\CreateRole;
-use Modules\Account\Forms\Roles\EditRole;
-use Modules\Account\Forms\Roles\ShowRole;
-use Modules\Account\Forms\Users\SyncUsers;
-use Modules\Account\Forms\Permissions\SyncPermissions;
-
-use Modules\Account\Http\Requests\RoleFormRequest;
-use Modules\Account\Http\Requests\SyncRelationFormRequest;
-
-use Modules\Account\Tables\Permissions\PermissionDatatable;
-use Modules\Account\Tables\Roles\RoleDatatable;
-use Modules\Account\Tables\Users\UserDatatable;
 use Modules\Addresses\Entities\Address;
-use Modules\Addresses\Events\AddressCreating;
 use Modules\Addresses\Events\AddressDeleted;
 use Modules\Addresses\Events\AddressDeleting;
 use Modules\Addresses\Events\AddressEditing;
 use Modules\Addresses\Events\AddressUpdated;
 use Modules\Addresses\Events\AddressViewed;
-use Modules\Addresses\Forms\CreateAddress;
 use Modules\Addresses\Forms\EditAddress;
 use Modules\Addresses\Forms\ShowAddress;
 use Modules\Addresses\Http\Requests\AddressFormRequest;
@@ -84,6 +60,10 @@ class AddressController extends Controller
         $form = $this->form(ShowAddress::class, [
             'model' => $address
         ]);
+
+        Mapper::location($address->getLocation())->map();
+
+        //Mapper::map($location->getLatitude(), $location->getLongitude());
 
         event(new AddressViewed($address));
 

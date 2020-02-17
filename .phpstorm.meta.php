@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-02-17 12:36:35.
+    * Generated on 2020-02-17 19:04:43.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -164,6 +164,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -342,6 +343,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -520,6 +522,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -698,6 +701,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -876,6 +880,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -1054,6 +1059,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -1232,6 +1238,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,
@@ -1410,6 +1417,7 @@ namespace PHPSTORM_META {
         'laravel-form-helper' => \Kris\LaravelFormBuilder\FormHelper::class,
         'log' => \Illuminate\Log\LogManager::class,
         'mailer' => \Illuminate\Mail\Mailer::class,
+        'mapper' => \Cornford\Googlmapper\Mapper::class,
         'memcached.connector' => \Illuminate\Cache\MemcachedConnector::class,
         'migration.creator' => \Illuminate\Database\Migrations\MigrationCreator::class,
         'migration.repository' => \Illuminate\Database\Migrations\DatabaseMigrationRepository::class,

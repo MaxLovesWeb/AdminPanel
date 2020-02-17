@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85f71557b731fca92b7fe28aefea0975",
+    "content-hash": "4a48c82da5eff2806d8463e5c94f3f3e",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -170,6 +170,67 @@
                 "laravel-bootstrap-components"
             ],
             "time": "2019-05-09T08:43:20+00:00"
+        },
+        {
+            "name": "cornford/googlmapper",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bradcornford/Googlmapper.git",
+                "reference": "1a87bac74a99ee5b4955cab43f6d183e16322295"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bradcornford/Googlmapper/zipball/1a87bac74a99ee5b4955cab43f6d183e16322295",
+                "reference": "1a87bac74a99ee5b4955cab43f6d183e16322295",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0",
+                "illuminate/view": "^6.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2.4",
+                "phpspec/phpspec": "^6.0",
+                "phpunit/phpunit": "^8.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Cornford\\Googlmapper\\MapperServiceProvider"
+                    ],
+                    "aliases": {
+                        "Mapper": "Cornford\\Googlmapper\\Facades\\MapperFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Cornford\\Googlmapper": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bradley Cornford",
+                    "email": "me@bradleycornford.co.uk"
+                }
+            ],
+            "description": "An easy way to integrate Google Maps with Laravel.",
+            "keywords": [
+                "google",
+                "laravel",
+                "map",
+                "mapping",
+                "maps",
+                "streetview"
+            ],
+            "time": "2020-01-30T11:47:32+00:00"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",

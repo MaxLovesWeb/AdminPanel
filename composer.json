@@ -11,6 +11,7 @@
         "php": "^7.2",
         "ext-json": "*",
         "appstract/laravel-bootstrap-components": "^1.1",
+        "cornford/googlmapper": "^3.0",
         "davejamesmiller/laravel-breadcrumbs": "^5.3",
         "fideloper/proxy": "^4.0",
         "jeroennoten/laravel-adminlte": "^3.0",

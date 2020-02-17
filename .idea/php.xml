@@ -123,6 +123,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-fractal" />
       <path value="$PROJECT_DIR$/vendor/rinvex/countries" />
       <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/cornford/googlmapper" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

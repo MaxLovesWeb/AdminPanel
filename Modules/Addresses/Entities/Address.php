@@ -59,4 +59,13 @@ class Address extends Model
     {
         return $this->morphTo('addressable', 'addressable_type', 'addressable_id');
     }
+
+    public function getLocation()
+    {
+        return implode(',', [
+            $this->postcode,
+            $this->city,
+            $this->street,
+        ]);
+    }
 }
