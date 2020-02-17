@@ -13,7 +13,6 @@
         "appstract/laravel-bootstrap-components": "^1.1",
         "davejamesmiller/laravel-breadcrumbs": "^5.3",
         "fideloper/proxy": "^4.0",
-        "jeremykenedy/laravel-roles": "^2.5",
         "jeroennoten/laravel-adminlte": "^3.0",
         "kris/laravel-form-builder": "^1.22",
         "laracasts/flash": "^3.0",

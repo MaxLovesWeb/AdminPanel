@@ -5,11 +5,8 @@ namespace Modules\Account\Providers;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
-use Illuminate\Database\Eloquent\Relations\Relation;
-
 use Modules\Account\Database\Seeders\DatabaseSeeder;
-use Modules\Account\Entities\User;
-use Modules\Account\Entities\Role;
+use Modules\Account\Providers\Providers\EventServiceProvider;
 
 class AccountServiceProvider extends ServiceProvider
 {
@@ -53,6 +50,7 @@ class AccountServiceProvider extends ServiceProvider
         $this->app->register(RelationServiceProvider::class);
         $this->app->register(ValidatorServiceProvider::class);
         $this->app->register(MenuServiceProvider::class);
+        $this->app->register(EventServiceProvider::class);
 
 
         $this->loadSeedsFrom();
@@ -65,8 +63,7 @@ class AccountServiceProvider extends ServiceProvider
      */
     private function loadSeedsFrom()
     {
-
-        $this->app['seed.handler']->register(
+        $this->app['seeder']->register(
             DatabaseSeeder::class
         );
 
