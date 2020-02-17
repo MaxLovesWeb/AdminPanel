@@ -13,13 +13,14 @@ use Illuminate\Validation\Rule;
 
 use App\User as Model;
 use Modules\Account\Traits\UpdateRelations;
+use Modules\Addresses\Traits\HasAddresses;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
 
     use Notifiable;
 
-    use HasPermissions, HasRoles, UpdateRelations;
+    use HasPermissions, HasRoles, UpdateRelations, HasAddresses;
 
     /**
      * The table associated with the model.

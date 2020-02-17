@@ -60,6 +60,9 @@
 								<li class="nav-item">
 									<a class="nav-link" id="tabs-permissions-tab" data-toggle="pill" href="#tabs-permissions" role="tab" aria-controls="tabs-permissions" aria-selected="true">Permissions</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="tabs-addresses-tab" data-toggle="pill" href="#tabs-addresses" role="tab" aria-controls="tabs-addresses" aria-selected="false">Addresses</a>
+								</li>
 							</ul>
 
 							<div class="tab-content" id="roles-permissionss-content-below-tabContent">
@@ -72,6 +75,11 @@
 
 									<div class="card-body">
 										@datatable(['builder' => $datatables['permissions']])
+									</div>
+								</div>
+								<div class="tab-pane fade" id="tabs-addresses" role="tabpanel" aria-labelledby="tabs-addresses-tab">
+									<div class="card-body">
+										@datatable(['builder' => $datatables['addresses']])
 									</div>
 								</div>
 							</div>

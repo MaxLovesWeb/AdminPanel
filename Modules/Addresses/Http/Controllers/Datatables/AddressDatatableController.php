@@ -41,30 +41,14 @@ class AddressDatatableController extends Controller
      * @param User $user
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getUserRoles(User $user)
+    public function getUserAddresses(User $user)
     {
-        $builder = $user->roles()->getQuery();
+        $builder = $user->addresses()->getQuery();
 
         $resource = $this->datatable->setQueryBuilder($builder);
 
         return $resource->getResponse();
     }
-
-    /**
-     * Get roles for given permission
-     * @param Permission $permission
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function getPermissionRoles(Permission $permission)
-    {
-        $builder = $permission->roles()->getQuery();
-
-        $resource = $this->datatable->setQueryBuilder($builder);
-
-        return $resource->getResponse();
-    }
-
-
 
 
 }

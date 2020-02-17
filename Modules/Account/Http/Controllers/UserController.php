@@ -30,6 +30,7 @@ use Kris\LaravelFormBuilder\FormBuilderTrait;
 use Modules\Account\Tables\Roles\RoleDatatable;
 use Modules\Account\Tables\Users\UserDatatable;
 use Modules\Account\Tables\Permissions\PermissionDatatable;
+use Modules\Addresses\Tables\AddressDatatable;
 
 class UserController extends Controller
 {
@@ -76,9 +77,13 @@ class UserController extends Controller
      * @param User $user
      * @param RoleDatatable $roleTable
      * @param PermissionDatatable $permissionTable
+     * @param AddressDatatable $addressDatatable
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user, RoleDatatable $roleTable, PermissionDatatable $permissionTable)
+    public function show(User $user,
+                         RoleDatatable $roleTable,
+                         PermissionDatatable $permissionTable,
+                         AddressDatatable $addressDatatable)
     {
         $form = $this->form(ShowUser::class, [
             'model' => $user
@@ -90,6 +95,9 @@ class UserController extends Controller
             ]),
             'permissions' => $permissionTable->html()->ajax([
                 'url' => route('datatables.users.permissions', $user)
+            ]),
+            'addresses' => $addressDatatable->html()->ajax([
+                'url' => route('datatables.users.addresses', $user)
             ]),
         ];
 
@@ -104,9 +112,13 @@ class UserController extends Controller
      * @param User $user
      * @param RoleDatatable $roleTable
      * @param PermissionDatatable $permissionTable
+     * @param AddressDatatable $addressDatatable
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user, RoleDatatable $roleTable, PermissionDatatable $permissionTable)
+    public function edit(User $user,
+                         RoleDatatable $roleTable,
+                         PermissionDatatable $permissionTable,
+                         AddressDatatable $addressDatatable)
     {
         $forms = [
             'user' => $this->form(EditUser::class, [
@@ -132,6 +144,9 @@ class UserController extends Controller
             ]),
             'permissions' => $permissionTable->html()->ajax([
                 'url' => route('datatables.users.permissions', $user)
+            ]),
+            'addresses' => $addressDatatable->html()->ajax([
+                'url' => route('datatables.users.addresses', $user)
             ]),
         ];
 
@@ -165,7 +180,7 @@ class UserController extends Controller
      * @param User $user
      * @param SyncRelationFormRequest $request
      * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \Exception
      */
     public function syncRelation(User $user, SyncRelationFormRequest $request)
     {
