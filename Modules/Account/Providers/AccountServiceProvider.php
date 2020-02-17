@@ -51,22 +51,6 @@ class AccountServiceProvider extends ServiceProvider
         $this->app->register(ValidatorServiceProvider::class);
         $this->app->register(MenuServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
-
-
-        $this->loadSeedsFrom();
-    }
-
-    /**
-     * Loads a seeds.
-     *
-     * @return void
-     */
-    private function loadSeedsFrom()
-    {
-        $this->app['seeder']->register(
-            DatabaseSeeder::class
-        );
-
     }
 
     /**
