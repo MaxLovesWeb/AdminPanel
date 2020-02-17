@@ -2,6 +2,7 @@
 
 namespace Modules\Addresses\Events;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Queue\SerializesModels;
 use Modules\Addresses\Entities\Address;
 
@@ -15,10 +16,10 @@ class AddressCreated
     /**
      * Create a new event instance.
      *
-     * @param  Address $address
+     * @param  Model $address
      * @return void
      */
-    public function __construct(Address $address)
+    public function __construct(Model $address)
     {
         $this->address = $address;
     }

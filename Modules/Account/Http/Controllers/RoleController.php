@@ -156,6 +156,7 @@ class RoleController extends Controller
      * @param SyncRelationFormRequest $request
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Validation\ValidationException
+     * @throws \Exception
      */
     public function syncRelation(Role $role, SyncRelationFormRequest $request)
     {

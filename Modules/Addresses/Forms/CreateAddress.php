@@ -9,11 +9,8 @@ class CreateAddress extends Form
 
     public function buildForm()
     {
-        // add addressable input!!!!!!!
 
-        $this->compose(AddressFields::class, [
-            'model' => $this->getModel(),
-        ]);
+        $this->compose(AddressFields::class);
 
         $this->remove('created_at');
         $this->remove('updated_at');

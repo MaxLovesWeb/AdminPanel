@@ -16,7 +16,7 @@ class AddressActions extends Column
             'data' => 'actions', 'name'=> 'actions',  'title' => __('addresses::address.columns.actions'),
             'searchable' => false, 'orderable' => false, 'exportable' => false,
             'printable' => false, 'type' => 'html',
-            'view' => 'addresses::address.datatable.actions', 'variable' => 'addresses'
+            'view' => 'addresses::address.datatable.actions', 'variable' => 'address'
         ]));
     }
 

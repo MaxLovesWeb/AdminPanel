@@ -31,6 +31,9 @@
 								<li class="nav-item">
 									<a class="nav-link" id="tabs-sync-permissions-tab" data-toggle="pill" href="#tabs-sync-permissions" role="tab" aria-controls="tabs-sync-permissions" aria-selected="false">Sync Permissions</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="tabs-create-address-tab" data-toggle="pill" href="#tabs-create-address" role="tab" aria-controls="tabs-create-address" aria-selected="false">Add Address</a>
+								</li>
 							</ul>
 
 							<div class="tab-content" id="user-data-content-below-tabContent">
@@ -47,6 +50,11 @@
 								<div class="tab-pane fade" id="tabs-sync-permissions" role="tabpanel" aria-labelledby="tabs-sync-permissions-tab">
 									<div class="card-body">
 										{!! form($forms['syncPermissions']) !!}
+									</div>
+								</div>
+								<div class="tab-pane fade" id="tabs-create-address" role="tabpanel" aria-labelledby="tabs-create-address-tab">
+									<div class="card-body">
+										{!! form($forms['createAddress']) !!}
 									</div>
 								</div>
 							</div>

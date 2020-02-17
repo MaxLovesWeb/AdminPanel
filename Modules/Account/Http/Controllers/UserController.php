@@ -4,32 +4,28 @@ namespace Modules\Account\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Modules\Account\Entities\Permission;
-use Modules\Account\Entities\Role;
 use Modules\Account\Entities\User;
-use Modules\Account\Events\Permissions\PermissionUpdated;
-use Modules\Account\Events\Roles\RoleEditing;
 use Modules\Account\Events\Users\UserDeleted;
 use Modules\Account\Events\Users\UserDeleting;
 use Modules\Account\Events\Users\UserEditing;
 use Modules\Account\Events\Users\UserSyncRelations;
 use Modules\Account\Events\Users\UserUpdated;
 use Modules\Account\Events\Users\UserViewed;
-use Modules\Account\Forms\Roles\EditRole;
 use Modules\Account\Forms\Roles\SyncRoles;
 use Modules\Account\Forms\Users\EditUser;
 use Modules\Account\Forms\Users\ShowUser;
 
 use Modules\Account\Forms\Permissions\SyncPermissions;
-use Modules\Account\Http\Requests\PermissionFormRequest;
 use Modules\Account\Http\Requests\SyncRelationFormRequest;
-use Modules\Account\Http\Requests\UserFormRequest;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 
 
 use Modules\Account\Tables\Roles\RoleDatatable;
 use Modules\Account\Tables\Users\UserDatatable;
 use Modules\Account\Tables\Permissions\PermissionDatatable;
+use Modules\Addresses\Events\AddressCreated;
+use Modules\Addresses\Forms\CreateAddress;
+use Modules\Addresses\Http\Requests\AddressFormRequest;
 use Modules\Addresses\Tables\AddressDatatable;
 
 class UserController extends Controller
@@ -136,6 +132,11 @@ class UserController extends Controller
                 'method' => 'PUT',
                 'url' => route('users.syncRelation', $user),
             ]),
+            'createAddress' => $this->form(CreateAddress::class, [
+                'model' => $user,
+                'method' => 'POST',
+                'url' => route('users.createAddress', $user),
+            ]),
         ];
 
         $datatables = [
@@ -192,6 +193,24 @@ class UserController extends Controller
         flash(trans('sync-relation-success'))->success()->important();
 
         event(new UserSyncRelations($user));
+
+        return redirect()->route('users.edit', $user);
+    }
+
+    /**
+     * Create One Address if Addressable.
+     * @param User $user
+     * @param AddressFormRequest $request
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
+     */
+    public function createAddress(User $user, AddressFormRequest $request)
+    {
+        $address = $user->addresses()->create($request->validated());
+
+        flash(trans('create-address-success'))->success()->important();
+
+        event(new AddressCreated($address));
 
         return redirect()->route('users.edit', $user);
     }

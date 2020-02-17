@@ -5,7 +5,7 @@
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::resource('addresses', 'AddressController');
+    Route::resource('addresses', 'AddressController')->except('create', 'store');
 
     Route::namespace('Datatables')->group(function () {
 
