@@ -4,6 +4,7 @@ namespace Modules\Account\Providers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Modules\Account\Http\ViewComposers\MustVerifyIdentifier;
 use Modules\Account\Http\ViewComposers\PermissionsComposer;
 
 class ViewServiceProvider extends ServiceProvider
@@ -25,6 +26,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', PermissionsComposer::class);
+        //View::composer('*', PermissionsComposer::class);
+        View::composer('template::layouts.page', MustVerifyIdentifier::class);
     }
 }

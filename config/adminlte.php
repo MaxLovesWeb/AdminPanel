@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'layout_topnav' => null,
+    'layout_topnav' => false,
     'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
@@ -178,11 +178,7 @@ return [
             'search' => true,
             'topnav' => true,
         ],
-        [
-            'text' => 'users',
-            'url'  => 'users',
-            'can'  => '',
-        ],
+        /*
         [
             'text'        => 'pages',
             'url'         => 'admin/pages',
@@ -252,6 +248,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'aqua',
         ],
+        */
     ],
 
     /*
@@ -328,6 +325,18 @@ return [
                     'location' => 'vendor/datatables/Buttons-1.5.6/css/buttons.bootstrap4.min.css',
                 ],
 
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js',
+                    'location' => 'vendor/datatables/Buttons-1.5.6/js/dataTabless.buttons.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css',
+                    'location' => 'vendor/datatables/Buttons-1.5.6/css/buttons.dataTables.css',
+                ],
                /* [
                     'type' => 'js',
                     'asset' => false,
@@ -417,6 +426,7 @@ return [
                     'location' => 'vendor/datatables/Responsive-2.2.2/js/dataTables.responsive.min.js',
                 ],
 
+
                 /*
 
                 //rowGroup
@@ -473,6 +483,15 @@ return [
 
                 */
 
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    //'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'location' => '/vendor/datatables/buttons.server-side.js',
+
+                ],
+
+
             ],
         ],
         [
@@ -526,6 +545,22 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'DualList',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '/vendor/dualListBox/jquery.bootstrap-duallistbox.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '/vendor/dualListBox/bootstrap-duallistbox-master/src/bootstrap-duallistbox.css',
                 ],
             ],
         ],

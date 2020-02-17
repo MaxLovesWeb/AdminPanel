@@ -8,7 +8,54 @@ trait HasRoles
 {
 
     /**
+     * @var \Illuminate\Support\Collection
+     */
+    protected $roles;
+
+    /**
+     * Register a deleted model event with the dispatcher.
+     *
+     * @param \Closure|string $callback
+     *
+     * @return void
+     */
+    abstract public static function deleting($callback);
+
+    /**
+     * Define a polymorphic many-to-many relationship.
+     *
+     * @param  string  $related
+     * @param  string  $name
+     * @param  string|null  $table
+     * @param  string|null  $foreignPivotKey
+     * @param  string|null  $relatedPivotKey
+     * @param  string|null  $parentKey
+     * @param  string|null  $relatedKey
+     * @param  bool  $inverse
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     */
+    abstract public function morphToMany($related, $name, $table = null, $foreignPivotKey = null,
+                                         $relatedPivotKey = null, $parentKey = null,
+                                         $relatedKey = null, $inverse = false);
+
+
+    /**
+     * Boot the HasRoles trait for the model.
+     *
+     * @return void
+     */
+    public static function bootHasRoles()
+    {
+        static::deleting(function(self $model) {
+            $model->roles()->delete();
+        });
+
+    }
+
+    /**
      * Get all of the roles for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
     public function roles()
     {
@@ -17,7 +64,7 @@ trait HasRoles
 
     /**
      * Get all roles for the given model.
-     * @return array
+     * \Illuminate\Support\Collection
      */
     public function allRoles()
     {
@@ -25,61 +72,24 @@ trait HasRoles
     }
 
     /**
-     * Check if the model has a role ophpf roles.
-     * @param string|array $role
-     * @return int
+     * Check if the model has a role.
+     * @param string $role
+     * @return bool
      */
     public function hasRole($role)
     {
-        return $this->findRole($role)->count();
+        return $this->allRoles()->contains($role);
     }
 
     /**
-     * Check if the model has a role.
-     * @param string|array $permission
+     * Sync with detaching all roles for the model
+     * @param string|array|null $roles
+     * @param bool $detaching
      * @return array
      */
-    public function findRole($role)
+    public function syncRoles($roles, $detaching = true)
     {
-        return $this->roles()->slug($role);
+        return $this->roles()->sync($roles, $detaching);
     }
 
-    /**
-     * Add a role to model.
-     * @param string|array $role
-     * @return array
-     */
-    public function addRole($role)
-    {
-        return $this->roles()->attach($role);
-    }
-
-    /**
-     * Remove roles from model.
-     * @param string|array|null $perolermission
-     * @return bool
-     */
-    public function removeRole($role)
-    {
-        return $this->findRole($role)->detach();
-    }
-
-    /**
-     * Remove all roles from model.
-     * @return bool
-     */
-    public function removeAllRoles()
-    {
-        return $this->roles()->detach();
-    }
-
-    /**
-     * Sync with detaching all roles for the model.
-     * @return array
-     */
-    public function syncRoles($roles = [])
-    {
-        return $this->roles()->sync($roles);
-    }
-    
 }

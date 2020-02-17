@@ -15,10 +15,14 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->string('slug');
-            $table->morphs('permissible');
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->string('module');
             $table->timestamps();
-            
-            $table->unique(['slug', 'permissible_id', 'permissible_type']);
+
+            $table->primary('slug');
+
+
         });
     }
 

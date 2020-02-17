@@ -2,24 +2,69 @@
 
 namespace Modules\Account\Traits;
 
-use Modules\Account\Entities\Permissions;
+use Modules\Account\Entities\Permission;
 
 trait HasPermissions
 {
+    /**
+     * @var \Illuminate\Support\Collection
+     */
+    protected $permissions;
 
     /**
-     * morphMany permissions.
-     * 
-     * @return morphMany
+     * Register a deleted model event with the dispatcher.
+     *
+     * @param \Closure|string $callback
+     *
+     * @return void
+     */
+    abstract public static function deleting($callback);
+
+    /**
+     * Define a polymorphic many-to-many relationship.
+     *
+     * @param  string  $related
+     * @param  string  $name
+     * @param  string|null  $table
+     * @param  string|null  $foreignPivotKey
+     * @param  string|null  $relatedPivotKey
+     * @param  string|null  $parentKey
+     * @param  string|null  $relatedKey
+     * @param  bool  $inverse
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     */
+    abstract public function morphToMany($related, $name, $table = null, $foreignPivotKey = null,
+                                $relatedPivotKey = null, $parentKey = null,
+                                $relatedKey = null, $inverse = false);
+
+    /**
+     * Boot the HasPermissions trait for the model.
+     *
+     * @return void
+     */
+    public static function bootHasPermissions() {
+
+        static::deleting(function(self $model) {
+
+            $model->permissions()->delete();
+
+        });
+
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
     public function permissions()
     {
-        return $this->morphMany(Permissions::class, 'permissible');
+        return $this->morphToMany(
+            Permission::class, Permission::MORPHS, Permission::PIVOT
+        );
     }
 
     /**
      * Get all permissions for the given model.
-     * @return array
+     * @return \Illuminate\Support\Collection
      */
     public function allPermissions()
     {
@@ -28,65 +73,23 @@ trait HasPermissions
 
     /**
      * Check if the model has a permission.
-     * @param string|array $permission
+     * @param string $permission
      * @return bool
      */
     public function hasPermission($permission)
     {
-        return $this->findPermission($permission)->count();
+        return $this->allPermissions()->contains($permission);
     }
 
     /**
-     * Check if the model has a permission.
-     * @param string|array $permission
-     * @return bool
-     */
-    public function findPermission($permission)
-    {
-       
-        return $this->permissions()->slug($permission);
-    }
-
-    /**
-     * Add a permission to model.
-     * @param string|array $permission
-     * @return Permissions
-     */
-    public function addPermission($slug)
-    {
-        return $this->permissions()->create(
-            compact('slug')
-        );
-    }
-
-    /**
-     * Remove permission from model.
-     * @param string|array|null $permission
-     * @return bool
-     */
-    public function removePermission($permission)
-    {
-        return $this->findPermission($permission)->delete();
-    }
-
-    /**
-     * Remove all permissions from model.
-     * @return bool
-     */
-    public function removeAllPermissions()
-    {
-        return $this->permissions()->delete();
-    }
-
-    /**
-     * Sync with detaching all permissions for the model.
+     * Sync with detaching all permissions for the model
+     * @param string|array|null $permissions
+     * @param bool $detaching
      * @return array
      */
-    public function syncPermissions($permissions = [])
+    public function syncPermissions($permissions, $detaching = true)
     {
-        if ($this->removeAllPermissions())
-
-            return $this->addPermission($permissions);
+        return $this->permissions()->sync($permissions, $detaching);
     }
 
 }

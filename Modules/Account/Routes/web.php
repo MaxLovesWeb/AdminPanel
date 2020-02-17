@@ -1,6 +1,5 @@
 <?php
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,34 +11,74 @@
 |
 */
 
-//Route::middleware('auth')->group(function () {
-    
-	Route::resource('accounts', 'AccountController')->except('create', 'store');
-	//Route::get('accounts/{account?}', 'AccountController@show')->name('accounts.show');
-	Route::get('account/confirm-delete', 'AccountController@confirmDelete')->name('accounts.confirm-delete');
 
-	//Route::get('account/{account?}/edit', 'AccountController@edit')->name('accounts.edit');
+Route::namespace('Auth')->group(function () {
 
-	/*Route::get('users', 'AccountController@index')->name('accounts.index');
+    Route::get('login', 'LoginController@showLoginForm')->name('showLoginForm');
+    Route::post('login', 'LoginController@login')->name('login');
+    Route::post('logout', 'LoginController@logout')->name('logout');
 
-	Route::get('users/{user}/account', 'AccountController@show')->name('accounts.show');
+    Route::get('register', 'RegisterController@showRegistrationForm')->name('users.register.form');
+    Route::post('register', 'RegisterController@register')->name('users.register');
 
-	Route::get('users/{user}/account/edit', 'AccountController@edit')->name('accounts.edit');
+    Route::get('email/verify', 'VerificationController@show')->name('verification.notice');
+    Route::get('email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify');
+    Route::post('email/resend', 'VerificationController@resend')->name('verification.resend');
 
-	Route::put('users/{user}/account', 'AccountController@update')->name('accounts.update');
-	
-	Route::get('users/{user}/account/create', 'AccountController@create')->name('accounts.create');
+    Route::get('/credentials', 'CredentialsController@showCredentialsForm')->name('users.credentials.edit');
+    Route::put('/credentials/identifier', 'CredentialsController@updateAuthIdentifier')->name('users.identifier.update');
+    Route::put('/credentials/password', 'CredentialsController@updateAuthPassword')->name('users.password.update');
 
-	Route::post('users/{user}/account', 'AccountController@store')->name('accounts.store');
+    Route::get('password/confirm', 'ConfirmPasswordController@showConfirmForm')->name('password.confirm');
+    Route::post('password/confirm', 'ConfirmPasswordController@confirm');
 
-	Route::delete('users/{user}/account', 'AccountController@destroy')->name('accounts.delete');
-	*/
-//});
+});
 
-//Route::middleware('auth')->group(function () {
-    
-	//Route::resource('roles', 'RoleController');//->only('index', 'show');
-	//Route::get('roles/{role}/confirm-delete', 'RoleController@confirmDelete')->name('roles.confirm-delete');
+Route::middleware(['auth', 'verified'])->group(function () {
 
-	//Route::resource('accounts.roles', 'AccountRoleController');
-//});
+    Route::namespace('Datatables')->group(function () {
+
+        /// user resource
+        Route::get('datatables/users', 'UserDatatableController@getAll')->name('datatables.users.index');
+        Route::get('datatables/users/{user}/roles', 'RoleDatatableController@getUserRoles')->name('datatables.users.roles');
+        Route::get('datatables/users/{user}/permissions', 'PermissionDatatableController@getUserPermissions')->name('datatables.users.permissions');
+
+        //role resource
+        Route::get('datatables/roles', 'RoleDatatableController@getAll')->name('datatables.roles.index');
+        Route::get('datatables/roles/{role}/users', 'UserDatatableController@getRoleUsers')->name('datatables.roles.users');
+        Route::get('datatables/roles/{role}/permissions', 'PermissionDatatableController@getRolePermissions')->name('datatables.roles.permissions');
+
+        //permission resource
+        Route::get('datatables/permissions', 'PermissionDatatableController@getAll')->name('datatables.permissions.index');
+        Route::get('datatables/permissions/{permission}/roles', 'RoleDatatableController@getPermissionRoles')->name('datatables.permissions.roles');
+        Route::get('datatables/permissions/{permission}/users', 'UserDatatableController@getPermissionUsers')->name('datatables.permissions.users');
+
+
+    });
+
+
+
+
+    Route::get('users/{user}/confirm-delete', 'UserController@confirmDelete')->name('users.confirm-delete');
+
+
+    Route::resource('roles', 'RoleController')->except('destroy');
+    Route::resource('users', 'UserController')->except('destroy');
+    Route::resource('permissions', 'PermissionController');
+    Route::put('permissions/{permission}/syncRelation', 'PermissionController@syncRelation')->name('permissions.syncRelation');
+    Route::put('users/{user}/syncRelation', 'UserController@syncRelation')->name('users.syncRelation');
+    Route::put('roles/{role}/syncRelation', 'RoleController@syncRelation')->name('roles.syncRelation');
+
+
+
+
+    Route::middleware('password.confirm')->group(function () {
+        Route::delete('roles/{role}', 'RoleController@destroy')->name('roles.destroy');
+        Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+    });
+
+
+});
+
+
+

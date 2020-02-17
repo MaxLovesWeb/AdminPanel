@@ -4,19 +4,11 @@ namespace Modules\Account\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Account\Traits\HasPermissions;
+use Modules\Account\Traits\UpdateRelations;
 
 class Role extends Model
 {
-    use HasPermissions;
-
-    /**
-     * The attributes that are not mass assignable.
-     *
-     * @var array
-     */
-    protected $guarded = [
-        'id',
-    ];
+    use HasPermissions, UpdateRelations;
 
     /**
      * The attributes that should be mutated to dates.
@@ -34,8 +26,8 @@ class Role extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
         'slug',
+        'name',
         'description',
     ];
 
@@ -45,28 +37,33 @@ class Role extends Model
      * @var array
      */
     protected $casts = [
-        'id'            => 'integer',
-        'name'          => 'string',
         'slug'          => 'string',
+        'name'          => 'string',
         'description'   => 'string',
         'created_at'    => 'datetime',
         'updated_at'    => 'datetime',
     ];
 
     /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
+     * morphedByMany Pivot Table Name
+     * @var string
      */
-    public $timestamps = true;
+    public const PIVOT = 'has_roles';
+
+    /**
+     * morphedByMany table field name
+     * @var string
+     */
+    public const MORPHS = 'model';
 
     /**
      * Get all of the accounts that are assigned this role.
      */
-    public function accounts()
+    public function users()
     {
-        return $this->morphedByMany(Account::class, 'model');
-    } 
+        return $this->morphedByMany(User::class, self::MORPHS, self::PIVOT);
+    }
+
 
     /**
      * Scope a query to only include roles of a given type.
@@ -82,5 +79,6 @@ class Role extends Model
         }
         return $query->whereSlug($slug);
     }
+
 
 }

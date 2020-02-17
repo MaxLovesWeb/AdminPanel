@@ -2,13 +2,26 @@
 
 namespace Modules\Account\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Relations\Relation;
+
 use Modules\Account\Database\Seeders\DatabaseSeeder;
-use Modules\Account\Http\Resources\AbilitiesResource;
+use Modules\Account\Entities\User;
+use Modules\Account\Entities\Role;
 
 class AccountServiceProvider extends ServiceProvider
 {
+
+    /**
+     * The path to the "home" route for your application.
+     *
+     * @var string
+     */
+    public const HOME = '/users';
+
+
     /**
      * Boot the application events.
      *
@@ -16,24 +29,16 @@ class AccountServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
+
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
         $this->registerFactories();
-        $this->loadMigrationsFrom(module_path('Account', 'Database/Migrations')); 
-        $this->registerResources();
-       
+        $this->loadMigrationsFrom(module_path('Account', 'Database/Migrations'));
+
     }
 
-    /**
-     * Boot wrapping Http Resources
-     * 
-     * @return void
-     */
-    protected function registerResources()
-    {
-        AbilitiesResource::withoutWrapping();
-    }
 
     /**
      * Register the service provider.
@@ -45,7 +50,10 @@ class AccountServiceProvider extends ServiceProvider
         $this->app->register(AuthServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(ViewServiceProvider::class);
-        
+        $this->app->register(RelationServiceProvider::class);
+        $this->app->register(ValidatorServiceProvider::class);
+        $this->app->register(MenuServiceProvider::class);
+
 
         $this->loadSeedsFrom();
     }
@@ -57,11 +65,11 @@ class AccountServiceProvider extends ServiceProvider
      */
     private function loadSeedsFrom()
     {
-        
+
         $this->app['seed.handler']->register(
             DatabaseSeeder::class
         );
-        
+
     }
 
     /**
@@ -89,8 +97,9 @@ class AccountServiceProvider extends ServiceProvider
         $viewPath = resource_path('views/modules/account');
 
         $sourcePath = module_path('Account', 'Resources/views');
-        $accountSourcePath = module_path('Account', 'Resources/views/account');
+        $userSourcePath = module_path('Account', 'Resources/views/user');
         $roleSourcePath = module_path('Account', 'Resources/views/role');
+        $permissionSourcePath = module_path('Account', 'Resources/views/permission');
 
         $this->publishes([
             $sourcePath => $viewPath
@@ -98,11 +107,19 @@ class AccountServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/account';
-        }, \Config::get('view.paths')), [$accountSourcePath]), 'account');
+        }, \Config::get('view.paths')), [$sourcePath]), 'account');
+
+        $this->loadViewsFrom(array_merge(array_map(function ($path) {
+            return $path . '/modules/account';
+        }, \Config::get('view.paths')), [$userSourcePath]), 'user');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/account';
         }, \Config::get('view.paths')), [$roleSourcePath]), 'role');
+
+        $this->loadViewsFrom(array_merge(array_map(function ($path) {
+            return $path . '/modules/account';
+        }, \Config::get('view.paths')), [$permissionSourcePath]), 'permission');
     }
 
     /**

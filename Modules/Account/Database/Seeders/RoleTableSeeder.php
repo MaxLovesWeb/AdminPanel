@@ -15,12 +15,10 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
         factory(Role::class)->state('super-admin')->create();
         factory(Role::class)->state('admin')->create();
         factory(Role::class)->state('moderator')->create();
         factory(Role::class)->state('user')->create();
-        
+
     }
 }

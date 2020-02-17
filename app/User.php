@@ -4,24 +4,20 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Modules\Account\Traits\HasAccount;
-use Modules\Account\Traits\HasRoles;
-use Modules\Account\Traits\HasPermissions;
 
 class User extends Authenticatable
 {
     use Notifiable;
-
-    use HasAccount, HasPermissions, HasRoles;
-
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,6 +36,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime'
     ];
-
 
 }

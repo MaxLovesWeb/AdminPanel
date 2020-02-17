@@ -1,19 +1,81 @@
-@extends('role::layouts.master')
+@extends('account::layouts.master')
 
 @section('content')
 
-<div class="row">
 
-    <div class="col-lg">
+    <div class="row">
 
-    	@card(['type' => 'default', 'header' => __('Role Show')])
+        <div class="col-12">
 
-    		{!! form($form) !!}
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-edit"></i>
+                        {{ __('Show Role')}}
 
-    	@endcard
-        
+                    </h3>
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-4">
+                            <ul class="nav nav-tabs" id="role-data-content-below-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="tabs-role-tab" data-toggle="pill" href="#tabs-role" role="tab" aria-controls="tabs-role" aria-selected="true">Role</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tabs-images-tab" data-toggle="pill" href="#tabs-images" role="tab" aria-controls="tabs-images" aria-selected="false">Images</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" id="role-data-content-below-tabContent">
+                                <div class="tab-pane text-left fade show active" id="tabs-role" role="tabpanel" aria-labelledby="tabs-role-tab">
+                                    <div class="card-body">
+                                        {!! form($form) !!}
+                                        <div class="btn-toolbar justify-content-between" role="group">
+                                            <a class="btn btn-outline-primary" role="button" href="{{ route('roles.edit', $role) }}" type="button">Edit</a>
+                                            @include('account::forms.destroy', ['url' => route('roles.destroy', $role)])
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tabs-images" role="tabpanel" aria-labelledby="tabs-images-tab">
+                                    IMAGE IMAGE IMAGE etc
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+
+                            <ul class="nav nav-tabs" id="permissions-users-content-below-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="tabs-permissions-tab" data-toggle="pill" href="#tabs-permissions" role="tab" aria-controls="tabs-permissions" aria-selected="true">Permissions</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tabs-users-tab" data-toggle="pill" href="#tabs-users" role="tab" aria-controls="tabs-users" aria-selected="false">Users</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" id="permissions-users-content-below-tabContent">
+                                <div class="tab-pane text-left fade show active" id="tabs-permissions" role="tabpanel" aria-labelledby="tabs-permissions-tab">
+
+                                    <div class="card-body">
+                                        @datatable(['builder' => $datatables['permissions']])
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tabs-users" role="tabpanel" aria-labelledby="tabs-users-tab">
+                                    <div class="card-body">
+                                        @datatable(['builder' => $datatables['users']])
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.card -->
+        </div>
     </div>
 
-</div>
 
 @endsection
+

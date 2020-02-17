@@ -57,15 +57,21 @@ return [
      * Default html builder parameters.
      */
     'parameters'    => [
-        'dom'     => 'Bfrtip',
-        'order'   => [[0, 'desc']],
-        'buttons' => [
-            'create',
-            'export',
-            'print',
-            'reset',
-            'reload',
+        'dom'          => 'Bfrtip',
+        'buttons'      => [
+            'pageLength', 'export', 'print', 'reset', 'reload', 'colvis'
         ],
+        'paging' => true,
+        'searching' => true,
+        'searchDelay' => 350,
+        'responsive' => true,
+        'lengthMenu' => [
+            [ 10, 50, 100, -1 ],
+            [ '10 rows', '50 rows', '100 rows', 'Show all' ]
+        ],
+
+        //'order'   => [[0, 'desc']],
+
     ],
 
     /*

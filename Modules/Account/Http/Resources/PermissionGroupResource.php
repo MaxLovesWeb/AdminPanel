@@ -3,10 +3,10 @@
 namespace Modules\Account\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Collection;
 
 class PermissionGroupResource extends JsonResource
 {
+
     /**
      * Transform the resource collection into an array.
      *
@@ -15,11 +15,10 @@ class PermissionGroupResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [ 
-            $this->resource->getName() => '123'// PermissionResource::collection($this->getPermissions())
+        return [
+            'name' => $this->resource->getName(),
         ];
-    }
 
-   
+    }
 
 }

@@ -17,7 +17,7 @@ class CreateHasRolesTable extends Migration
             $table->bigInteger('role_id')->unsigned();
             $table->morphs('model');
             $table->timestamps();
-
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->unique(['role_id', 'model_type', 'model_id']);
         });
     }

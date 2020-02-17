@@ -54,7 +54,7 @@
 
 @section('body')
 
-    
+
 
     <div class="wrapper">
         @if(config('adminlte.layout_topnav') || View::getSection('layout_topnav'))
@@ -98,19 +98,8 @@
             @endif
                 <ul class="navbar-nav ml-auto @if(config('adminlte.layout_topnav') || View::getSection('layout_topnav'))order-1 order-md-3 navbar-no-expand @endif">
                     @yield('content_top_nav_right')
-                    
+
                     @auth
-                        <li class="nav-item dropdown">
-
-                            <a id="dropdownAccountMenu" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">{{ __('Settings') }}</a>
-                            @if(Auth::user()->account)
-                                <ul aria-labelledby="dropdownAccountMenu" class="dropdown-menu border-0 shadow">
-
-                                    <li class="nav-item"><a href="{{ route('accounts.edit', Auth::user()->account) }}" class="dropdown-item">{{ __('Account') }}</a></li>
-                                </ul>
-                            @endif
-
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -210,7 +199,7 @@
 
         @if(config('adminlte.right_sidebar'))
             <aside class="control-sidebar control-sidebar-{{config('adminlte.right_sidebar_theme')}}">
-                
+
                 @yield('right-sidebar')
             </aside>
         @endif

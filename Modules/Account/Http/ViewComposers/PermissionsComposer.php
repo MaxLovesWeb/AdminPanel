@@ -3,8 +3,6 @@
 namespace Modules\Account\Http\ViewComposers;
 
 use Illuminate\View\View;
-use Modules\Account\Http\Resources\PermissionGroupResource;
-use Joshbrw\LaravelPermissions\Contracts\PermissionManager;
 
 class PermissionsComposer
 {
@@ -16,11 +14,10 @@ class PermissionsComposer
     /**
      * Create a new composer.
      *
-     * @return void
      */
-    public function __construct(PermissionManager $abilities)
+    public function __construct()
     {
-        $this->abilities = $abilities;
+        //$this->abilities = $abilities;
     }
 
     /**
@@ -31,6 +28,8 @@ class PermissionsComposer
      */
     public function compose(View $view)
     {
-        $view->with('abilities', $this->abilities->all());
+
+        //dd($this->abilities->all());
+        //$view->with('abilities', $this->abilities->all());
     }
 }

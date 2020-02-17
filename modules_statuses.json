@@ -1,4 +1,5 @@
 {
     "Authorization": true,
-    "Account": true
+    "Account": true,
+    "Template": true
 }

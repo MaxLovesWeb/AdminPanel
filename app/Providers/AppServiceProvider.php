@@ -24,11 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::component('bootstrap4.tabs', 'tabs');
+         //Blade::component('bootstrap4.tabs', 'tabs');
 
-        Blade::component('bootstrap4.card', 'card');
-        Blade::component('bootstrap4.form', 'form');
-        Blade::component('bootstrap4.datatable', 'datatable');
+       // Blade::component('bootstrap4.card', 'card');
+       // Blade::component('bootstrap4.form', 'form');
+       // Blade::component('bootstrap4.datatable', 'datatable');
 
         Blade::include('bootstrap4.datatable', 'datatable');
 

@@ -26,26 +26,3 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
-
-
-// Define Super-Admin Account Factory
-$factory->state(User::class, 'super-admin', [
-    'name' => 'admin',
-    'email' => '4336944@gmail.com',
-    'password' => '$2y$10$LR3vSopEO/pj2KsMSjIN4.QxC249zWQWip0IflWiejm2xII7.fylW',
-]);
-
-$factory->afterCreatingState(User::class, 'super-admin', function ($user) {
-
-    $role = Role::slug('super-admin')->first();
-
-    $user->addRole($role);
-
-});
-/////////////////////////////////////////
-
-$factory->state(User::class, 'admin', []);
-
-$factory->state(User::class, 'moderator', []);
-
-$factory->state(User::class, 'user', []);

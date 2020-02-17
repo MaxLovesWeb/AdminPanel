@@ -15,6 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $moduleNamespace = 'Modules\Account\Http\Controllers';
 
+
     /**
      * Called before routes are registered.
      *
@@ -87,6 +88,6 @@ class RouteServiceProvider extends ServiceProvider
             //require module_path('Account', '/Routes/breadcrumbs.php');
             Route::middleware('web')->group(module_path('Account', '/Routes/breadcrumbs.php'));
         }
-        
+
     }
 }

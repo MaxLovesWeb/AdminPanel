@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a8907fd-c578-4a26-be38-61fafe887419" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_09_095608_create_accounts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_23_211052_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_23_211052_create_permissions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_085624_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_085624_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_091532_create_has_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Migrations/2020_01_24_091532_create_has_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/AccountTableSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/RoleTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/RoleTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/UserTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/factories/AccountFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/factories/RoleFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/factories/RoleFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Entities/Account.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Entities/Permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Entities/Permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Entities/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Entities/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Forms/AccountForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Controllers/AccountController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Controllers/AccountRoleController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Controllers/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Requests/CreateAccountFormRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Requests/DeleteAccountFormRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Requests/UpdateAccountFormRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/AbilitiesResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/AccountDatatableResource.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionGroupResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionGroupResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Resources/PermissionResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Resources/RoleDatatableResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Resources/RoleDatatableResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/ViewComposers/PermissionsComposer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/ViewComposers/PermissionsComposer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Policies/AccountPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/AccountServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/ViewServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/ViewServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/lang/en/permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/lang/en/permissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/lang/en/table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/destroy.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/layouts/master.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/all-permissions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/table-actions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/table-permissions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/partials/table-roles.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/account/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/layouts/master.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/partials/table-actions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Resources/views/role/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Resources/views/role/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Tables/AccountDatatable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Tables/RoleDatatable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Tests/Feature/AccountControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/CreateAccounts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/CreateRoles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/DeleteAccounts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/DeleteRoles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/HasAccount.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/HasPermissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Traits/HasPermissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/HasRoles.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Traits/HasRoles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/ReadAccounts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/ReadRoles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/UpdateAccounts.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Traits/UpdateRoles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tables/UserDatatable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/BelongsToUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/CreateUsers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/DestroyUsers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/ReadUsers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/UpdateUsers.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/datatables-buttons.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/datatables-buttons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules_statuses.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules_statuses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/datatable.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bootstrap4/datatable.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/fields/input.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/fields/select.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bootstrap4/form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/destroy.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/layouts/master.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/partials/table-actions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/account/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/destroy.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/layouts/master.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/partials/table-actions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/account/role/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/layouts/master.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/partials/table-actions.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modules/authorization/role/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Tables/AdminDatatable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1207">
+              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>columns()</find>
+      <find>make(</find>
+      <find>columns(</find>
+      <find>UserDatatable</find>
+      <find>htmlBuilder(</find>
+      <find>query</find>
+      <find>$dataTable</find>
+      <find>Builder</find>
+      <find>render</find>
+      <find>getHtml</find>
+      <find>dd(</find>
+      <find>ajax(</find>
+      <find>d</find>
+      <find>before(</find>
+      <find>dataTable</find>
+      <find>ber</find>
+      <find>addAc</find>
+      <find>ajax</find>
+      <find>ajax()</find>
+      <find>htmlBuilder</find>
+      <find>$data</find>
+      <find>query(</find>
+      <find>sync(</find>
+      <find>sync</find>
+      <find>static</find>
+      <find>c static</find>
+      <find>create(</find>
+      <find>save</find>
+      <find>save(</find>
+      <find>morphToMany</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/config/session.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Modules/Account/Http/Controllers/UserController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Modules/Account/Http/Controllers/RoleController.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Modules/Account/Entities/Permission.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Column.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Modules/Account/Tables/Users/UserDatatable.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Permissions/SyncPermissionUsers.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/HasRoles.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Entities/User.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Http/Controllers/RelationController.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Permissions/HasPermissions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/SyncRolePermissions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/SyncRoles.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Users/SyncUsers.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Permissions/SyncPermissions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/role/create.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/CreateRole.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/role/edit.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/DestroyRole.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/Roles/EditRole.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Forms/DestroyRole.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/role/show.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/forms/destroy.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleCreated.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleDeleting.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Users/UserCreating.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleCreating.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleSyncRelations.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Roles/RoleDeleted.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Http/Controllers/RoleController.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Users/UserSyncRelations.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Users/UserDeleted.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Events/Permissions/PermissionSyncRelations.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Http/Controllers/PermissionController.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/user/show.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Routes/web.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Http/Controllers/Auth/ConfirmPasswordController.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/auth/passwords/confirm.blade.php" />
+        <option value="$PROJECT_DIR$/app/Traits/BelongsToUser.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Traits/UpdateRelations.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Traits/HasPermissions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Traits/HasRoles.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Entities/Permission.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Scopes/UserRoles.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Entities/Role.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Permissions/HasPermissions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Users/HasUsers.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Roles/RoleActions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Resources/views/user/datatable/has-users.blade.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Roles/RoleDatatable.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Permissions/PermissionActions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Permissions/PermissionDatatable.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Users/UserActions.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Roles/HasRoles.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Tables/Users/UserDatatable.php" />
+        <option value="$PROJECT_DIR$/app/helpers.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="admin.test" id="d700cccf-b6c6-49be-805a-0d119c24e5c7" name="admin.test" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/appstract/laravel-bootstrap-components" />
+      <path value="$PROJECT_DIR$/vendor/appstract/laravel-blade-directives" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-query-builder" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/flash" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/jeremykenedy/laravel-roles" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/vendor/kris/laravel-form-builder" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/mydnic/laravel-form-blade-components" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/davejamesmiller/laravel-breadcrumbs" />
+      <path value="$PROJECT_DIR$/vendor/nwidart/laravel-modules" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
+      <path value="$PROJECT_DIR$/vendor/jeroennoten/laravel-adminlte" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/eklundkristoffer/seedster" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/vendor/spatie/fractalistic" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-fractal" />
+    </include_path>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+        <option value="$PROJECT_DIR$/.idea/admin.iml" />
+        <option value="$PROJECT_DIR$/.idea/php.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/deployment.xml" />
+        <option value="$PROJECT_DIR$/.idea/laravel-plugin.xml" />
+        <option value="$PROJECT_DIR$/.idea/php-test-framework.xml" />
+        <option value="$PROJECT_DIR$/.idea/symfony2.xml" />
+        <option value="$PROJECT_DIR$/.idea/dictionaries/43369.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="195" />
+    <option name="y" value="-30" />
+    <option name="width" value="1480" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Tables" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Account/Tables/Roles" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\admin\Modules\Account\Tables\Roles" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Tables\Users" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Tables\Permissions" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Http\Controllers\Auth" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Events\Permissions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\admin\Modules\Account\Forms" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Events\Users" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Resources\views\permission\datatable" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Tables\Users" />
+      <recent name="D:\laragon\www\admin\Modules\Account\Tables" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a8907fd-c578-4a26-be38-61fafe887419" name="Default Changelist" comment="" />
+      <created>1580672104707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580672104707</updated>
+      <workItem from="1580672111754" duration="30190000" />
+      <workItem from="1580758580437" duration="16299000" />
+      <workItem from="1580891193521" duration="12943000" />
+      <workItem from="1580980617589" duration="14979000" />
+      <workItem from="1581065959896" duration="33362000" />
+      <workItem from="1581238830177" duration="21780000" />
+      <workItem from="1581323613753" duration="21994000" />
+      <workItem from="1581416744190" duration="6670000" />
+      <workItem from="1581427998477" duration="11548000" />
+      <workItem from="1581496444347" duration="15476000" />
+      <workItem from="1581594630728" duration="20361000" />
+      <workItem from="1581670608749" duration="42771000" />
+      <workItem from="1581764054389" duration="14619000" />
+      <workItem from="1581802112887" duration="1365000" />
+      <workItem from="1581843644574" duration="15425000" />
+      <workItem from="1581928843003" duration="5537000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="285319000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30402684" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Resources/views/auth/passwords/confirm.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-291">
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Http/Requests/PermissionFormRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Http/Controllers/PermissionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="128" column="7" lean-forward="true" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
+          <folding>
+            <element signature="e#52#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <folding>
+            <element signature="e#52#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Http/Controllers/RoleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1786">
+          <caret line="230" column="5" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
+          <folding>
+            <element signature="e#52#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/UpdateRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Exceptions/ThrottleRequestsException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/Exception/TooManyRequestsHttpException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-663">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/BelongsToUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/CreateAccounts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/CreateRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-663">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/CreateUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/HasAccount.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-952">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/HasPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="514" column="69" lean-forward="true" selection-start-line="499" selection-start-column="4" selection-end-line="514" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/MorphToMany.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/ReadAccounts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/TableBuilderTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/UpdateAccounts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/UpdateRelations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/HasRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Entities/Permission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/RolePermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/RoleUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/UserRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Traits/HasPermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Entities/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/UserPermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Scopes/UserDataTableFilter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Fluent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/HasColumns.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Columns/Action.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Resources/views/role/datatable/actions.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Column.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3496">
+          <caret line="42" column="61" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Resources/views/user/datatable/has-users.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Permissions/HasPermissions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Users/HasUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Roles/RoleActions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Forms/Roles/HasRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Roles/HasRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Users/UserDatatable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1477">
+          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+          <folding>
+            <element signature="e#47#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Permissions/PermissionDatatable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="82" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Users/UserActions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Permissions/PermissionActions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="80" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Tables/Roles/RoleDatatable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="100" column="7" lean-forward="true" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/UpdateUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tables/AdminDatatable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
