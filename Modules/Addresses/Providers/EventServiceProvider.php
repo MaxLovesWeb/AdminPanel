@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Account\Providers;
+namespace Modules\Addresses\Providers;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -15,9 +15,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
+        //Registered::class => [SendEmailVerificationNotification::class,],
     ];
 
     /**

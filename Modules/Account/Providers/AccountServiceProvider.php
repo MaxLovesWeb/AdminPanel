@@ -5,8 +5,6 @@ namespace Modules\Account\Providers;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
-use Modules\Account\Database\Seeders\DatabaseSeeder;
-use Modules\Account\Providers\Providers\EventServiceProvider;
 
 class AccountServiceProvider extends ServiceProvider
 {
