@@ -10,17 +10,5 @@ class AddressCreating
 
     use SerializesModels;
 
-    public $address;
-
-    /**
-     * Create a new event instance.
-     *
-     * @param  Address $address
-     * @return void
-     */
-    public function __construct(Address $address)
-    {
-        $this->address = $address;
-    }
 
 }

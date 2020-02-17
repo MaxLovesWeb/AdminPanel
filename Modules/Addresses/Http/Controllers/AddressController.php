@@ -1,0 +1,154 @@
+<?php
+
+namespace Modules\Addresses\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Kris\LaravelFormBuilder\FormBuilderTrait;
+
+use Modules\Account\Entities\Role;
+
+use Modules\Account\Events\Roles\RoleCreated;
+use Modules\Account\Events\Roles\RoleCreating;
+use Modules\Account\Events\Roles\RoleDeleted;
+use Modules\Account\Events\Roles\RoleDeleting;
+use Modules\Account\Events\Roles\RoleEditing;
+use Modules\Account\Events\Roles\RoleSyncRelations;
+use Modules\Account\Events\Roles\RoleUpdated;
+use Modules\Account\Events\Roles\RoleViewed;
+
+use Modules\Account\Forms\Roles\CreateRole;
+use Modules\Account\Forms\Roles\EditRole;
+use Modules\Account\Forms\Roles\ShowRole;
+use Modules\Account\Forms\Users\SyncUsers;
+use Modules\Account\Forms\Permissions\SyncPermissions;
+
+use Modules\Account\Http\Requests\RoleFormRequest;
+use Modules\Account\Http\Requests\SyncRelationFormRequest;
+
+use Modules\Account\Tables\Permissions\PermissionDatatable;
+use Modules\Account\Tables\Roles\RoleDatatable;
+use Modules\Account\Tables\Users\UserDatatable;
+use Modules\Addresses\Entities\Address;
+use Modules\Addresses\Events\AddressCreating;
+use Modules\Addresses\Events\AddressDeleted;
+use Modules\Addresses\Events\AddressDeleting;
+use Modules\Addresses\Events\AddressEditing;
+use Modules\Addresses\Events\AddressUpdated;
+use Modules\Addresses\Events\AddressViewed;
+use Modules\Addresses\Forms\CreateAddress;
+use Modules\Addresses\Forms\EditAddress;
+use Modules\Addresses\Forms\ShowAddress;
+use Modules\Addresses\Http\Requests\AddressFormRequest;
+use Modules\Addresses\Tables\AddressDatatable;
+
+
+class AddressController extends Controller
+{
+    use FormBuilderTrait;
+
+    /**
+     * AddressController constructor.
+     * @param Request $request
+     */
+    public function __construct(Request $request)
+    {
+        //$this->authorizeResource(Address::class);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @param AddressDatatable $addressTable
+     * @return \Illuminate\View\View
+     */
+    public function index(AddressDatatable $addressTable)
+    {
+        $datatables = [
+            'addresses' => $addressTable->html()->ajax([
+                'url' => route('datatables.addresses.index')
+            ]),
+        ];
+
+        return view('addresses::address.index', compact( 'datatables'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Address $address
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Address $address)
+    {
+        $form = $this->form(ShowAddress::class, [
+            'model' => $address
+        ]);
+
+        event(new AddressViewed($address));
+
+        return view('addresses::address.show', compact('address', 'form'));
+    }
+
+    /**
+     * Show the form for editing Address.
+     *
+     * @param Address $address
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Address $address)
+    {
+        $forms = [
+            'role' => $this->form(EditAddress::class, [
+                'model' => $address,
+                'method' => 'PUT',
+                'url' => route('addresses.update', $address),
+            ]),
+
+        ];
+
+        event(new AddressEditing($address));
+
+        return view('addresses::address.edit', compact('address', 'forms'));
+    }
+
+    /**
+     * Update Address.
+     *
+     * @param Address $address
+     * @param AddressFormRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Address $address, AddressFormRequest $request)
+    {
+        $address->fill($request->validated())->save();
+
+        event(new AddressUpdated($address));
+
+        flash(trans('update-address-success'))->success()->important();
+
+        return redirect()->route('addresses.edit', $address);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Address $address
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
+     */
+    public function destroy(Address $address, Request $request)
+    {
+        event(new AddressDeleting($address));
+
+        $address->delete();
+
+        flash(trans('delete-address-success'))->success()->important();
+
+        event(new AddressDeleted);
+
+        return redirect()->route('addresses.index');
+    }
+
+}
