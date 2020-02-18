@@ -1,4 +1,4 @@
-<div class="modal fade modal-danger" id="confirmDelete" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true" tabindex="-1">
+<div class="modal fade modal-danger" id="{{ $modal_id }}" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

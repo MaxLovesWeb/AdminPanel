@@ -13,7 +13,7 @@
 
 	@can('delete', $address)
 	    <button class="btn btn-outline-danger" type="button"
-				data-toggle="modal" data-target="#confirmDelete" data-title="data title for address"
+				data-toggle="modal" data-target="#addresses-{{ $address->getKey() }}-modal" data-title="data title for address"
 				data-message="data-message for address">
 	    	<i class="fa fa-trash"></i>
 		</button>
@@ -22,5 +22,6 @@
 
 @include('template::partials.delete-modal', [
 	'form_id' => 'address-'.$address->getKey().'-destroy-form',
-	'route' => route('addresses.destroy', $address)
+	'route' => route('addresses.destroy', $address),
+	'modal_id' => 'addresses-'.$address->getKey().'-modal'
 ])
