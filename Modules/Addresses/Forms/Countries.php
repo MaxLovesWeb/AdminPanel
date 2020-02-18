@@ -11,8 +11,7 @@ class Countries extends Form
 
     public function buildForm()
     {
-
-        $this->add('country', 'select', [
+        $this->add('country_code', 'select', [
             'attr' => ['class' => 'form-control select2', 'style' => 'width:100%'],
             'choices' => $this->getChoices(),
             'selected' => $this->getSelected(),
@@ -23,18 +22,18 @@ class Countries extends Form
     protected function getSelected()
     {
         if ($this->getModel()){
-            return [];
+            return $this->getModel()->country_code;
         }
 
-        return array_pluck(
-            country($this->getModel()->country_code), 'name', 'emoji'
-        );
+        return '';
     }
 
     protected function getChoices()
     {
+        $countries = $this->getData('countries') ?? countries();
+
         return array_pluck(
-            $this->getData('countries') ?? countries(), 'name', 'emoji'
+            $countries, 'name', 'iso_3166_1_alpha2'
         );
     }
 

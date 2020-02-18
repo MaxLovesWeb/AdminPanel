@@ -68,4 +68,9 @@ class Address extends Model
             $this->street,
         ]);
     }
+
+    public function setCountryCodeAttribute($value)
+    {
+        $this->attributes['country_code'] = strtoupper($value);
+    }
 }

@@ -52,8 +52,6 @@ class UserController extends Controller
      */
     public function index(UserDatatable $userTable, RoleDatatable $roleTable, PermissionDatatable $permissionTable)
     {
-
-        //dd(countries());
         $datatables = [
             'users' => $userTable->html()->ajax([
                 'url' => route('datatables.users.index')
@@ -208,6 +206,7 @@ class UserController extends Controller
      */
     public function createAddress(User $user, AddressFormRequest $request)
     {
+        //dd($request->validated());
         $address = $user->addresses()->create($request->validated());
 
         flash(trans('create-address-success'))->success()->important();

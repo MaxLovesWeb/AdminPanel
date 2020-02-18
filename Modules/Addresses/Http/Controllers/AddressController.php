@@ -57,17 +57,17 @@ class AddressController extends Controller
      */
     public function show(Address $address)
     {
-        $form = $this->form(ShowAddress::class, [
-            'model' => $address
-        ]);
+        $forms = [
+            'address' => $this->form(ShowAddress::class, [
+                'model' => $address,
+            ]),
+        ];
 
-        Mapper::location($address->getLocation())->map();
-
-        //Mapper::map($location->getLatitude(), $location->getLongitude());
+        $this->getGmap($address);
 
         event(new AddressViewed($address));
 
-        return view('addresses::address.show', compact('address', 'form'));
+        return view('addresses::address.show', compact('address', 'forms'));
     }
 
     /**
@@ -79,13 +79,14 @@ class AddressController extends Controller
     public function edit(Address $address)
     {
         $forms = [
-            'role' => $this->form(EditAddress::class, [
+            'address' => $this->form(EditAddress::class, [
                 'model' => $address,
                 'method' => 'PUT',
                 'url' => route('addresses.update', $address),
             ]),
-
         ];
+
+        $this->getGmap($address);
 
         event(new AddressEditing($address));
 
@@ -129,6 +130,17 @@ class AddressController extends Controller
         event(new AddressDeleted);
 
         return redirect()->route('addresses.index');
+    }
+
+    /**
+     * Get Mapper and Add a new map
+     *
+     * @param $address
+     * @return Mapper
+     */
+    protected function getGmap(Address $address)
+    {
+        return Mapper::location($address->getLocation())->map();
     }
 
 }
