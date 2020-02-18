@@ -145,8 +145,6 @@ class AddressController extends Controller
         try {
             Mapper::location($address->getLocation())->map();
 
-            //return view('addresses::gmaps.map');
-
         } catch (Exception $e) {
             return view('addresses::gmaps.error', ['error' => $e->getMessage()])->render();
         }
