@@ -43,6 +43,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('datatables/users/{user}/roles', 'RoleDatatableController@getUserRoles')->name('datatables.users.roles');
         Route::get('datatables/users/{user}/permissions', 'PermissionDatatableController@getUserPermissions')->name('datatables.users.permissions');
 
+        // company
+        Route::get('datatables/companies/{company}/users', 'UserDatatableController@getCompanyUsers')->name('datatables.companies.users');
+
         //role resource
         Route::get('datatables/roles', 'RoleDatatableController@getAll')->name('datatables.roles.index');
         Route::get('datatables/roles/{role}/users', 'UserDatatableController@getRoleUsers')->name('datatables.roles.users');

@@ -8,6 +8,7 @@ use Modules\Account\Entities\Permission;
 use Modules\Account\Entities\Role;
 use Modules\Account\Entities\User;
 use Modules\Account\Tables\Users\UserDatatable;
+use Modules\Company\Entities\Company;
 use Modules\Template\Tables\Scopes\RequestFilter;
 
 class UserDatatableController extends Controller
@@ -58,6 +59,20 @@ class UserDatatableController extends Controller
     public function getPermissionUsers(Permission $permission)
     {
         $builder = $permission->users()->getQuery();
+
+        $resource = $this->datatable->setQueryBuilder($builder);
+
+        return $resource->getResponse();
+    }
+
+    /**
+     * Get companies for given user
+     * @param Company $company
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getCompanyUsers(Company $company)
+    {
+        $builder = $company->users()->getQuery();
 
         $resource = $this->datatable->setQueryBuilder($builder);
 

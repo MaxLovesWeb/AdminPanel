@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Modules\Account\Database\Seeders\DatabaseSeeder as AccountModuleSeeder;
 use Modules\Addresses\Database\Seeders\AddressesDatabaseSeeder;
+use Modules\Company\Database\Seeders\CompanyDatabaseSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AccountModuleSeeder::class,
-        	AddressesDatabaseSeeder::class
+            AddressesDatabaseSeeder::class,
+            CompanyDatabaseSeeder::class
         ]);
     }
 }

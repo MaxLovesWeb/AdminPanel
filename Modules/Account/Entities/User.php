@@ -11,13 +11,14 @@ use Modules\Account\Traits\HasPermissions;
 use Modules\Account\Traits\HasRoles;
 use Modules\Account\Traits\UpdateRelations;
 use Modules\Addresses\Traits\HasAddresses;
+use Modules\Company\Traits\HasCompanies;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
 
     use Notifiable;
 
-    use HasPermissions, HasRoles, HasAddresses;
+    use HasPermissions, HasRoles, HasAddresses, HasCompanies;
 
     use UpdateRelations, Filterable;
 
