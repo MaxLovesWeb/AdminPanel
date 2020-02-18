@@ -2,8 +2,8 @@
 
 namespace Modules\Addresses\Tables;
 
-use App\Tables\AdminDatatable;
 use Modules\Addresses\Entities\Address;
+use Modules\Template\Tables\AdminDatatable;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Database\Eloquent\Builder;
 use Yajra\DataTables\Html\Column;

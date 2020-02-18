@@ -6,7 +6,7 @@ use Modules\Account\Entities\Role;
 use Modules\Account\Entities\User;
 use Modules\Account\Tables\Permissions\HasPermissions;
 use Modules\Account\Tables\Users\HasUsers;
-use Template\Tables\AdminDatatable;
+use Modules\Template\Tables\AdminDatatable;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Database\Eloquent\Builder;
 use Yajra\DataTables\Html\Column;

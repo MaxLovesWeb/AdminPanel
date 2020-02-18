@@ -1,6 +1,6 @@
 <?php
 
-namespace Template\Tables;
+namespace Modules\Template\Tables;
 
 use Yajra\DataTables\Facades\DataTables;
 use Yajra\DataTables\Services\DataTable as DataTableService;

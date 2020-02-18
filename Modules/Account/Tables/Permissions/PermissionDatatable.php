@@ -5,7 +5,7 @@ namespace Modules\Account\Tables\Permissions;
 use Modules\Account\Entities\Permission;
 use Modules\Account\Tables\Roles\RoleActions;
 use Modules\Account\Tables\Users\HasUsers;
-use Template\Tables\AdminDatatable;
+use Modules\Template\Tables\AdminDatatable;
 use Yajra\DataTables\Facades\DataTables;
 use Modules\Account\Entities\User;
 use Illuminate\Database\Eloquent\Builder;
