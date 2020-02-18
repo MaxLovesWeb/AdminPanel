@@ -2,16 +2,13 @@
 
 namespace Modules\Account\Entities;
 
+use EloquentFilter\Filterable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
+use Modules\Account\Filters\UserFilter;
 use Modules\Account\Traits\HasPermissions;
 use Modules\Account\Traits\HasRoles;
-use Illuminate\Validation\Rule;
-
-use App\User as Model;
 use Modules\Account\Traits\UpdateRelations;
 use Modules\Addresses\Traits\HasAddresses;
 
@@ -20,7 +17,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     use Notifiable;
 
-    use HasPermissions, HasRoles, UpdateRelations, HasAddresses;
+    use HasPermissions, HasRoles, HasAddresses;
+
+    use UpdateRelations, Filterable;
 
     /**
      * The table associated with the model.
@@ -109,6 +108,15 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     public static $messages = [];
+
+    /**
+     * Provide Eloquent Filter
+     * @return string
+     */
+    public function modelFilter()
+    {
+        return $this->provideFilter(UserFilter::class);
+    }
 
     /**
      * Mark the given user's email as unverified.

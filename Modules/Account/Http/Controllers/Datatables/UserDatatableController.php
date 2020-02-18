@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Modules\Account\Entities\Permission;
 use Modules\Account\Entities\Role;
-use Modules\Account\Tables\Scopes\UserDataTableFilter;
+use Modules\Account\Entities\User;
 use Modules\Account\Tables\Users\UserDatatable;
+use Modules\Template\Tables\Scopes\RequestFilter;
 
 class UserDatatableController extends Controller
 {
@@ -32,7 +33,7 @@ class UserDatatableController extends Controller
      */
     public function getAll(Request $request)
     {
-        return $this->datatable->addScope(new UserDataTableFilter)->getResponse();
+        return $this->datatable->addScope(new RequestFilter($request))->getResponse();
     }
 
     /**

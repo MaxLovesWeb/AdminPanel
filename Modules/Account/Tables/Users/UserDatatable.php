@@ -54,6 +54,7 @@ class UserDatatable extends AdminDatatable
      */
     public function getModelBuilder()
     {
+        //$this->request()->all()
         return User::query();
     }
 
@@ -105,7 +106,7 @@ class UserDatatable extends AdminDatatable
             ],
             [
                 'data' => 'name', 'name' => 'name', 'title' => __('account::users.columns.name'),
-                'searchable' => true, 'orderable' => true
+                'searchable' => false, 'orderable' => true
             ],
             [
                 'data' => 'email', 'name' => 'email', 'title' => __('account::users.columns.email'),

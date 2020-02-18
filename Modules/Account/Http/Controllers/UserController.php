@@ -47,14 +47,16 @@ class UserController extends Controller
      * @param UserDatatable $userTable
      * @param RoleDatatable $roleTable
      * @param PermissionDatatable $permissionTable
+     * @param Request $request
      * @return \Illuminate\View\View
-     * @throws \Exception
      */
-    public function index(UserDatatable $userTable, RoleDatatable $roleTable, PermissionDatatable $permissionTable)
+    public function index(
+        UserDatatable $userTable, RoleDatatable $roleTable,
+        PermissionDatatable $permissionTable, Request $request)
     {
         $datatables = [
             'users' => $userTable->html()->ajax([
-                'url' => route('datatables.users.index')
+                'url' => route('datatables.users.index', $request->query())
             ]),
             'roles' => $roleTable->html()->ajax([
                 'url' => route('datatables.roles.index')
