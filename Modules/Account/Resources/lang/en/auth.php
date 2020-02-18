@@ -2,9 +2,17 @@
 
 return [
 
+
+    'credentials' => 'Credentials',
+
+    'identifier' => 'Identifier',
+
     'full_name'                   => 'Full name',
     'email'                       => 'Email',
     'password'                    => 'Password',
+    'confirm' => 'Confirm',
+    'forgot_password' => 'Forgot Your Password?',
+    'confirm_password'            => 'Please confirm your password before continuing.',
     'retype_password'             => 'Retype password',
     'remember_me'                 => 'Remember Me',
     'register'                    => 'Register',
@@ -24,4 +32,8 @@ return [
     'verify_check_your_email'     => 'Before proceeding, please check your email for a verification link.',
     'verify_if_not_recieved'      => 'If you did not receive the email',
     'verify_request_another'      => 'click here to request another',
+
+
+
+
 ];

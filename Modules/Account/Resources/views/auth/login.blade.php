@@ -21,21 +21,21 @@
 
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ $dashboard_url ?? '' }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+            <a href="{{ $dashboard_url ?? '' }}">{!! config('account.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">{{ __('adminlte::adminlte.login_message') }}</p>
+                <p class="login-box-msg">{{ __('account::auth.login_message') }}</p>
                 {!! form($form) !!}
                 <p class="mt-2 mb-1">
                     <a href="{{ $password_reset_url }}">
-                        {{ __('adminlte::adminlte.i_forgot_my_password') }}
+                        {{ __('account::auth.i_forgot_my_password') }}
                     </a>
                 </p>
                 @if ($register_url)
                     <p class="mb-0">
                         <a href="{{ $register_url }}">
-                            {{ __('adminlte::adminlte.register_a_new_membership') }}
+                            {{ __('account::auth.register_a_new_membership') }}
                         </a>
                     </p>
                 @endif
