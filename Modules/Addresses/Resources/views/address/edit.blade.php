@@ -32,7 +32,7 @@
 
                         </div>
                         <div class="card-body col-8">
-                            @include('addresses::gmaps.map')
+                            {!! $gmaps !!}
                         </div>
                     </div>
                 </div>

@@ -3,11 +3,8 @@
 namespace Modules\Account\Tables\Permissions;
 
 use Modules\Account\Entities\Permission;
-use Modules\Account\Tables\Roles\RoleActions;
-use Modules\Account\Tables\Users\HasUsers;
 use Modules\Template\Tables\AdminDatatable;
 use Yajra\DataTables\Facades\DataTables;
-use Modules\Account\Entities\User;
 use Illuminate\Database\Eloquent\Builder;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Column;

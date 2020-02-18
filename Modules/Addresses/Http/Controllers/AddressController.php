@@ -2,6 +2,7 @@
 
 namespace Modules\Addresses\Http\Controllers;
 
+use Exception;
 use Mapper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -52,6 +53,7 @@ class AddressController extends Controller
      *
      * @param Address $address
      * @return \Illuminate\Http\Response
+     * @throws \Throwable
      */
     public function show(Address $address)
     {
@@ -61,11 +63,11 @@ class AddressController extends Controller
             ]),
         ];
 
-        $this->getGmap($address);
+        $gmaps = $this->getGmap($address);
 
         event(new AddressViewed($address));
 
-        return view('addresses::address.show', compact('address', 'forms'));
+        return view('addresses::address.show', compact('address', 'forms', 'gmaps'));
     }
 
     /**
@@ -73,6 +75,7 @@ class AddressController extends Controller
      *
      * @param Address $address
      * @return \Illuminate\Http\Response
+     * @throws \Throwable
      */
     public function edit(Address $address)
     {
@@ -84,11 +87,11 @@ class AddressController extends Controller
             ]),
         ];
 
-        $this->getGmap($address);
+        $gmaps = $this->getGmap($address);
 
         event(new AddressEditing($address));
 
-        return view('addresses::address.edit', compact('address', 'forms'));
+        return view('addresses::address.edit', compact('address', 'forms', 'gmaps'));
     }
 
     /**
@@ -133,12 +136,22 @@ class AddressController extends Controller
     /**
      * Get Mapper and Add a new map
      *
-     * @param $address
-     * @return Mapper
+     * @param Address $address
+     * @return array|string
+     * @throws \Throwable
      */
     protected function getGmap(Address $address)
     {
-        return Mapper::location($address->getLocation())->map();
+        try {
+            Mapper::location($address->getLocation())->map();
+
+            //return view('addresses::gmaps.map');
+
+        } catch (Exception $e) {
+            return view('addresses::gmaps.error', ['error' => $e->getMessage()])->render();
+        }
+
+        return view('addresses::gmaps.map')->render();
     }
 
 }

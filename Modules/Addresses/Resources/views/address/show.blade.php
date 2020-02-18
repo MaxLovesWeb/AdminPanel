@@ -30,7 +30,7 @@
                             <a class="btn btn-default form-control" role="button" href="{{ route('addresses.edit', $address) }}" type="button">Edit</a>
                         </div>
                         <div class="card-body col-8">
-                            @include('addresses::gmaps.map')
+                            {!! $gmaps !!}
                         </div>
                     </div>
                 </div>
