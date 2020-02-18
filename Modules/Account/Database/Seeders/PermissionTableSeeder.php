@@ -98,6 +98,34 @@ class PermissionTableSeeder extends Seeder
                 'module'       => 'Account',
 
             ],
+
+            [
+                'name'        => 'Can View Addresses',
+                'slug'        => 'view.addresses',
+                'description' => 'Can view addresses',
+                'module'       => 'Addresses',
+            ],
+            [
+                'name'        => 'Can Create Addresses',
+                'slug'        => 'create.addresses',
+                'description' => 'Can create new address',
+                'module'       => 'Addresses',
+
+            ],
+            [
+                'name'        => 'Can Edit Addresses',
+                'slug'        => 'update.addresses',
+                'description' => 'Can edit addresses',
+                'module'       => 'Addresses',
+
+            ],
+            [
+                'name'        => 'Can Delete Addresses',
+                'slug'        => 'delete.addresses',
+                'description' => 'Can delete addresses',
+                'module'       => 'Addresses',
+
+            ],
         ];
 
         foreach ($Permissionitems as $Permissionitem) {

@@ -4,7 +4,6 @@
 
 use Faker\Generator as Faker;
 use Modules\Addresses\Entities\Address;
-use Modules\Account\Entities\User;
 
 $factory->define(Address::class, function (Faker $faker) {
     return [
