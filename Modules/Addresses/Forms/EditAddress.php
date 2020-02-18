@@ -9,6 +9,10 @@ class EditAddress extends Form
 
     public function buildForm()
     {
+        $this->compose(Countries::class, [
+            'model' => $this->getModel(),
+        ]);
+
         $this->compose(AddressFields::class, [
             'model' => $this->getModel(),
         ]);

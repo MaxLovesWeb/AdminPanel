@@ -22,6 +22,8 @@ class TemplateServiceProvider extends ServiceProvider
         $this->registerFactories();
         $this->loadMigrationsFrom(module_path('Template', 'Database/Migrations'));
 
+        \Blade::include('template::partials.datatable', 'datatable');
+        \Blade::include('template::partials.select2', 'select2');
         \View::composer('*', AdminLteComposer::class);
     }
 

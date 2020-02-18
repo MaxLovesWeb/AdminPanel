@@ -24,7 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::include('bootstrap4.datatable', 'datatable');
+        //\Blade::include('bootstrap4.datatable', 'datatable');
+
 
     }
 }

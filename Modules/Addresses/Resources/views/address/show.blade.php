@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="col-8">
-                            {!! Mapper::render() !!}
+                            @include('addresses::gmaps.map')
                         </div>
                     </div>
                 </div>

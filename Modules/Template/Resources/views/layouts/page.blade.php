@@ -84,23 +84,32 @@
     <script type="text/javascript">
 
         $(function() {
+            $('.select2').select2({
+                placeholder: "Select a value",
+                allowClear: true
+            });
+        });
 
-                var list = $('.duallist').bootstrapDualListbox(
-                    {
-                        nonSelectedListLabel: 'Non-selected',
-                        selectedListLabel: 'Selected',
-                        preserveSelectionOnMove: 'moved',
-                        moveOnSelect: false,
-                        selectorMinimalHeight: 200
-                    }
-                );
+        $(function() {
 
-                var customSettings = $('.duallist').bootstrapDualListbox('getContainer');
-                    customSettings.find('.moveall i').removeClass().addClass('fa fa-angle-double-right').next().remove();
-                    customSettings.find('.move i').removeClass().addClass('fa fa-angle-right').next().remove();
-                    customSettings.find('.removeall i').removeClass().addClass('fa fa-angle-double-left').next().remove();
-                    customSettings.find('.remove i').removeClass().addClass('fa fa-angle-left').next().remove();
-                });
+            var list = $('.duallist');
+
+            list.bootstrapDualListbox(
+                {
+                    nonSelectedListLabel: 'Non-selected',
+                    selectedListLabel: 'Selected',
+                    preserveSelectionOnMove: 'moved',
+                    moveOnSelect: false,
+                    selectorMinimalHeight: 200
+                }
+            );
+
+            var customSettings = list.bootstrapDualListbox('getContainer');
+                customSettings.find('.moveall i').removeClass().addClass('fa fa-angle-double-right').next().remove();
+                customSettings.find('.move i').removeClass().addClass('fa fa-angle-right').next().remove();
+                customSettings.find('.removeall i').removeClass().addClass('fa fa-angle-double-left').next().remove();
+                customSettings.find('.remove i').removeClass().addClass('fa fa-angle-left').next().remove();
+            });
 
     </script>
     @stack('js')

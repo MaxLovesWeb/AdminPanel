@@ -4,8 +4,6 @@ namespace Modules\Addresses\Providers;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use Modules\Account\Http\ViewComposers\MustVerifyIdentifier;
-use Modules\Account\Http\ViewComposers\PermissionsComposer;
 
 class ViewServiceProvider extends ServiceProvider
 {

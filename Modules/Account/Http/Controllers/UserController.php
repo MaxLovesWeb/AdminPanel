@@ -52,6 +52,8 @@ class UserController extends Controller
      */
     public function index(UserDatatable $userTable, RoleDatatable $roleTable, PermissionDatatable $permissionTable)
     {
+
+        //dd(countries());
         $datatables = [
             'users' => $userTable->html()->ajax([
                 'url' => route('datatables.users.index')
