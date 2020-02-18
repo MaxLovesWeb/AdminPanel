@@ -14,11 +14,20 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="card-body col-4">
-                            {!! form($forms['address']) !!}
-                            <div class="btn-toolbar justify-content-between" role="group">
-                                <a class="btn btn-outline-primary" role="button" href="{{ route('addresses.edit', $address) }}" type="button">Edit</a>
-                                @include('account::forms.destroy', ['url' => route('addresses.destroy', $address)])
+                            {!! form_start($forms['address']) !!}
+                            <div class="row">
+                                <div class="col-4">
+                                    {!! form_row($forms['address']->is_primary) !!}
+                                </div>
+                                <div class="col-4">
+                                    {!! form_row($forms['address']->is_shipping) !!}
+                                </div>
+                                <div class="col-4">
+                                    {!! form_row($forms['address']->is_billing) !!}
+                                </div>
                             </div>
+                            {!! form_rest($forms['address']) !!}
+                            <a class="btn btn-default form-control" role="button" href="{{ route('addresses.edit', $address) }}" type="button">Edit</a>
                         </div>
                         <div class="card-body col-8">
                             @include('addresses::gmaps.map')

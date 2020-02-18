@@ -6,7 +6,6 @@ use Mapper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
-
 use Modules\Addresses\Entities\Address;
 use Modules\Addresses\Events\AddressDeleted;
 use Modules\Addresses\Events\AddressDeleting;
@@ -17,7 +16,6 @@ use Modules\Addresses\Forms\EditAddress;
 use Modules\Addresses\Forms\ShowAddress;
 use Modules\Addresses\Http\Requests\AddressFormRequest;
 use Modules\Addresses\Tables\AddressDatatable;
-
 
 class AddressController extends Controller
 {

@@ -14,7 +14,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="card-body col-4">
-                            {!! form($forms['address']) !!}
+                            {!! form_start($forms['address']) !!}
+
+                            <div class="row">
+                                <div class="col-4">
+                                    {!! form_row($forms['address']->is_primary) !!}
+                                </div>
+                                <div class="col-4">
+                                    {!! form_row($forms['address']->is_shipping) !!}
+                                </div>
+                                <div class="col-4">
+                                    {!! form_row($forms['address']->is_billing) !!}
+                                </div>
+                            </div>
+
+                            {!! form_rest($forms['address']) !!}
+
                         </div>
                         <div class="card-body col-8">
                             @include('addresses::gmaps.map')
