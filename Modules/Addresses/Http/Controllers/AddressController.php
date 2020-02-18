@@ -127,7 +127,7 @@ class AddressController extends Controller
 
         event(new AddressDeleted);
 
-        return redirect()->route('addresses.index');
+        return back();
     }
 
     /**
