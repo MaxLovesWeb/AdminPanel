@@ -16,6 +16,12 @@ class PermissionTableSeeder extends Seeder
     {
         $Permissionitems = [
             [
+                'name'        => 'Can View Any Users',
+                'slug'        => 'viewAny.users',
+                'description' => 'Can view users',
+                'module'       => 'Account',
+            ],
+            [
                 'name'        => 'Can View Users',
                 'slug'        => 'view.users',
                 'description' => 'Can view users',
@@ -43,6 +49,14 @@ class PermissionTableSeeder extends Seeder
 
             ],
 
+
+            // ROLES
+            [
+                'name'        => 'Can View Any Roles',
+                'slug'        => 'viewAny.roles',
+                'description' => 'Can view Roles',
+                'module'       => 'Account',
+            ],
             [
                 'name'        => 'Can View Roles',
                 'slug'        => 'view.roles',
@@ -71,6 +85,13 @@ class PermissionTableSeeder extends Seeder
 
             ],
 
+            //Permissions
+            [
+                'name'        => 'Can View Any Permissions',
+                'slug'        => 'viewAny.permissions',
+                'description' => 'Can view Permissions',
+                'module'       => 'Account',
+            ],
             [
                 'name'        => 'Can View Permissions',
                 'slug'        => 'view.permissions',
@@ -99,6 +120,13 @@ class PermissionTableSeeder extends Seeder
 
             ],
 
+            //Addresses
+            [
+                'name'        => 'Can View Any Addresses',
+                'slug'        => 'viewAny.addresses',
+                'description' => 'Can view Addresses',
+                'module'       => 'Addresses',
+            ],
             [
                 'name'        => 'Can View Addresses',
                 'slug'        => 'view.addresses',
@@ -124,6 +152,41 @@ class PermissionTableSeeder extends Seeder
                 'slug'        => 'delete.addresses',
                 'description' => 'Can delete addresses',
                 'module'       => 'Addresses',
+
+            ],
+
+            //Company
+            [
+                'name'        => 'Can View Any Companies',
+                'slug'        => 'viewAny.companies',
+                'description' => 'Can view Companies',
+                'module'       => 'Company',
+            ],
+            [
+                'name'        => 'Can View Companies',
+                'slug'        => 'view.companies',
+                'description' => 'Can view Companies',
+                'module'       => 'Company',
+            ],
+            [
+                'name'        => 'Can Create Companies',
+                'slug'        => 'create.companies',
+                'description' => 'Can create new Companies',
+                'module'       => 'Company',
+
+            ],
+            [
+                'name'        => 'Can Edit Companies',
+                'slug'        => 'update.companies',
+                'description' => 'Can edit Companies',
+                'module'       => 'Company',
+
+            ],
+            [
+                'name'        => 'Can Delete Companies',
+                'slug'        => 'delete.companies',
+                'description' => 'Can delete Companies',
+                'module'       => 'Company',
 
             ],
         ];

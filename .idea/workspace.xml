@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a8907fd-c578-4a26-be38-61fafe887419" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Entities/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Entities/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Http/Controllers/Datatables/UserDatatableController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Http/Controllers/Datatables/UserDatatableController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Account/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ModelFilters/UserFilter.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules_statuses.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules_statuses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Database/Seeders/PermissionTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Database/Seeders/PermissionTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Account/Providers/MenuServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Account/Providers/MenuServiceProvider.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Company/Http/Controllers/CompanyController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="193">
-              <caret line="71" column="15" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+              <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
               <folding>
                 <element signature="e#52#80#0#PHP" expanded="true" />
               </folding>
@@ -51,9 +46,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Account/Providers/MenuServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modules/Account/Database/Seeders/PermissionTableSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="125" column="43" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Company/Resources/views/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
+            <state relative-caret-position="918">
               <caret line="54" column="83" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="83" />
             </state>
           </provider>
@@ -71,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Company/Forms/CompanyFields.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
+            <state relative-caret-position="102">
               <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
             </state>
           </provider>
@@ -80,7 +93,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Company/Tables/CompanyDatatable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
+            <state relative-caret-position="1190">
               <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
               <folding>
                 <element signature="e#42#79#0#PHP" expanded="true" />
@@ -101,7 +114,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Company/Entities/Company.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
+            <state relative-caret-position="1003">
               <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
               <folding>
                 <element signature="e#44#83#0#PHP" expanded="true" />
@@ -162,8 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Modules/Company/Database/factories/CompanyFactory.php" />
-        <option value="$PROJECT_DIR$/Modules/Company/Traits/HasCompanies.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Entities/User.php" />
         <option value="$PROJECT_DIR$/Modules/Addresses/Database/Seeders/AddressesDatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/Modules/Company/Database/Seeders/CompanyDatabaseSeeder.php" />
@@ -213,6 +224,8 @@
         <option value="$PROJECT_DIR$/Modules/Account/Http/Controllers/Datatables/UserDatatableController.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Routes/web.php" />
         <option value="$PROJECT_DIR$/Modules/Company/Entities/Company.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Providers/MenuServiceProvider.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Database/Seeders/PermissionTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -357,9 +370,9 @@
       <path value="$PROJECT_DIR$/vendor/tucker-eric/eloquentfilter" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="195" />
-    <option name="y" value="-30" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="208" />
+    <option name="y" value="45" />
     <option name="width" value="1480" />
     <option name="height" value="1040" />
   </component>
@@ -383,67 +396,35 @@
             <path>
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Account" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Account" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Account" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Seeders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Modules" type="462c0819:PsiDirectoryNode" />
+              <item name="Account" type="462c0819:PsiDirectoryNode" />
               <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Account" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Account" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Account" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Datatables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="admin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Account" type="462c0819:PsiDirectoryNode" />
-              <item name="Routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="admin" type="b2602c69:ProjectViewProjectNode" />
@@ -547,17 +528,18 @@
       <workItem from="1581843644574" duration="15425000" />
       <workItem from="1581928843003" duration="22113000" />
       <workItem from="1582011226990" duration="35270000" />
+      <workItem from="1582097058754" duration="744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337165000" />
+    <option name="totallyTimeSpent" value="337909000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="156" y="-24" width="1184" height="832" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.40836298" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31409395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -594,20 +576,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Modules/Company/Traits/HasCompanies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Company/Database/Seeders/CompanyDatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Addresses/Providers/AuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -712,9 +680,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Company/Resources/lang/en/auth.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Company/Resources/lang/en/auth.php" />
     <entry file="file://$PROJECT_DIR$/Modules/Company/Resources/lang/en/company.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -743,13 +709,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Company/Forms/SyncRoles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Company/Forms/SyncRoles.php" />
     <entry file="file://$PROJECT_DIR$/Modules/Company/Forms/HasCompanies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -760,13 +720,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Company/Events/RoleSyncRelations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Company/Events/RoleSyncRelations.php" />
     <entry file="file://$PROJECT_DIR$/Modules/Company/Events/CompanyCreated.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -910,6 +864,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Company/Http/Controllers/CompanyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+          <folding>
+            <element signature="e#52#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Company/Resources/views/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="83" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Company/Forms/ShowCompany.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -919,14 +890,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Company/Forms/CompanyFields.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
+        <state relative-caret-position="102">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Company/Tables/CompanyDatatable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
+        <state relative-caret-position="1190">
           <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="e#42#79#0#PHP" expanded="true" />
@@ -943,7 +914,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Company/Entities/Company.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="1003">
           <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
           <folding>
             <element signature="e#44#83#0#PHP" expanded="true" />
@@ -951,20 +922,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Company/Resources/views/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Providers/MenuServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="54" column="83" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="83" />
+        <state relative-caret-position="289">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Company/Http/Controllers/CompanyController.php">
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Database/Seeders/PermissionTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="71" column="15" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
-          <folding>
-            <element signature="e#52#80#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="125" column="43" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
         </state>
       </provider>
     </entry>

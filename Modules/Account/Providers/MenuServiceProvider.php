@@ -17,7 +17,7 @@ class MenuServiceProvider extends ServiceProvider
                 $event->menu->add([
                     'text' => 'users',
                     'url' => route('users.index'),
-                    //'can' => 'user-viewAny'
+                    'can' => 'user-viewAny'
                 ]);
             });
     }
