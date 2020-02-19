@@ -10,7 +10,8 @@ return [
         'slug' => 'Slug',
         'created_at' => 'Created',
         'updated_at' => 'Updated',
-        'actions' => 'Actions'
+        'actions' => 'Actions',
+        'companies' => 'Companies'
 
 
     ],

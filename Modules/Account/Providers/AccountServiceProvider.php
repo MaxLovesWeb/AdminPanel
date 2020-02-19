@@ -47,7 +47,6 @@ class AccountServiceProvider extends ServiceProvider
         $this->app->register(ViewServiceProvider::class);
         $this->app->register(RelationServiceProvider::class);
         $this->app->register(ValidatorServiceProvider::class);
-        $this->app->register(MenuServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
     }
 

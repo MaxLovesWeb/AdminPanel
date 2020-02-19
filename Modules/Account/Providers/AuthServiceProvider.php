@@ -3,6 +3,8 @@
 namespace Modules\Account\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Modules\Account\Entities\Permission;
 use Modules\Account\Entities\User;
 use Modules\Account\Policies\PermissionPolicy;
@@ -33,22 +35,8 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        $this->defineAbilities();
 
-        //dd(Gate::abilities(), PermissionGroupResource::collection(Permissions::all()));
     }
-
-    protected function defineAbilities()
-    {
-
-        //Permission::all();
-        /**
-         * Gate::define($ability, function (User $user, string $ability) {
-        return $user->hasPermission($ability);
-        });
-         */
-    }
-
 
 
 }

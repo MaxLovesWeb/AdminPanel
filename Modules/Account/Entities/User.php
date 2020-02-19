@@ -131,4 +131,9 @@ class User extends Authenticatable implements MustVerifyEmail
         ])->save();
     }
 
+    public function isSuperAdmin()
+    {
+        return $this->hasRole('super-admin');
+    }
+
 }

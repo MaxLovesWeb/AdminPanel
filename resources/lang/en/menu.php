@@ -4,14 +4,10 @@ return [
 
     'management' => 'MANAGEMENT',
     'users' => 'Users',
-
-
-
-
-
-
-
-
+    'roles' => 'Roles',
+    'permissions' => 'Permissions',
+    'companies' => 'Companies',
+    'addresses' => 'Addresses',
 
 
 

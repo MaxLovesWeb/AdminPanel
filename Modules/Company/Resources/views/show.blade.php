@@ -50,7 +50,7 @@
 
                             <div class="tab-content" id="users-content-below-tabContent">
 
-                                <div class="tab-pane fade" id="tabs-users" role="tabpanel" aria-labelledby="tabs-users-tab">
+                                <div class="tab-pane fade show active" id="tabs-users" role="tabpanel" aria-labelledby="tabs-users-tab">
                                     <div class="card-body">
                                         @datatable(['builder' => $datatables['users']])
                                     </div>

@@ -78,7 +78,7 @@ trait HasRoles
      */
     public function hasRole($role)
     {
-        return $this->allRoles()->contains($role);
+        return $this->roles->contains($role);
     }
 
     /**

@@ -4,6 +4,7 @@ namespace Modules\Account\Tables\Users;
 
 use Modules\Account\Tables\Permissions\HasPermissions;
 use Modules\Account\Tables\Roles\HasRoles;
+use Modules\Company\Tables\HasCompanies;
 use Modules\Template\Tables\AdminDatatable;
 use Yajra\DataTables\Facades\DataTables;
 use Modules\Account\Entities\User;
@@ -17,7 +18,7 @@ class UserDatatable extends AdminDatatable
      * @var array
      */
     protected $relations = [
-        'roles', 'permissions'
+        'roles', 'permissions', 'companies'
     ];
 
     //columns which must html render
@@ -37,7 +38,7 @@ class UserDatatable extends AdminDatatable
     /**
      * @var Column
      */
-    protected $permissions, $roles, $actions;
+    protected $permissions, $roles, $companies, $actions;
 
     /**
      * RoleDatatable constructor.
@@ -47,6 +48,7 @@ class UserDatatable extends AdminDatatable
         $this->actions = new UserActions;
         $this->permissions = new HasPermissions;
         $this->roles = new HasRoles;
+        $this->companies = new HasCompanies;
     }
 
     /**
@@ -66,6 +68,7 @@ class UserDatatable extends AdminDatatable
         return parent::html()
             ->add($this->roles)
             ->add($this->permissions)
+            ->add($this->companies)
             ->add($this->actions);
     }
 
@@ -86,10 +89,14 @@ class UserDatatable extends AdminDatatable
             ->editColumn($this->permissions->name, function (User $user) {
                 return view($this->permissions->view, [$this->permissions->data => $user->permissions])->render();
             })
+            ->editColumn($this->companies->name, function (User $user) {
+                return view($this->companies->view, [$this->companies->data => $user->companies])->render();
+            })
             ->rawColumns([
                 $this->permissions->name,
                 $this->roles->name,
-                $this->actions->name
+                $this->companies->name,
+                $this->actions->name,
             ])->whitelist($this->whiteList)->make(true);
     }
 
