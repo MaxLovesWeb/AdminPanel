@@ -148,7 +148,7 @@ class PermissionController extends Controller
      * @param Permission $permission
      * @param SyncRelationFormRequest $request
      * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \Exception
      */
     public function syncRelation(Permission $permission, SyncRelationFormRequest $request)
     {

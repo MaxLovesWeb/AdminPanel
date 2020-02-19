@@ -19,7 +19,7 @@ class RolePolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->allows('viewAny-roles');
     }
 
     /**
@@ -31,7 +31,7 @@ class RolePolicy
      */
     public function view(User $user, Role $role)
     {
-        return true;
+        return $user->allows('view-roles');
     }
 
     /**
@@ -42,7 +42,7 @@ class RolePolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->allows('create-roles');
     }
 
     /**
@@ -54,8 +54,7 @@ class RolePolicy
      */
     public function update(User $user, Role $role)
     {
-        //return $authenticate->getKey() === $account->user->getKey();
-        return true;
+        return $user->allows('update-roles');
     }
 
     /**
@@ -67,8 +66,7 @@ class RolePolicy
      */
     public function delete(User $user, Role $role)
     {
-        //return $authenticate->getKey() === $account->user->getKey();
-        return true;
+        return $user->allows('delete-roles');
     }
 
     /**

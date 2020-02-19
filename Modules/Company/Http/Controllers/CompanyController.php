@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
+use Modules\Account\Entities\User;
 use Modules\Account\Events\Roles\RoleDeleted;
 use Modules\Account\Forms\Users\SyncUsers;
 use Modules\Account\Tables\Users\UserDatatable;
+use Modules\Addresses\Events\AddressCreated;
+use Modules\Addresses\Forms\CreateAddress;
+use Modules\Addresses\Http\Requests\AddressFormRequest;
+use Modules\Addresses\Tables\AddressDatatable;
 use Modules\Company\Entities\Company;
 use Modules\Company\Events\CompanyCreated;
 use Modules\Company\Events\CompanyCreating;
@@ -45,7 +50,7 @@ class CompanyController extends Controller
     public function index(CompanyDatatable $companyTable)
     {
         $datatables = [
-            'companies' => $companyTable->html()->ajax([
+            'companies' => $companyTable->html()->buttons(['create'])->ajax([
                 'url' => route('datatables.companies.index')
             ]),
         ];
@@ -60,8 +65,9 @@ class CompanyController extends Controller
      * @param UserDatatable $userTable
      * @return Response
      */
-    public function show(Company $company, UserDatatable $userTable)
+    public function show(Company $company, UserDatatable $userTable, AddressDatatable $addressDatatable)
     {
+
         $form = $this->form(ShowCompany::class, [
             'model' => $company
         ]);
@@ -69,6 +75,9 @@ class CompanyController extends Controller
         $datatables = [
             'users' => $userTable->html()->ajax([
                 'url' => route('datatables.companies.users', $company)
+            ]),
+            'addresses' => $addressDatatable->html()->ajax([
+                'url' => route('datatables.companies.addresses', $company)
             ]),
         ];
 
@@ -82,9 +91,10 @@ class CompanyController extends Controller
      *
      * @param Company $company
      * @param UserDatatable $userTable
+     * @param AddressDatatable $addressDatatable
      * @return Response
      */
-    public function edit(Company $company, UserDatatable $userTable)
+    public function edit(Company $company, UserDatatable $userTable, AddressDatatable $addressDatatable)
     {
         $forms = [
             'company' => $this->form(EditCompany::class, [
@@ -92,10 +102,10 @@ class CompanyController extends Controller
                 'method' => 'PUT',
                 'url' => route('companies.update', $company),
             ]),
-            'syncUsers' => $this->form(SyncUsers::class, [
+            'createAddress' => $this->form(CreateAddress::class, [
                 'model' => $company,
-                'method' => 'PUT',
-                'url' => route('companies.syncRelation', $company),
+                'method' => 'POST',
+                'url' => route('companies.createAddress', $company),
             ]),
         ];
 
@@ -103,11 +113,33 @@ class CompanyController extends Controller
             'users' => $userTable->html()->ajax([
                 'url' => route('datatables.companies.users', $company)
             ]),
+            'addresses' => $addressDatatable->html()->ajax([
+                'url' => route('datatables.companies.addresses', $company)
+            ]),
         ];
 
         event(new CompanyEditing($company));
 
         return view('company::edit', compact('company', 'forms', 'datatables'));
+    }
+
+    /**
+     * Create One Address if Addressable.
+     * @param Company $company
+     * @param AddressFormRequest $request
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
+     */
+    public function createAddress(Company $company, AddressFormRequest $request)
+    {
+        //dd($request->validated());
+        $address = $company->addresses()->create($request->validated());
+
+        flash(trans('create-address-success'))->success()->important();
+
+        event(new AddressCreated($address));
+
+        return redirect()->route('companies.edit', $company);
     }
 
     /**

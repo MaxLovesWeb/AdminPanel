@@ -3,10 +3,12 @@
 namespace Modules\Addresses\Http\Controllers;
 
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Mapper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
+use Modules\Account\Entities\User;
 use Modules\Addresses\Entities\Address;
 use Modules\Addresses\Events\AddressDeleted;
 use Modules\Addresses\Events\AddressDeleting;
@@ -28,7 +30,7 @@ class AddressController extends Controller
      */
     public function __construct(Request $request)
     {
-        //$this->authorizeResource(Address::class);
+        $this->authorizeResource(Address::class);
     }
 
     /**
@@ -57,6 +59,7 @@ class AddressController extends Controller
      */
     public function show(Address $address)
     {
+        //dd(Auth::user(), $address->addressable);
         $forms = [
             'address' => $this->form(ShowAddress::class, [
                 'model' => $address,

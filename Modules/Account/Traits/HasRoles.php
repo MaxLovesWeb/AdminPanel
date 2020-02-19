@@ -7,10 +7,6 @@ use Modules\Account\Entities\Role;
 trait HasRoles
 {
 
-    /**
-     * @var \Illuminate\Support\Collection
-     */
-    protected $roles;
 
     /**
      * Register a deleted model event with the dispatcher.
@@ -49,7 +45,6 @@ trait HasRoles
         static::deleting(function(self $model) {
             $model->roles()->delete();
         });
-
     }
 
     /**
@@ -64,7 +59,7 @@ trait HasRoles
 
     /**
      * Get all roles for the given model.
-     * \Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
      */
     public function allRoles()
     {
@@ -78,7 +73,23 @@ trait HasRoles
      */
     public function hasRole($role)
     {
-        return $this->roles->contains($role);
+        return $this->allRoles()->pluck('slug')->contains($role);
+    }
+
+    /**
+     * Check if the model has a permission defined in role.
+     * @param string $permission
+     * @return bool
+     */
+    public function hasRolePermission($permission)
+    {
+         foreach ($this->allRoles() as $role){
+             if ($role->hasPermission($permission)){
+                 return true;
+             }
+         }
+
+         return false;
     }
 
     /**

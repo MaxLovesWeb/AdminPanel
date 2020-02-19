@@ -18,7 +18,7 @@ class AddressPolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->allows('viewAny-addresses');
     }
 
     /**
@@ -30,7 +30,7 @@ class AddressPolicy
      */
     public function view(User $user, Address $address)
     {
-        return true;
+        return $user->allows('view-addresses') || $user == $address->addressable;
     }
 
     /**
@@ -41,7 +41,7 @@ class AddressPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->allows('create-addresses');
     }
 
     /**
@@ -53,7 +53,7 @@ class AddressPolicy
      */
     public function update(User $user, Address $address)
     {
-        return true;
+        return $user->allows('update-addresses') || $user == $address->addressable;
     }
 
     /**
@@ -65,7 +65,7 @@ class AddressPolicy
      */
     public function delete(User $user, Address $address)
     {
-        return true;
+        return $user->allows('delete-addresses') || $user == $address->addressable;
     }
 
     /**

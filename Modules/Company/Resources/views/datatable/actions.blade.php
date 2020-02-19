@@ -1,5 +1,5 @@
 <div class="btn-group" role="group">
-	@can('view', $company)
+	@can('view',  $company)
 		<a class="btn btn-outline-primary" href="{{ route('companies.show', $company) }}" data-toggle="tooltip" title="{!! __('template::buttons.show') !!}">
 			<i class="fa fa-eye"></i>
 		</a>
@@ -13,8 +13,8 @@
 
 	@can('delete', $company)
 		<button class="btn btn-outline-danger" type="button"
-				data-toggle="modal" data-target="#roles-{{ $company->getKey() }}-modal" data-title="data title for role"
-				data-message="data-message for role">
+				data-toggle="modal" data-target="#companies-{{ $company->getKey() }}-modal" data-title="data title for company"
+				data-message="data-message for company">
 			<i class="fa fa-trash"></i>
 		</button>
 	@endcan

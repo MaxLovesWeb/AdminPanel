@@ -18,12 +18,6 @@ class CompanyFields extends Form
             ->add('updated_at', 'datetime-local', ['label' => 'Updated']);
     		//->add('submit', 'submit');
 
-        $this->modify('slug', 'text', [
-            'attr' => [
-                'disabled' => true
-            ]
-        ]);
-
         $this->modify('created_at', 'datetime-local', [
             'attr' => [
                 'disabled' => true

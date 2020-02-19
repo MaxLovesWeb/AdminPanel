@@ -3,6 +3,7 @@
 namespace Modules\Addresses\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Modules\Account\Entities\User;
 
 class Address extends Model
 {

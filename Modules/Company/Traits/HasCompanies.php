@@ -7,10 +7,6 @@ use Modules\Company\Entities\Company;
 trait HasCompanies
 {
 
-    /**
-     * @var \Illuminate\Support\Collection
-     */
-    protected $companies;
 
     /**
      * Register a deleted model event with the dispatcher.
@@ -64,7 +60,7 @@ trait HasCompanies
 
     /**
      * Get all companies for the given model.
-     * \Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
      */
     public function allCompanies()
     {

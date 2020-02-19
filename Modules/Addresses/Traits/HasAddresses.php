@@ -7,10 +7,6 @@ use Modules\Addresses\Entities\Address;
 trait HasAddresses
 {
 
-    /**
-     * @var \Illuminate\Support\Collection
-     */
-    protected $addresses;
 
     /**
      * Register a deleted model event with the dispatcher.

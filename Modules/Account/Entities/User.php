@@ -136,4 +136,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasRole('super-admin');
     }
 
+    public function allows($permission)
+    {
+        return $this->hasPermission($permission) || $this->hasRolePermission($permission);
+    }
+
+    public function denies($permission)
+    {
+        return ! $this->allows($permission);
+    }
+
 }

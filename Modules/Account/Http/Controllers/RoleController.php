@@ -53,7 +53,7 @@ class RoleController extends Controller
     public function index(RoleDatatable $roleTable)
     {
         $datatables = [
-            'roles' => $roleTable->html()->ajax([
+            'roles' => $roleTable->html()->buttons(['create'])->ajax([
                 'url' => route('datatables.roles.index')
             ]),
         ];

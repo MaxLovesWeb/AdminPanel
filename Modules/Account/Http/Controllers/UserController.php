@@ -83,6 +83,7 @@ class UserController extends Controller
                          PermissionDatatable $permissionTable,
                          AddressDatatable $addressDatatable)
     {
+
         $form = $this->form(ShowUser::class, [
             'model' => $user
         ]);

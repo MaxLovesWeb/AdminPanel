@@ -5,10 +5,12 @@ namespace Modules\Company\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Account\Entities\User;
 use Modules\Account\Traits\UpdateRelations;
+use Modules\Addresses\Traits\HasAddresses;
 
 class Company extends Model
 {
-    use UpdateRelations;
+    use UpdateRelations, HasAddresses;
+
 
     /**
      * The attributes that should be mutated to dates.

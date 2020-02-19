@@ -18,7 +18,7 @@ class CompanyPolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->allows('viewAny-companies');
     }
 
     /**
@@ -30,7 +30,7 @@ class CompanyPolicy
      */
     public function view(User $user, Company $company)
     {
-        return true;
+        return $user->allows('view-companies') || $user->hasCompany($company);
     }
 
     /**
@@ -41,7 +41,7 @@ class CompanyPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->allows('create-companies');
     }
 
     /**
@@ -53,7 +53,7 @@ class CompanyPolicy
      */
     public function update(User $user, Company $company)
     {
-        return true;
+        return $user->allows('update-companies') && $user->hasCompany($company);
     }
 
     /**
@@ -65,7 +65,7 @@ class CompanyPolicy
      */
     public function delete(User $user, Company $company)
     {
-        return true;
+        return $user->allows('delete-companies') && $user->hasCompany($company);
     }
 
     /**

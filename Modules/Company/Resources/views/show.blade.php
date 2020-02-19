@@ -30,10 +30,7 @@
                                 <div class="tab-pane text-left fade show active" id="tabs-company" role="tabpanel" aria-labelledby="tabs-company-tab">
                                     <div class="card-body">
                                         {!! form($form) !!}
-                                        <div class="btn-toolbar justify-content-between" role="group">
-                                            <a class="btn btn-outline-primary" role="button" href="{{ route('companies.edit', $company) }}" type="button">Edit</a>
-                                            @include('account::forms.destroy', ['url' => route('companies.destroy', $company)])
-                                        </div>
+                                        <a class="btn btn-default form-control" role="button" href="{{ route('companies.edit', $company) }}" type="button">Edit</a>
                                     </div>
                                 </div>
                             </div>
@@ -45,6 +42,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" id="tabs-users-tab" data-toggle="pill" href="#tabs-users" role="tab" aria-controls="tabs-users" aria-selected="false">Users</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="tabs-addresses-tab" data-toggle="pill" href="#tabs-addresses" role="tab" aria-controls="tabs-addresses" aria-selected="false">Addresses</a>
+                                </li>
 
                             </ul>
 
@@ -53,6 +53,11 @@
                                 <div class="tab-pane fade show active" id="tabs-users" role="tabpanel" aria-labelledby="tabs-users-tab">
                                     <div class="card-body">
                                         @datatable(['builder' => $datatables['users']])
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="tabs-addresses" role="tabpanel" aria-labelledby="tabs-addresses-tab">
+                                    <div class="card-body">
+                                        @datatable(['builder' => $datatables['addresses']])
                                     </div>
                                 </div>
                             </div>

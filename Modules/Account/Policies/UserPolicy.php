@@ -17,19 +17,19 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return true;
+        return $user->allows('viewAny-users');
     }
 
     /**
      * Determine whether the user can view the model.
      *
+     * @param  User $auth
      * @param  User $user
-     * @param  User $account
      * @return bool
      */
-    public function view(User $user, User $account)
+    public function view(User $auth, User $user)
     {
-        return true;
+        return $user->allows('view-users') || $auth->getKey() === $user->getKey();
     }
 
     /**
@@ -40,44 +40,41 @@ class UserPolicy
      */
     public function create(User $user)
     {
-
         return true;
     }
 
     /**
      * Determine if the given user can be updated by the auth user.
      *
-     * @param  User  $authenticate
-     * @param  Account  $account
+     * @param User $auth
+     * @param User $user
      * @return bool
      */
-    public function update(User $authenticate, User $account)
+    public function update(User $auth, User $user)
     {
-        //return $authenticate->getKey() === $account->user->getKey();
-        return true;
+        return $user->allows('update-users') || $auth->getKey() === $user->getKey();
     }
 
     /**
      * Determine whether the user can delete the model.
      *
-     * @param  User  $authenticate
-     * @param  User  $account
+     * @param User $auth
+     * @param User $user
      * @return bool
      */
-    public function delete(User $user, User $account)
+    public function delete(User $auth, User $user)
     {
-        //return $authenticate->getKey() === $account->user->getKey();
-        return true;
+        return $user->allows('update-users') || $auth->getKey() === $user->getKey();
     }
 
     /**
      * Determine whether the user can restore the model.
      *
-     * @param  User  $authenticate
-     * @param  Account  $account
+     * @param User $auth
+     * @param User $user
      * @return bool
      */
-    public function restore(User $user, User $account)
+    public function restore(User $auth, User $user)
     {
         return false;
     }
@@ -85,11 +82,11 @@ class UserPolicy
     /**
      * Determine whether the user can permanently delete the model.
      *
-     * @param  User  $authenticate
-     * @param  Account  $account
+     * @param User $auth
+     * @param User $user
      * @return bool
      */
-    public function forceDelete(User $user, User $account)
+    public function forceDelete(User $auth, User $user)
     {
         return false;
     }

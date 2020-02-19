@@ -6,10 +6,6 @@ use Modules\Account\Entities\Permission;
 
 trait HasPermissions
 {
-    /**
-     * @var \Illuminate\Support\Collection
-     */
-    protected $permissions;
 
     /**
      * Register a deleted model event with the dispatcher.
@@ -49,7 +45,6 @@ trait HasPermissions
             $model->permissions()->delete();
 
         });
-
     }
 
     /**

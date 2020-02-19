@@ -12,8 +12,17 @@
 	@endcan
 
 	@can('delete', $user)
-		<a class="btn btn-outline-danger" href="{{ route('users.confirm-delete', $user) }}" data-toggle="tooltip" title="{!! __('template::buttons.delete') !!}">
+		<button class="btn btn-outline-danger" type="button"
+				data-toggle="modal" data-target="#users-{{ $user->getKey() }}-modal" data-title="data title for users"
+				data-message="data-message for users">
 			<i class="fa fa-trash"></i>
-		</a>
+		</button>
 	@endcan
 </div>
+
+@include('template::partials.delete-modal', [
+	'form_id' => 'users-'.$user->getKey().'-destroy-form',
+	'route' => route('users.destroy', $user),
+	'modal_id' => 'users-'.$user->getKey().'-modal'
+])
+

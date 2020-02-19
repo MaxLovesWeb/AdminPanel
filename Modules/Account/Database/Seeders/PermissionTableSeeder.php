@@ -17,33 +17,33 @@ class PermissionTableSeeder extends Seeder
         $Permissionitems = [
             [
                 'name'        => 'Can View Any Users',
-                'slug'        => 'viewAny.users',
+                'slug'        => 'viewAny-users',
                 'description' => 'Can view users',
                 'module'       => 'Account',
             ],
             [
                 'name'        => 'Can View Users',
-                'slug'        => 'view.users',
+                'slug'        => 'view-users',
                 'description' => 'Can view users',
                 'module'       => 'Account',
             ],
             [
                 'name'        => 'Can Create Users',
-                'slug'        => 'create.users',
+                'slug'        => 'create-users',
                 'description' => 'Can create new users',
                 'module'       => 'Account',
 
             ],
             [
                 'name'        => 'Can Edit Users',
-                'slug'        => 'update.users',
+                'slug'        => 'update-users',
                 'description' => 'Can edit users',
                 'module'       => 'Account',
 
             ],
             [
                 'name'        => 'Can Delete Users',
-                'slug'        => 'delete.users',
+                'slug'        => 'delete-users',
                 'description' => 'Can delete users',
                 'module'       => 'Account',
 
@@ -53,33 +53,33 @@ class PermissionTableSeeder extends Seeder
             // ROLES
             [
                 'name'        => 'Can View Any Roles',
-                'slug'        => 'viewAny.roles',
+                'slug'        => 'viewAny-roles',
                 'description' => 'Can view Roles',
                 'module'       => 'Account',
             ],
             [
                 'name'        => 'Can View Roles',
-                'slug'        => 'view.roles',
+                'slug'        => 'view-roles',
                 'description' => 'Can view roles',
                 'module'       => 'Account',
             ],
             [
                 'name'        => 'Can Create Roles',
-                'slug'        => 'create.roles',
+                'slug'        => 'create-roles',
                 'description' => 'Can create new roles',
                 'module'       => 'Account',
 
             ],
             [
                 'name'        => 'Can Edit Roles',
-                'slug'        => 'update.roles',
+                'slug'        => 'update-roles',
                 'description' => 'Can edit roles',
                 'module'       => 'Account',
 
             ],
             [
                 'name'        => 'Can Delete Roles',
-                'slug'        => 'delete.roles',
+                'slug'        => 'delete-roles',
                 'description' => 'Can delete roles',
                 'module'       => 'Account',
 
@@ -88,33 +88,33 @@ class PermissionTableSeeder extends Seeder
             //Permissions
             [
                 'name'        => 'Can View Any Permissions',
-                'slug'        => 'viewAny.permissions',
+                'slug'        => 'viewAny-permissions',
                 'description' => 'Can view Permissions',
                 'module'       => 'Account',
             ],
             [
                 'name'        => 'Can View Permissions',
-                'slug'        => 'view.permissions',
+                'slug'        => 'view-permissions',
                 'description' => 'Can view permissions',
                 'module'       => 'Account',
             ],
             [
                 'name'        => 'Can Create Permissions',
-                'slug'        => 'create.permissions',
+                'slug'        => 'create-permissions',
                 'description' => 'Can create new permissions',
                 'module'       => 'Account',
 
             ],
             [
                 'name'        => 'Can Edit Permissions',
-                'slug'        => 'update.permissions',
+                'slug'        => 'update-permissions',
                 'description' => 'Can edit permissions',
                 'module'       => 'Account',
 
             ],
             [
                 'name'        => 'Can Delete Permissions',
-                'slug'        => 'delete.permissions',
+                'slug'        => 'delete-permissions',
                 'description' => 'Can delete permissions',
                 'module'       => 'Account',
 
@@ -123,33 +123,33 @@ class PermissionTableSeeder extends Seeder
             //Addresses
             [
                 'name'        => 'Can View Any Addresses',
-                'slug'        => 'viewAny.addresses',
+                'slug'        => 'viewAny-addresses',
                 'description' => 'Can view Addresses',
                 'module'       => 'Addresses',
             ],
             [
                 'name'        => 'Can View Addresses',
-                'slug'        => 'view.addresses',
+                'slug'        => 'view-addresses',
                 'description' => 'Can view addresses',
                 'module'       => 'Addresses',
             ],
             [
                 'name'        => 'Can Create Addresses',
-                'slug'        => 'create.addresses',
+                'slug'        => 'create-addresses',
                 'description' => 'Can create new address',
                 'module'       => 'Addresses',
 
             ],
             [
                 'name'        => 'Can Edit Addresses',
-                'slug'        => 'update.addresses',
+                'slug'        => 'update-addresses',
                 'description' => 'Can edit addresses',
                 'module'       => 'Addresses',
 
             ],
             [
                 'name'        => 'Can Delete Addresses',
-                'slug'        => 'delete.addresses',
+                'slug'        => 'delete-addresses',
                 'description' => 'Can delete addresses',
                 'module'       => 'Addresses',
 
@@ -158,33 +158,33 @@ class PermissionTableSeeder extends Seeder
             //Company
             [
                 'name'        => 'Can View Any Companies',
-                'slug'        => 'viewAny.companies',
+                'slug'        => 'viewAny-companies',
                 'description' => 'Can view Companies',
                 'module'       => 'Company',
             ],
             [
                 'name'        => 'Can View Companies',
-                'slug'        => 'view.companies',
+                'slug'        => 'view-companies',
                 'description' => 'Can view Companies',
                 'module'       => 'Company',
             ],
             [
                 'name'        => 'Can Create Companies',
-                'slug'        => 'create.companies',
+                'slug'        => 'create-companies',
                 'description' => 'Can create new Companies',
                 'module'       => 'Company',
 
             ],
             [
                 'name'        => 'Can Edit Companies',
-                'slug'        => 'update.companies',
+                'slug'        => 'update-companies',
                 'description' => 'Can edit Companies',
                 'module'       => 'Company',
 
             ],
             [
                 'name'        => 'Can Delete Companies',
-                'slug'        => 'delete.companies',
+                'slug'        => 'delete-companies',
                 'description' => 'Can delete Companies',
                 'module'       => 'Company',
 

@@ -36,6 +36,14 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+
+    }
+
+    protected function beforeGate()
+    {
+        Gate::before(function () {
+            return request()->user()->isSuperAdmin();
+        });
     }
 
 

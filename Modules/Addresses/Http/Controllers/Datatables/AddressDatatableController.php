@@ -8,6 +8,7 @@ use Modules\Account\Entities\User;
 use Modules\Account\Tables\Roles\RoleDatatable;
 use Modules\Account\Tables\Scopes\UserRoles;
 use Modules\Addresses\Tables\AddressDatatable;
+use Modules\Company\Entities\Company;
 
 class AddressDatatableController extends Controller
 {
@@ -27,7 +28,7 @@ class AddressDatatableController extends Controller
     }
 
     /**
-     * Get All Role Datatables Response
+     * Get All addresses Datatables Response
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
      */
@@ -37,13 +38,27 @@ class AddressDatatableController extends Controller
     }
 
     /**
-     * Get roles for given user
+     * Get addresses for given user
      * @param User $user
      * @return \Illuminate\Http\JsonResponse
      */
     public function getUserAddresses(User $user)
     {
         $builder = $user->addresses()->getQuery();
+
+        $resource = $this->datatable->setQueryBuilder($builder);
+
+        return $resource->getResponse();
+    }
+
+    /**
+     * Get addresses for given company
+     * @param Company $company
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getCompanyAddresses(Company $company)
+    {
+        $builder = $company->addresses()->getQuery();
 
         $resource = $this->datatable->setQueryBuilder($builder);
 

@@ -42,9 +42,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" id="tabs-companies-tab" data-toggle="pill" href="#tabs-companies" role="tab" aria-controls="tabs-roles" aria-selected="true">Companies</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="tabs-users-tab" data-toggle="pill" href="#tabs-users" role="tab" aria-controls="tabs-users" aria-selected="false">Users</a>
-                                </li>
+
 
                             </ul>
 
@@ -55,10 +53,7 @@
                                         @datatable(['builder' => $datatables['companies']])
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="tabs-users" role="tabpanel" aria-labelledby="tabs-users-tab">
-                                    <div class="card-body">
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

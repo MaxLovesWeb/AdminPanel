@@ -20,6 +20,8 @@ Route::prefix('company')->group(function() {
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('companies', 'CompanyController');
+    Route::post('companies/{company}/createAddress', 'CompanyController@createAddress')->name('companies.createAddress');
+
 
     Route::namespace('Datatables')->group(function () {
 
