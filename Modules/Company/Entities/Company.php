@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Account\Entities\User;
 use Modules\Account\Traits\UpdateRelations;
 use Modules\Addresses\Traits\HasAddresses;
+use Modules\Person\Traits\HasPersons;
 
 class Company extends Model
 {
-    use UpdateRelations, HasAddresses;
-
+    use UpdateRelations, HasAddresses, HasPersons;
 
     /**
      * The attributes that should be mutated to dates.

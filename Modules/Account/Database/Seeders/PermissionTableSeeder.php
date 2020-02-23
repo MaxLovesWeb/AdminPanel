@@ -187,6 +187,142 @@ class PermissionTableSeeder extends Seeder
                 'slug'        => 'delete-companies',
                 'description' => 'Can delete Companies',
                 'module'       => 'Company',
+            ],
+
+            //Resume
+            [
+                'name'        => 'Can View Any Resume',
+                'slug'        => 'viewAny-resume',
+                'description' => 'Can view Resume',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can View Resume',
+                'slug'        => 'view-resume',
+                'description' => 'Can view Resume',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can Create Resume',
+                'slug'        => 'create-resume',
+                'description' => 'Can create new Resumes',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Edit Resume',
+                'slug'        => 'update-resume',
+                'description' => 'Can edit Resume',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Delete Resume',
+                'slug'        => 'delete-resume',
+                'description' => 'Can delete Resume',
+                'module'       => 'Resume',
+
+            ],
+            //Edu
+            [
+                'name'        => 'Can View Any Edu',
+                'slug'        => 'viewAny-educations',
+                'description' => 'Can view Edu',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can View Edu',
+                'slug'        => 'view-educations',
+                'description' => 'Can view Edu',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can Create Edu',
+                'slug'        => 'create-educations',
+                'description' => 'Can create new Edu',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Edit Edu',
+                'slug'        => 'update-educations',
+                'description' => 'Can edit Edu',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Delete Edu',
+                'slug'        => 'delete-educations',
+                'description' => 'Can delete Edu',
+                'module'       => 'Resume',
+
+            ],
+            //Experience
+            [
+                'name'        => 'Can View Any Experience',
+                'slug'        => 'viewAny-experience',
+                'description' => 'Can view Experience',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can View Experience',
+                'slug'        => 'view-experience',
+                'description' => 'Can view Experience',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can Create Experience',
+                'slug'        => 'create-experience',
+                'description' => 'Can create new Experience',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Edit Experience',
+                'slug'        => 'update-experience',
+                'description' => 'Can edit Experience',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Delete Experience',
+                'slug'        => 'delete-experience',
+                'description' => 'Can delete Experience',
+                'module'       => 'Resume',
+
+            ],
+            //Training
+            [
+                'name'        => 'Can View Any Trainings',
+                'slug'        => 'viewAny-trainings',
+                'description' => 'Can view Trainings',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can View Trainings',
+                'slug'        => 'view-trainings',
+                'description' => 'Can view Trainings',
+                'module'       => 'Resume',
+            ],
+            [
+                'name'        => 'Can Create Trainings',
+                'slug'        => 'create-trainings',
+                'description' => 'Can create new Trainings',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Edit Trainings',
+                'slug'        => 'update-trainings',
+                'description' => 'Can edit Trainings',
+                'module'       => 'Resume',
+
+            ],
+            [
+                'name'        => 'Can Delete Trainings',
+                'slug'        => 'delete-trainings',
+                'description' => 'Can delete Trainings',
+                'module'       => 'Resume',
 
             ],
         ];

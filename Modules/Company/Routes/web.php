@@ -11,12 +11,6 @@
 |
 */
 
-Route::prefix('company')->group(function() {
-    Route::get('/', 'CompanyController@index');
-});
-
-
-
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('companies', 'CompanyController');

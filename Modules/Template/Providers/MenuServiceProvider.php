@@ -39,6 +39,12 @@ class MenuServiceProvider extends ServiceProvider
                     'url' => route('companies.index'),
                     //'can' => 'viewAny.companies'
                 ]);
+
+                $event->menu->add([
+                    'text' => 'persons',
+                    'url' => route('persons.index'),
+                    //'can' => 'viewAny.companies'
+                ]);
             });
     }
 

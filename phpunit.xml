@@ -24,9 +24,9 @@
             <directory suffix="Test.php">./Modules/**/Tests/Feature</directory>
         </testsuite>
 
-    <testsuite name="ModulesUnit">
-        <directory suffix="Test.php">./Modules/**/Tests/Unit</directory>
-    </testsuite>
+        <testsuite name="ModulesUnit">
+            <directory suffix="Test.php">./Modules/**/Tests/Unit</directory>
+        </testsuite>
 
 
 

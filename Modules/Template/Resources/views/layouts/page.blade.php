@@ -62,6 +62,8 @@
             @include('template::page.left-sidebar')
         @endif
 
+
+
         <div class="content-wrapper">
             @include('template::page.content')
         </div>
@@ -86,8 +88,11 @@
         $(function() {
             $('.select2').select2({
                 placeholder: "Select a value",
-                allowClear: true
+                allowClear: true,
+                width: "100%"
+
             });
+
         });
 
         $(function() {

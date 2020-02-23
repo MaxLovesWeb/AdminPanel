@@ -9,6 +9,7 @@ use Modules\Account\Tables\Roles\RoleDatatable;
 use Modules\Account\Tables\Scopes\UserRoles;
 use Modules\Addresses\Tables\AddressDatatable;
 use Modules\Company\Entities\Company;
+use Modules\Person\Entities\Person;
 
 class AddressDatatableController extends Controller
 {
@@ -59,6 +60,20 @@ class AddressDatatableController extends Controller
     public function getCompanyAddresses(Company $company)
     {
         $builder = $company->addresses()->getQuery();
+
+        $resource = $this->datatable->setQueryBuilder($builder);
+
+        return $resource->getResponse();
+    }
+
+    /**
+     * Get addresses for given company
+     * @param Person $person
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getPersonAddresses(Person $person)
+    {
+        $builder = $person->addresses()->getQuery();
 
         $resource = $this->datatable->setQueryBuilder($builder);
 

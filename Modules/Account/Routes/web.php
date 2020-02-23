@@ -71,6 +71,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('permissions/{permission}/syncRelation', 'PermissionController@syncRelation')->name('permissions.syncRelation');
     Route::put('users/{user}/syncRelation', 'UserController@syncRelation')->name('users.syncRelation');
     Route::post('users/{user}/createAddress', 'UserController@createAddress')->name('users.createAddress');
+    Route::post('users/{user}/createPerson', 'UserController@createPerson')->name('users.createPerson');
     Route::put('roles/{role}/syncRelation', 'RoleController@syncRelation')->name('roles.syncRelation');
 
 

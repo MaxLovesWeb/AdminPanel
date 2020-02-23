@@ -1,0 +1,13 @@
+{
+    "name": "Taggable",
+    "alias": "taggable",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Taggable\\Providers\\TaggableServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

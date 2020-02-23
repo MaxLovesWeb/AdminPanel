@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
-use Modules\Account\Entities\User;
 use Modules\Account\Events\Roles\RoleDeleted;
-use Modules\Account\Forms\Users\SyncUsers;
 use Modules\Account\Tables\Users\UserDatatable;
 use Modules\Addresses\Events\AddressCreated;
 use Modules\Addresses\Forms\CreateAddress;
@@ -63,11 +61,11 @@ class CompanyController extends Controller
      *
      * @param Company $company
      * @param UserDatatable $userTable
+     * @param AddressDatatable $addressDatatable
      * @return Response
      */
     public function show(Company $company, UserDatatable $userTable, AddressDatatable $addressDatatable)
     {
-
         $form = $this->form(ShowCompany::class, [
             'model' => $company
         ]);

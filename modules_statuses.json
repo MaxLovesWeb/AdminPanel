@@ -3,5 +3,10 @@
     "Account": true,
     "Template": true,
     "Addresses": true,
-    "Company": true
+    "Company": true,
+    "Contact": true,
+    "Person": true,
+    "Resume": true,
+    "Profile": true,
+    "Taggable": true
 }

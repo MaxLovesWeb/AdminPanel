@@ -13,6 +13,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('datatables/addresses', 'AddressDatatableController@getAll')->name('datatables.addresses.index');
         Route::get('datatables/users/{user}/addresses', 'AddressDatatableController@getUserAddresses')->name('datatables.users.addresses');
         Route::get('datatables/companies/{company}/addresses', 'AddressDatatableController@getCompanyAddresses')->name('datatables.companies.addresses');
+        Route::get('datatables/persons/{person}/addresses', 'AddressDatatableController@getPersonAddresses')->name('datatables.persons.addresses');
 
     });
 

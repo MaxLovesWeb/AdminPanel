@@ -14,7 +14,7 @@ class CreateHasCompaniesTable extends Migration
     public function up()
     {
         Schema::create('has_companies', function (Blueprint $table) {
-            $table->bigInteger('company_id')->unsigned();
+            $table->bigInteger('company_id')->nullable()->unsigned();
             $table->morphs('model');
             $table->timestamps();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');

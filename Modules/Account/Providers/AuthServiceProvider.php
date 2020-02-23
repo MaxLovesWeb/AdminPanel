@@ -35,14 +35,15 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+        $this->gateBefore();
 
 
     }
 
-    protected function beforeGate()
+    protected function gateBefore()
     {
         Gate::before(function () {
-            return request()->user()->isSuperAdmin();
+            return request()->user() && request()->user()->isSuperAdmin();
         });
     }
 

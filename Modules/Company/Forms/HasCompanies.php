@@ -14,17 +14,10 @@ class HasCompanies extends Form
             'value' => 'companies',
         ]);
 
-        $this->add('ids', 'choice', [
-            'attr' => ['class' => 'form-control duallist'],
+        $this->add('companies', 'select', [
+            'attr' => ['class' => 'form-control select2', 'style' => 'width=100%'],
             'choices' => array_pluck($this->getDefinedCompanies(), 'name', 'id'),
-            'selected' => array_pluck($this->getModelCompanies(), 'id'),
-            'multiple' => true,
         ]);
-    }
-
-    protected function getModelCompanies()
-    {
-        return $this->getModel()->companies;
     }
 
     protected function getDefinedCompanies()

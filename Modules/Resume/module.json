@@ -1,0 +1,13 @@
+{
+    "name": "Resume",
+    "alias": "resume",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Resume\\Providers\\ResumeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

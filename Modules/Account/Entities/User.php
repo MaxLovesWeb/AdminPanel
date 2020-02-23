@@ -12,6 +12,9 @@ use Modules\Account\Traits\HasRoles;
 use Modules\Account\Traits\UpdateRelations;
 use Modules\Addresses\Traits\HasAddresses;
 use Modules\Company\Traits\HasCompanies;
+use Modules\Person\Entities\Person;
+use Modules\Person\Traits\HasOnePerson;
+use Modules\Resume\Traits\HasResume;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -19,6 +22,8 @@ class User extends Authenticatable implements MustVerifyEmail
     use Notifiable;
 
     use HasPermissions, HasRoles, HasAddresses, HasCompanies;
+
+    use HasOnePerson, HasResume;
 
     use UpdateRelations, Filterable;
 
@@ -145,5 +150,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return ! $this->allows($permission);
     }
+
+
 
 }

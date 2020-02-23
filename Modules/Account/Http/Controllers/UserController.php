@@ -27,6 +27,11 @@ use Modules\Addresses\Events\AddressCreated;
 use Modules\Addresses\Forms\CreateAddress;
 use Modules\Addresses\Http\Requests\AddressFormRequest;
 use Modules\Addresses\Tables\AddressDatatable;
+use Modules\Person\Events\PersonCreated;
+use Modules\Person\Events\PersonCreating;
+use Modules\Person\Forms\CreatePerson;
+use Modules\Person\Forms\ShowPerson;
+use Modules\Person\Http\Requests\PersonFormRequest;
 
 class UserController extends Controller
 {
@@ -83,10 +88,14 @@ class UserController extends Controller
                          PermissionDatatable $permissionTable,
                          AddressDatatable $addressDatatable)
     {
-
-        $form = $this->form(ShowUser::class, [
-            'model' => $user
-        ]);
+        $forms = [
+            'user' => $this->form(ShowUser::class, [
+                'model' => $user,
+            ]),
+            'person' => $this->form(ShowPerson::class, [
+                'model' => $user->person,
+            ]),
+        ];
 
         $datatables = [
             'roles' => $roleTable->html()->ajax([
@@ -102,7 +111,7 @@ class UserController extends Controller
 
         event(new UserViewed($user));
 
-        return view('user::show', compact('user', 'form', 'datatables'));
+        return view('user::show', compact('user', 'forms', 'datatables'));
     }
 
     /**
@@ -140,6 +149,9 @@ class UserController extends Controller
                 'method' => 'POST',
                 'url' => route('users.createAddress', $user),
             ]),
+            'person' => $this->form(ShowPerson::class, [
+                'model' => $user->person,
+            ]),
         ];
 
         $datatables = [
@@ -158,6 +170,8 @@ class UserController extends Controller
 
         return view('user::edit', compact('user', 'forms', 'datatables'));
     }
+
+
 
     /**
      * Update Permission.
@@ -215,6 +229,25 @@ class UserController extends Controller
         flash(trans('create-address-success'))->success()->important();
 
         event(new AddressCreated($address));
+
+        return redirect()->route('users.edit', $user);
+    }
+
+    /**
+     * Create One Address if Addressable.
+     * @param User $user
+     * @param PersonFormRequest $request
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
+     */
+    public function createPerson(User $user, PersonFormRequest $request)
+    {
+        //dd($request->validated());
+        $person = $user->person()->create($request->validated());
+
+        flash(trans('create-person-success'))->success()->important();
+
+        event(new PersonCreated($person));
 
         return redirect()->route('users.edit', $user);
     }

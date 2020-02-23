@@ -24,7 +24,7 @@
                                     <a class="nav-link active" id="tabs-user-tab" data-toggle="pill" href="#tabs-user" role="tab" aria-controls="tabs-user" aria-selected="true">User</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="tabs-images-tab" data-toggle="pill" href="#tabs-images" role="tab" aria-controls="tabs-images" aria-selected="false">Images</a>
+                                    <a class="nav-link" id="tabs-person-tab" data-toggle="pill" href="#tabs-person" role="tab" aria-controls="tabs-person" aria-selected="false">Person</a>
                                 </li>
 
                             </ul>
@@ -33,17 +33,24 @@
                                 <div class="tab-pane text-left fade show active" id="tabs-user" role="tabpanel" aria-labelledby="tabs-user-tab">
                                     <div class="card-body">
 
-                                        {!! form($form) !!}
+                                        {!! form($forms['user']) !!}
 
-                                        <div class="btn-toolbar justify-content-between" role="group">
-                                            <a class="btn btn-outline-primary" role="button" href="{{ route('users.edit', $user) }}" type="button">Edit</a>
-                                            @include('account::forms.destroy', ['url' => route('users.destroy', $user)])
-                                        </div>
+                                        <a class="btn btn-default form-control" role="button" href="{{ route('users.edit', $user) }}" type="button">Edit</a>
+
 
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="tabs-images" role="tabpanel" aria-labelledby="tabs-images-tab">
-                                    IMAGE IMAGE IMAGE etc
+                                <div class="tab-pane fade" id="tabs-person" role="tabpanel" aria-labelledby="tabs-person-tab">
+                                    <div class="card-body">
+
+                                        {!! form($forms['person']) !!}
+                                        @if ($user->person->getKey())
+                                            <a class="btn btn-default form-control" role="button" href="{{ route('persons.edit', $user) }}" type="button">Edit</a>
+                                        @else
+                                            <a class="btn btn-default form-control" role="button" href="{{ route('persons.create', $user) }}" type="button">Edit</a>
+                                        @endif
+
+                                    </div>
                                 </div>
                             </div>
                         </div>

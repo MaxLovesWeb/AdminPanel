@@ -36,11 +36,11 @@ trait HasCompanies
 
 
     /**
-     * Boot the HasRoles trait for the model.
+     * Boot the HasCompanies trait for the model.
      *
      * @return void
      */
-    public static function bootHasRCompanies()
+    public static function bootHasCompanies()
     {
         static::deleting(function(self $model) {
             $model->companies()->delete();
@@ -49,7 +49,7 @@ trait HasCompanies
     }
 
     /**
-     * Get all of the roles for the model.
+     * Get all companies for the model.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
@@ -75,17 +75,6 @@ trait HasCompanies
     public function hasCompany($company)
     {
         return $this->allCompanies()->contains($company);
-    }
-
-    /**
-     * Sync with detaching all companies for the model
-     * @param string|array|null $companies
-     * @param bool $detaching
-     * @return array
-     */
-    public function syncCompanies($companies, $detaching = true)
-    {
-        return $this->companies()->sync($companies, $detaching);
     }
 
 }

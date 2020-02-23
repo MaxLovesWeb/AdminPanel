@@ -13,6 +13,9 @@ class UserControllerTest extends TestCase
     //use RefreshDatabase;
     use DatabaseMigrations;
 
+    /**
+     * @var User
+     */
     protected $user;
 
     protected function setUp(): void
@@ -27,7 +30,7 @@ class UserControllerTest extends TestCase
     }
 
     public function test_user_can_view_index_page()
-    {     
+    {
         $this->get('/users')
                     ->assertSuccessful()->assertViewIs('user::index');
     }
@@ -51,7 +54,7 @@ class UserControllerTest extends TestCase
             'first_name' => 'new first name'
         ];
 
-        $this->put('/users/'.$this->account->getKey(), $overrides)
+        $this->put('/users/'.$this->user->getKey(), $overrides)
                     ->assertRedirect('/users/'.$this->user->getKey().'/edit');
     }
 
