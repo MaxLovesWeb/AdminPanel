@@ -2,6 +2,10 @@
 
 #### Table of contents
 - [About](#about)
+<<<<<<< HEAD
+- [Tools](#tools)
+=======
+>>>>>>> 6b03101a6f966dc278f41202a87b0ce0353e9cc4
 - [Features](#features)
 - [Installation](#installation)
     - [Composer](#composer)
@@ -31,6 +35,144 @@
 - [License](#license)
 
 ## About
+<<<<<<< HEAD
+A Powerful packages for handling user, roles, permissions, resume with addresses and contacts.
+
+## Tools
+* [Composer](https://getcomposer.org/)
+* [PHP 7](https://www.php.net/manual/en/)
+* [Bootstrap](https://getbootstrap.com/)
+* [MySQL](https://github.com/mysql)
+* [PhpUnit](https://phpunit.readthedocs.io/en/9.0/)
+* [Homestead](https://laravel.com/docs/6.x/homestead)
+* [Laravel](http://laravel.com/)
+* [Blade](https://laravel.com/docs/6.x/blade)
+* [Admin LTE3](https://github.com/jeroennoten/Laravel-AdminLTE)
+* [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar) 
+* [Laravel-Modules](https://github.com/nWidart/laravel-modules)
+* [Laravel-Datatables](https://github.com/yajra/laravel-datatables)
+
+## Features
+- [Modules](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules)
+    - [Account](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account)
+        - [Entities](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Entities)
+            - [User](https://github.com/MaxLovesWeb/AdminPanel/blob/master/Modules/Account/Entities/User.php)
+            - [Role](https://github.com/MaxLovesWeb/AdminPanel/blob/master/Modules/Account/Entities/Role.php)
+            - [Permission](https://github.com/MaxLovesWeb/AdminPanel/blob/master/Modules/Account/Entities/Permission.php)
+        - [Database](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Database)
+            - [Factories](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Database/factories)
+            - [Migrations](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Database/Migrations)
+            - [Seedes](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Database/Seeders)
+        - [Forms](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Forms)
+            - [User](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Forms/Users)
+            - [Role](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Forms/Roles)
+            - [Permission](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Forms/Permissions)
+        - [Tables](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tables)
+            - [User](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tables/Users)
+            - [Role](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tables/Roles)
+            - [Permission](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tables/Permissions)
+        - [Events](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Forms)
+            - [User](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Events/Users)
+            - [Role](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Events/Roles)
+            - [Permission](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Events/Permissions)
+        - [Policies](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Policies)
+        - [Traits](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Traits)
+        - [Http](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Http)
+        - [Resources](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Resources)
+        - [Tests](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tests/Feature)
+
+
+| Account Module  |
+| :------------ |
+|Users, Permissions, Roles|
+|Built in migrations with ability to publish and modify your own.|
+|Built in seed with ability to publish and modify your own.|
+|User with relationships to roles, permissions|
+|Roles with relationships to users, permissions|
+|Permissions with relationships to users and roles|
+|CRUD of Users, Roles and Permissions|
+|Gates, Policies, Events, Notifications|
+|Register, Email Confirmation, Credentials update with Email Notifications|
+
+### Seeds
+* [DatabaseSeeder.php](https://github.com/jeremykenedy/larablog/blob/master/database/seeds/DatabaseSeeder.php)
+* [PermissionsTableSeeder.php](https://github.com/jeremykenedy/larablog/blob/master/database/seeds/PermissionsTableSeeder.php)
+* [RolesTableSeeder.php](https://github.com/jeremykenedy/larablog/blob/master/database/seeds/RolesTableSeeder.php)
+* [ConnectRelationshipsSeeder.php](https://github.com/jeremykenedy/larablog/blob/master/database/seeds/ConnectRelationshipsSeeder.php)
+* [UsersTableSeeder.php](https://github.com/jeremykenedy/larablog/blob/master/database/seeds/UsersTableSeeder.php)
+* [TagTableSeeder.php](https://github.com/jeremykenedy/larablog/blob/master/database/seeds/TagTableSeeder.php)
+* [PostTableSeeder.php](https://github.com/jeremykenedy/larablog/blob/master/database/seeds/PostTableSeeder.php)
+
+
+
+
+
+
+| Resume Module |
+| :------------ |
+| Resume Module |
+|Built in migrations with ability to publish and modify your own.|
+|Built in seed with ability to publish and modify your own.|
+|Resume with many relationships|
+|Resume with contacts, addresses, skills, trainings, educations, experiences|
+|Gates, Policies, Events, Notifications|
+|CRUD of all defined Entities|
+|Datatables|
+|FrontEnd Resume View|
+
+| Addresses and Contacts Features |
+| :------------ |
+|Built in migrations with ability to publish and modify your own.|
+|Built in seed with ability to publish and modify your own.|
+|Address with many relationships|
+|Entities can have addresses, emails, phones how many they need|
+
+## Installation
+This package is very easy to set up. There are only couple of steps.
+
+### Composer
+1. Run `git clone https://github.com/MaxLovesWeb/AdminPanel laraveladmin`
+2. Create a MySQL database for the project
+    * ```mysql -u root -p```, if using Vagrant: ```mysql -u homestead -psecret```
+    * ```create database admin;```
+    * ```\q```
+3. From the projects root run `cp .env.example .env`
+4. Configure your `.env` file
+5. Run `composer install` from the projects root folder
+6. From the projects root folder run:
+```
+php artisan vendor:publish
+```
+7. From the projects root folder run `php artisan key:generate`
+8. From the projects root folder run `php artisan migrate`
+9. From the projects root folder run `composer dump-autoload`
+10. From the projects root folder run `php artisan db:seed`
+
+### HasRoleAndPermission Trait And Contract
+
+1. Include `HasRoleAndPermission` trait and also implement `HasRoleAndPermission` contract inside your `User` model. See example below.
+
+2. Include `use jeremykenedy\LaravelRoles\Traits\HasRoleAndPermission;` in the top of your `User` model below the namespace and implement the `HasRoleAndPermission` trait. See example below.
+
+Example `User` model Trait And Contract:
+
+```php
+
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use jeremykenedy\LaravelRoles\Traits\HasRoleAndPermission;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    use Notifiable;
+    use HasRoleAndPermission;
+
+=======
 A Powerful package for handling user, roles and permissions, user resume with addresses and contacts, companies, tags with Laravel and Laravel-Modules.
 
 ## Features
@@ -110,6 +252,7 @@ class User extends Authenticatable
     use Notifiable;
     use HasRoleAndPermission;
 
+>>>>>>> 6b03101a6f966dc278f41202a87b0ce0353e9cc4
     // rest of your model ...
 }
 
@@ -417,6 +560,7 @@ $editArticlesPermission = config('roles.models.permission')::create([
 ]);
 
 $user->attachPermission($editArticlesPermission);
+<<<<<<< HEAD
 
 $article = Article::find(1);
 
@@ -433,6 +577,24 @@ if ($user->allowed('edit.articles', $article, false)) { // now owner check is di
 }
 ```
 
+=======
+
+$article = Article::find(1);
+
+if ($user->allowed('edit.articles', $article)) { // $user->allowedEditArticles($article)
+    //
+}
+```
+
+This condition checks if the current user is the owner of article. If not, it will be looking inside user permissions for a row we created before.
+
+```php
+if ($user->allowed('edit.articles', $article, false)) { // now owner check is disabled
+    //
+}
+```
+
+>>>>>>> 6b03101a6f966dc278f41202a87b0ce0353e9cc4
 ### Blade Extensions
 
 There are four Blade extensions. Basically, it is replacement for classic if statements.
