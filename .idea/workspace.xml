@@ -319,11 +319,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Account/Entities/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-              <folding>
-                <element signature="e#44#74#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -332,12 +329,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-289">
-                <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-                <folding>
-                  <element signature="e#21#60#0" expanded="true" />
-                  <element signature="e#6#37#0" expanded="true" />
-                </folding>
+              <first_editor relative-caret-position="163">
+                <caret line="1193" column="3" lean-forward="true" selection-start-line="1193" selection-start-column="3" selection-end-line="1193" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -451,7 +444,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Modules/Resume/Resources/views/template/partials/experience.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Resume/Database/factories/EducationFactory.php" />
         <option value="$PROJECT_DIR$/Modules/Resume/Database/Migrations/2020_02_21_143356_create_educations_table.php" />
         <option value="$PROJECT_DIR$/Modules/Resume/Resources/views/template/partials/education.blade.php" />
@@ -501,6 +493,7 @@
         <option value="$PROJECT_DIR$/Modules/Account/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/Modules/Account/Tests/Feature/UserControllerTest.php" />
+        <option value="$PROJECT_DIR$/Modules/Account/Entities/User.php" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -831,7 +824,7 @@
       <workItem from="1582301564777" duration="11846000" />
       <workItem from="1582353676887" duration="30261000" />
       <workItem from="1582446322309" duration="31508000" />
-      <workItem from="1582535950589" duration="19053000" />
+      <workItem from="1582535950589" duration="19534000" />
     </task>
     <servers />
   </component>
@@ -868,7 +861,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="463271000" />
+    <option name="totallyTimeSpent" value="463752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1186,16 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Account/Entities/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding>
-            <element signature="e#44#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306" />
@@ -1212,15 +1195,18 @@
     <entry file="file://$PROJECT_DIR$/Modules/Account/Database/Seeders/RoleTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Account/Entities/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-289">
-            <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-            <folding>
-              <element signature="e#21#60#0" expanded="true" />
-              <element signature="e#6#37#0" expanded="true" />
-            </folding>
+          <first_editor relative-caret-position="163">
+            <caret line="1193" column="3" lean-forward="true" selection-start-line="1193" selection-start-column="3" selection-end-line="1193" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
