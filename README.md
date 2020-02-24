@@ -16,8 +16,10 @@ A set of packages for handling user, roles, permissions, resume with addresses a
 
 ## Tools
 * [Composer](https://getcomposer.org/)
+* [Git](https://git-scm.com/)
 * [PHP 7](https://www.php.net/manual/en/)
 * [Bootstrap](https://getbootstrap.com/)
+* [Jquery](https://jquery.com/)
 * [MySQL](https://github.com/mysql)
 * [PhpUnit](https://phpunit.readthedocs.io/en/9.0/)
 * [Homestead](https://laravel.com/docs/6.x/homestead)
