@@ -82,11 +82,6 @@ class ResumeController extends Controller
      */
     public function show(Resume $resume)
     {
-        //return $directories = Storage::allDirectories();
-        // use presenter
-        // experience order by start date desc
-        // start date presenter
-
         event(new ResumeViewed($resume));
 
         return view('resume::show', compact('resume'));
