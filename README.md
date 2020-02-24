@@ -2,10 +2,7 @@
 
 #### Table of contents
 - [About](#about)
-<<<<<<< HEAD
 - [Tools](#tools)
-=======
->>>>>>> 6b03101a6f966dc278f41202a87b0ce0353e9cc4
 - [Features](#features)
 - [Installation](#installation)
     - [Composer](#composer)
@@ -35,7 +32,6 @@
 - [License](#license)
 
 ## About
-<<<<<<< HEAD
 A Powerful packages for handling user, roles, permissions, resume with addresses and contacts.
 
 ## Tools
