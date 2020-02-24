@@ -13,7 +13,7 @@ class MenuServiceProvider extends ServiceProvider
     public function boot(Dispatcher $events)
     {
             $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
-                $event->menu->add(['header' => 'management']);
+                /*$event->menu->add(['header' => 'management']);
                 $event->menu->add([
                     'text' => 'users',
                     'url' => route('users.index'),
@@ -44,7 +44,7 @@ class MenuServiceProvider extends ServiceProvider
                     'text' => 'persons',
                     'url' => route('persons.index'),
                     //'can' => 'viewAny.companies'
-                ]);
+                ]);*/
             });
     }
 

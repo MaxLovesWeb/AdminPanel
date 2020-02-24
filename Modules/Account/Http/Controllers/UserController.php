@@ -59,6 +59,8 @@ class UserController extends Controller
         UserDatatable $userTable, RoleDatatable $roleTable,
         PermissionDatatable $permissionTable, Request $request)
     {
+       // $this->authorize('viewAny', User::class);
+
         $datatables = [
             'users' => $userTable->html()->ajax([
                 'url' => route('datatables.users.index', $request->query())
@@ -170,7 +172,6 @@ class UserController extends Controller
 
         return view('user::edit', compact('user', 'forms', 'datatables'));
     }
-
 
 
     /**

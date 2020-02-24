@@ -11,6 +11,14 @@
 |
 */
 
-Route::prefix('template')->group(function() {
-    Route::get('/', 'TemplateController@index');
-});
+
+
+
+//Route::get('/home', 'TemplateController@index');
+//Route::get('/', 'TemplateController@index');
+
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+
+

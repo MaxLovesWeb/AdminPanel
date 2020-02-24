@@ -35,14 +35,29 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        $this->gateBefore();
+        //$this->gateBefore();
+        //$this->registerGates();
+    }
 
+    // ?
+    protected function registerGates()
+    {
+        foreach ($this->policies as $model => $policy) {
 
+            $policy_methods = get_class_methods($policy);
+
+            foreach ($policy_methods as $method_name) {
+
+                Gate::define($method_name.'-'.strtolower(class_basename($model)), UserPolicy::class.'@'.$method_name);
+
+            }
+        }
     }
 
     protected function gateBefore()
     {
         Gate::before(function () {
+
             return request()->user() && request()->user()->isSuperAdmin();
         });
     }
