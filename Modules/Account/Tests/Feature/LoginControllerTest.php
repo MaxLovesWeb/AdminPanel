@@ -2,13 +2,11 @@
 
 namespace Modules\Account\Tests\Feature;
 
-use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Modules\Account\Entities\User;
-use Modules\Account\Providers\AccountServiceProvider;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class LoginControllerTest extends AccountTestCase
+class LoginControllerTest extends AccountAuthTestCase
 {
 
     use DatabaseMigrations;

@@ -18,8 +18,8 @@ Route::namespace('Auth')->group(function () {
     Route::post('login', 'LoginController@login')->name('login');
     Route::post('logout', 'LoginController@logout')->name('logout');
 
-    Route::get('register', 'RegisterController@showRegistrationForm')->name('users.register.form');
-    Route::post('register', 'RegisterController@register')->name('users.register');
+    Route::get('register', 'RegisterController@showRegistrationForm')->name('showRegisterForm');
+    Route::post('register', 'RegisterController@register')->name('register');
 
     Route::get('email/verify', 'VerificationController@show')->name('verification.notice');
     Route::get('email/verify/{id}/{hash}', 'VerificationController@verify')->name('verification.verify');

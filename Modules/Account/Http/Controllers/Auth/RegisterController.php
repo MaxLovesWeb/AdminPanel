@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Modules\Account\Entities\User;
 use Modules\Account\Forms\CreateUserForm;
 use Modules\Account\Http\Requests\Auth\CreateUserFormRequest;
@@ -34,7 +35,7 @@ class RegisterController extends Controller
     {
         $options = [
             'method' => 'POST',
-            'route' => 'users.register',
+            'route' => 'register',
         ];
 
         $form = \FormBuilder::create(CreateUserForm::class, $options);
@@ -50,7 +51,13 @@ class RegisterController extends Controller
      */
     public function register(CreateUserFormRequest $request)
     {
-        $user = User::create($request->validated());
+        $data = $request->validated();
+
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
 
         $this->guard()->login($user);
 
