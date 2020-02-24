@@ -14,6 +14,7 @@ return [
     */
 
     'default' => env('FILESYSTEM_DRIVER', 'local'),
+    //'default' => env('FILESYSTEM_DRIVER', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -48,6 +49,21 @@ return [
             'root' => storage_path('app'),
         ],
 
+        /*'local' => [
+            'driver' => 'local',
+            'root' => storage_path('app'),
+            'permissions' => [
+                'file' => [
+                    'public' => 0775,
+                    'private' => 0775,
+                ],
+                'dir' => [
+                    'public' => 0775,
+                    'private' => 0775,
+                ],
+            ],
+        ],*/
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -65,5 +81,6 @@ return [
         ],
 
     ],
+
 
 ];

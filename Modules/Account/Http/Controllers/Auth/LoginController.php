@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Modules\Account\Entities\User;
 use Modules\Account\Events\Users\UserAuthenticated;
 use Modules\Account\Forms\LoginUserForm;
+use Modules\Account\Providers\AccountServiceProvider;
 
 class LoginController extends Controller
 {
@@ -66,6 +67,6 @@ class LoginController extends Controller
      */
     protected function redirectTo()
     {
-        return route('users.index');
+        return AccountServiceProvider::HOME; //route('users.index')
     }
 }

@@ -59,21 +59,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     });
 
-
-
-
-    Route::get('users/{user}/confirm-delete', 'UserController@confirmDelete')->name('users.confirm-delete');
-
-
     Route::resource('roles', 'RoleController')->except('destroy');
     Route::resource('users', 'UserController')->except('destroy');
     Route::resource('permissions', 'PermissionController');
+
+
+    Route::get('users/{user}/confirm-delete', 'UserController@confirmDelete')->name('users.confirm-delete');
     Route::put('permissions/{permission}/syncRelation', 'PermissionController@syncRelation')->name('permissions.syncRelation');
     Route::put('users/{user}/syncRelation', 'UserController@syncRelation')->name('users.syncRelation');
     Route::post('users/{user}/createAddress', 'UserController@createAddress')->name('users.createAddress');
     Route::post('users/{user}/createPerson', 'UserController@createPerson')->name('users.createPerson');
     Route::put('roles/{role}/syncRelation', 'RoleController@syncRelation')->name('roles.syncRelation');
-
 
 
 

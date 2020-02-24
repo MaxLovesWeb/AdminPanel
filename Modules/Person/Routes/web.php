@@ -13,13 +13,13 @@
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('persons', 'UserPersonController@index')->name('persons.index');
-    Route::get('user/{user}/person', 'UserPersonController@show')->name('persons.show');
-    Route::get('user/{user}/person/edit', 'UserPersonController@edit')->name('persons.edit');
-    Route::post('user/{user}/person/store', 'UserPersonController@store')->name('persons.store');
-    Route::get('user/{user}/person/create', 'UserPersonController@create')->name('persons.create');
-    Route::put('user/{user}/person', 'UserPersonController@update')->name('persons.update');
-    Route::delete('user/{user}/person', 'UserPersonController@destroy')->name('persons.destroy');
+    Route::get('persons', 'PersonController@index')->name('persons.index');
+    Route::get('user/{user}/person', 'PersonController@show')->name('persons.show');
+    Route::get('user/{user}/person/edit', 'PersonController@edit')->name('persons.edit');
+    Route::post('user/{user}/person/store', 'PersonController@store')->name('persons.store');
+    Route::get('user/{user}/person/create', 'PersonController@create')->name('persons.create');
+    Route::put('user/{user}/person', 'PersonController@update')->name('persons.update');
+    Route::delete('user/{user}/person', 'PersonController@destroy')->name('persons.destroy');
 
 
     Route::post('persons/{person}/createAddress', 'PersonController@createAddress')->name('persons.createAddress');

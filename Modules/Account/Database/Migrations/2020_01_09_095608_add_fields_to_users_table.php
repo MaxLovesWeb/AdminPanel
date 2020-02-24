@@ -33,7 +33,50 @@ class AddFieldsToUsersTable extends Migration
     public function down()
     {
 
-        Schema::table('users', function (Blueprint $table) {
+        if (Schema::hasColumn('users', 'title'))
+        {
+            Schema::table('users', function(BLueprint $table)
+            {
+                $table->dropColumn('title');
+            });
+        }
+        if (Schema::hasColumn('users', 'last_name'))
+        {
+            Schema::table('users', function(BLueprint $table)
+            {
+                $table->dropColumn('last_name');
+            });
+        }
+        if (Schema::hasColumn('users', 'first_name'))
+        {
+            Schema::table('users', function(BLueprint $table)
+            {
+                $table->dropColumn('first_name');
+            });
+        }
+        if (Schema::hasColumn('users', 'phone'))
+        {
+            Schema::table('users', function(BLueprint $table)
+            {
+                $table->dropColumn('phone');
+            });
+        }
+        if (Schema::hasColumn('users', 'birthDate'))
+        {
+            Schema::table('users', function(BLueprint $table)
+            {
+                $table->dropColumn('birthDate');
+            });
+        }
+        if (Schema::hasColumn('users', 'biography'))
+        {
+            Schema::table('users', function(BLueprint $table)
+            {
+                $table->dropColumn('biography');
+            });
+        }
+
+        /*Schema::table('users', function (Blueprint $table) {
             
             $table->dropColumn('title');
             $table->dropColumn('last_name');
@@ -42,6 +85,6 @@ class AddFieldsToUsersTable extends Migration
             $table->dropColumn('phone');
             $table->dropColumn('birthDate');
             $table->dropColumn('biography');
-        });
+        });*/
     }
 }

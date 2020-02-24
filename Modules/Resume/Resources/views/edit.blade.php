@@ -1,7 +1,16 @@
 @extends('resume::layouts.master')
 
+@push('css')
+    <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/cropper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/mime-icons.min.css') }}">
+    <style>{!! \File::get(base_path('vendor/unisharp/laravel-filemanager/public/css/lfm.css')) !!}</style>
+    @endpush
+
 @section('content')
 
+
+    <iframe src="/laravel-filemanager" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe>
 
     <div class="row">
 
@@ -15,6 +24,10 @@
 
                 <div class="card-body">
                     <div class="row">
+
+                        <textarea id="my-editor" name="content" class="form-control">{!! $resume->title !!}</textarea>
+
+
                         <div class="col-5">
                             <ul class="nav nav-tabs" id="resume-data-content-below-tab" role="tablist">
                                 <li class="nav-item">
@@ -140,9 +153,125 @@
 
 @push('js')
 
+    <script src="{{ asset('vendor/laravel-filemanager/js/cropper.min.js') }}"></script>
+    <script src="{{ asset('vendor/laravel-filemanager/js/dropzone.min.js') }}"></script>
+    <script>
+        var lang = {!! json_encode(trans('laravel-filemanager::lfm')) !!};
+        var actions = [
+            // {
+            //   name: 'use',
+            //   icon: 'check',
+            //   label: 'Confirm',
+            //   multiple: true
+            // },
+            {
+                name: 'rename',
+                icon: 'edit',
+                label: lang['menu-rename'],
+                multiple: false
+            },
+            {
+                name: 'download',
+                icon: 'download',
+                label: lang['menu-download'],
+                multiple: true
+            },
+            // {
+            //   name: 'preview',
+            //   icon: 'image',
+            //   label: lang['menu-view'],
+            //   multiple: true
+            // },
+            {
+                name: 'move',
+                icon: 'paste',
+                label: lang['menu-move'],
+                multiple: true
+            },
+            {
+                name: 'resize',
+                icon: 'arrows-alt',
+                label: lang['menu-resize'],
+                multiple: false
+            },
+            {
+                name: 'crop',
+                icon: 'crop',
+                label: lang['menu-crop'],
+                multiple: false
+            },
+            {
+                name: 'trash',
+                icon: 'trash',
+                label: lang['menu-delete'],
+                multiple: true
+            },
+        ];
+        var sortings = [
+            {
+                by: 'alphabetic',
+                icon: 'sort-alpha-down',
+                label: lang['nav-sort-alphabetic']
+            },
+            {
+                by: 'time',
+                icon: 'sort-numeric-down',
+                label: lang['nav-sort-time']
+            }
+        ];
+    </script>
+
+    <script>{!! \File::get(base_path('vendor/unisharp/laravel-filemanager/public/js/script.js')) !!}</script>
+    {{-- Use the line below instead of the above if you need to cache the script. --}}
+     <script src="{{ asset('vendor/laravel-filemanager/js/script.js') }}"></script>
+    <script>
+        Dropzone.options.uploadForm = {
+            paramName: "upload[]", // The name that will be used to transfer the file
+            uploadMultiple: false,
+            parallelUploads: 5,
+            timeout:0,
+            clickable: '#upload-button',
+            dictDefaultMessage: lang['message-drop'],
+            init: function() {
+                var _this = this; // For the closure
+                this.on('success', function(file, response) {
+                    if (response == 'OK') {
+                        loadFolders();
+                    } else {
+                        this.defaultOptions.error(file, response.join('\n'));
+                    }
+                });
+            },
+        }
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/ckeditor.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.11/adapters/jquery.js"></script>
+
     <script type="text/javascript">
 
+        var route_prefix = "/filemanager";
+
+        var options = {
+            height: 100,
+            filebrowserImageBrowseUrl: route_prefix + '?type=Images',
+            filebrowserImageUploadUrl: route_prefix + '/upload?type=Images&_token={{csrf_token()}}',
+            filebrowserBrowseUrl: route_prefix + '?type=Files',
+            filebrowserUploadUrl: route_prefix + '/upload?type=Files&_token={{csrf_token()}}'
+        };
+
+        //$('textarea.my-editor').ckeditor(options);
+
         $(function() {
+
+            ClassicEditor
+                .create( document.querySelector( '#my-editor' ) )
+                .then( editor => {
+                    console.log( editor );
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
 
             $(".select2Tags").each(function(index, element) {
                 $(this).select2({
@@ -153,9 +282,16 @@
                 });
             });
 
-        });
+
+
+
+
+    });
 
     </script>
+
+
+
 
 @endpush
 

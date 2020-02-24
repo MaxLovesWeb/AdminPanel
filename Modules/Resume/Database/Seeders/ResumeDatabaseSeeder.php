@@ -10,6 +10,7 @@ use Modules\Resume\Entities\Skill;
 use Modules\Resume\Entities\Training;
 use Modules\Resume\Entities\Experience;
 use Modules\Resume\Entities\Resume;
+use Faker\Generator as Faker;
 
 class ResumeDatabaseSeeder extends Seeder
 {
@@ -35,6 +36,11 @@ class ResumeDatabaseSeeder extends Seeder
             $resume->skills()->sync(
                 factory(Skill::class, 10)->create()->pluck('id')->toArray()
             );
+        });
+
+        Resume::all()->each(function (Resume $resume) {
+            $url = 'https://source.unsplash.com/random';
+            $resume->addMediaFromUrl($url)->toMediaCollection('resume');
         });
     }
 }

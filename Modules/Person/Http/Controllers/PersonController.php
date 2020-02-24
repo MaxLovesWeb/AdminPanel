@@ -41,7 +41,7 @@ use Modules\Person\Http\Requests\PersonFormRequest;
 use Modules\Person\Tables\PersonDatatable;
 
 
-class UserPersonController extends Controller
+class PersonController extends Controller
 {
     use FormBuilderTrait;
 

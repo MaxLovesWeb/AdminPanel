@@ -5,11 +5,14 @@ namespace Modules\Resume\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Account\Entities\User;
 use Modules\Taggable\Traits\HasTags;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 
-class Resume extends Model
+class Resume extends Model implements HasMedia
 {
 
-    use HasTags;
+    use HasTags, HasMediaTrait;
 
     protected $table = 'resume';
 
@@ -48,6 +51,25 @@ class Resume extends Model
         'created_at'    => 'datetime',
         'updated_at'    => 'datetime',
     ];
+
+
+    public function registerMediaConversions(Media $media = null)
+    {
+        $this->addMediaConversion('pass')
+            ->width(450)
+            ->height(350)
+            ->sharpen(10);
+
+        $this->addMediaConversion('thumb')
+            ->width(200)
+            ->height(200)
+            ->sharpen(10);
+
+        $this->addMediaConversion('square')
+            ->width(412)
+            ->height(412)
+            ->sharpen(10);
+    }
 
     /**
      * Get user that are assigned this resume.

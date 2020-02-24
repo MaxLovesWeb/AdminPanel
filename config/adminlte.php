@@ -564,5 +564,16 @@ return [
                 ],
             ],
         ],
+        [
+            'name' => 'Ckeditor',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js',
+                ],
+            ],
+        ],
     ],
 ];

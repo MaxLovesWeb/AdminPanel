@@ -7,12 +7,14 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Modules\Account\Entities\User;
+use Modules\Account\Forms\CreateUserForm;
 use Modules\Account\Http\Requests\Auth\CreateUserFormRequest;
-use Modules\Account\Traits\CreateUser;
 
 class RegisterController extends Controller
 {
-    use RedirectsUsers, CreateUser;
+
+    use RedirectsUsers;
 
     /**
      * Create a new controller instance.
@@ -35,7 +37,7 @@ class RegisterController extends Controller
             'route' => 'users.register',
         ];
 
-        $form = $this->buildCreateUserForm($options);
+        $form = \FormBuilder::create(CreateUserForm::class, $options);
 
         return view('account::auth.register', compact('form'));
     }
@@ -48,7 +50,7 @@ class RegisterController extends Controller
      */
     public function register(CreateUserFormRequest $request)
     {
-        $user = $this->createUser($request->validated());
+        $user = User::create($request->validated());
 
         $this->guard()->login($user);
 

@@ -15,7 +15,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $moduleNamespace = 'Modules\Account\Http\Controllers';
 
-
     /**
      * Called before routes are registered.
      *
@@ -26,10 +25,6 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
-        //Route::bind('account', function ($account) {
-         //   return $account ?? Auth::user()->account;
-        //});
     }
 
     /**

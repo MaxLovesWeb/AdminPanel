@@ -12,6 +12,7 @@
 
 @section('body')
 
+
     @include('resume::template.resume', compact('resume'))
 
 @endsection

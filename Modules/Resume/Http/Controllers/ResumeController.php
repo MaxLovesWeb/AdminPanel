@@ -5,6 +5,7 @@ namespace Modules\Resume\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 use Modules\Account\Entities\User;
 use Modules\Account\Events\Roles\RoleDeleted;
@@ -81,7 +82,7 @@ class ResumeController extends Controller
      */
     public function show(Resume $resume)
     {
-
+        //return $directories = Storage::allDirectories();
         // use presenter
         // experience order by start date desc
         // start date presenter
