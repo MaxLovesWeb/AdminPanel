@@ -34,7 +34,7 @@
 A Powerful package for handling user, roles and permissions, user resume with addresses and contacts, companies, tags with Laravel and Laravel-Modules.
 
 ## Features
-[Laravel](http://laravel.com/), [Bootstrap](https://getbootstrap.com/), [Admin LTE3](https://github.com/jeroennoten/Laravel-AdminLTE, [MySQL](https://github.com/mysql), [Artisan](http://laravel.com/docs/6.0/artisan), [COMPOSER](https://getcomposer.org/), [Language Localization Files](https://laravel.com/docs/5.8/localization), [Laravel Requests](https://laravel.com/docs/5.8/requests), [Mails](https://laravel.com/docs/6.0/mail), [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar), [Laravel-Modules](https://github.com/nWidart/laravel-modules)
+[Laravel](http://laravel.com/), [Bootstrap](https://getbootstrap.com/), [Admin LTE3](https://github.com/jeroennoten/Laravel-AdminLTE), [MySQL](https://github.com/mysql), [Artisan](http://laravel.com/docs/6.0/artisan), [COMPOSER](https://getcomposer.org/), [Language Localization Files](https://laravel.com/docs/5.8/localization), [Laravel Requests](https://laravel.com/docs/5.8/requests), [Mails](https://laravel.com/docs/6.0/mail), [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar), [Laravel-Modules](https://github.com/nWidart/laravel-modules)
 
 | Users, Permissions, Roles Features  |
 | :------------ |
