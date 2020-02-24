@@ -29,7 +29,6 @@
         "spatie/laravel-medialibrary": "^7.0.0",
         "spatie/laravel-query-builder": "^2.3",
         "tucker-eric/eloquentfilter": "^2.2",
-        "unisharp/laravel-filemanager": "^2.0",
         "yajra/laravel-datatables-buttons": "^4.8",
         "yajra/laravel-datatables-html": "^4.18",
         "yajra/laravel-datatables-oracle": "~9.0"
