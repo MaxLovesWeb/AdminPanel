@@ -332,8 +332,12 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="554">
-                <caret line="76" column="101" selection-start-line="76" selection-start-column="101" selection-end-line="76" selection-end-column="101" />
+              <first_editor relative-caret-position="-289">
+                <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+                <folding>
+                  <element signature="e#21#60#0" expanded="true" />
+                  <element signature="e#6#37#0" expanded="true" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -827,7 +831,7 @@
       <workItem from="1582301564777" duration="11846000" />
       <workItem from="1582353676887" duration="30261000" />
       <workItem from="1582446322309" duration="31508000" />
-      <workItem from="1582535950589" duration="18344000" />
+      <workItem from="1582535950589" duration="19053000" />
     </task>
     <servers />
   </component>
@@ -864,7 +868,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462562000" />
+    <option name="totallyTimeSpent" value="463271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1211,8 +1215,12 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="554">
-            <caret line="76" column="101" selection-start-line="76" selection-start-column="101" selection-end-line="76" selection-end-column="101" />
+          <first_editor relative-caret-position="-289">
+            <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <folding>
+              <element signature="e#21#60#0" expanded="true" />
+              <element signature="e#6#37#0" expanded="true" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
