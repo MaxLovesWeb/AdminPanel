@@ -38,7 +38,7 @@ A set of packages for handling user, roles, permissions, resume with addresses a
 * User can create [resume](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Contact/Traits/HasContacts.php) with educations, expiriences, skills, trainings.
 * Lots of [datatables](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tables/Users/UserDatatable.php) with [scopes](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tables/Scopes/Active.php), [filter](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Filters/UserFilter.php), [actions](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tables/Users/UserActions.php)
 * [Events](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Events/Users), [Policies](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Policies), [Gates](https://laravel.com/docs/6.x/authorization#writing-gates), [Tests](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Tests)
-* Blade [Resources](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Resources/views) views are structured to easily add and avoid duplicates|
+* Blade [Resources](https://github.com/MaxLovesWeb/AdminPanel/tree/master/Modules/Account/Resources/views) views are structured to easily add and avoid duplicates and powerful [Session  Flash](https://laravel.com/docs/6.x/session) messages for easy user notifications.
 
 ## Installation
 This package is very easy to set up. There are only couple of steps.
