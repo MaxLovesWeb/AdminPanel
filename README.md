@@ -34,17 +34,7 @@
 A Powerful package for handling user, roles and permissions, user resume with addresses and contacts, companies, tags with Laravel and Laravel-Modules.
 
 ## Features
-|Built on [Laravel](http://laravel.com/) 6|
-|Built on [Bootstrap](https://getbootstrap.com/) 4|
-|Admin Built on [Admin LTE3](https://github.com/jeroennoten/Laravel-AdminLTE)|
-|Uses [MySQL](https://github.com/mysql) Database (can be changed)|
-|Uses [Artisan](http://laravel.com/docs/6.0/artisan) to manage database migration, schema creations, and create/publish page controller templates|
-|Dependencies are managed with [COMPOSER](https://getcomposer.org/)|
-|Makes use of [Language Localization Files](https://laravel.com/docs/5.8/localization)|
-|Active Nav states using [Laravel Requests](https://laravel.com/docs/5.8/requests)|
-|Uses Laravel built in [mail](https://laravel.com/docs/6.0/mail) services|
-|Uses [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar) Package for local debugging|
-|Admin with [Laravel-Modules](https://github.com/nWidart/laravel-modules)|
+[Laravel](http://laravel.com/), [Bootstrap](https://getbootstrap.com/), [Admin LTE3](https://github.com/jeroennoten/Laravel-AdminLTE, [MySQL](https://github.com/mysql), [Artisan](http://laravel.com/docs/6.0/artisan), [COMPOSER](https://getcomposer.org/), [Language Localization Files](https://laravel.com/docs/5.8/localization), [Laravel Requests](https://laravel.com/docs/5.8/requests), [Mails](https://laravel.com/docs/6.0/mail), [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar), [Laravel-Modules](https://github.com/nWidart/laravel-modules)
 
 | Users, Permissions, Roles Features  |
 | :------------ |
