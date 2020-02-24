@@ -5,10 +5,7 @@
 - [Tools](#tools)
 - [Features](#features)
 - [Installation](#installation)
-- [More Information](#more-information)
 - [Screen Shots](#screen-shots)
-- [File Tree](#file-tree)
-- [Opening an Issue](#opening-an-issue)
 - [License](#license)
 
 ## About
