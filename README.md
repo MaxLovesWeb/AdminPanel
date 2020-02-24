@@ -5,9 +5,6 @@
 - [Features](#features)
 - [Installation](#installation)
     - [Composer](#composer)
-    - [Service Provider](#service-provider)
-    - [Publish All Assets](#publish-all-assets)
-    - [Publish Specific Assets](#publish-specific-assets)
     - [HasRoleAndPermission Trait And Contract](#hasroleandpermission-trait-and-contract)
     - [Migrations and Seeds](#migrations-and-seeds)
     - [Migrate from Bican roles](#Migrate-from-bican-roles)
@@ -34,72 +31,70 @@
 - [License](#license)
 
 ## About
-A Powerful package for handling roles and permissions in Laravel.
-Supports Laravel 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, and 6.0.
+A Powerful package for handling user, roles and permissions, user resume with addresses and contacts, companies, tags with Laravel and Laravel-Modules.
 
 ## Features
-| Laravel Roles Features  |
+|Built on [Laravel](http://laravel.com/) 6|
+|Built on [Bootstrap](https://getbootstrap.com/) 4|
+|Admin Built on [Admin LTE3](https://github.com/jeroennoten/Laravel-AdminLTE)|
+|Uses [MySQL](https://github.com/mysql) Database (can be changed)|
+|Uses [Artisan](http://laravel.com/docs/6.0/artisan) to manage database migration, schema creations, and create/publish page controller templates|
+|Dependencies are managed with [COMPOSER](https://getcomposer.org/)|
+|Makes use of [Language Localization Files](https://laravel.com/docs/5.8/localization)|
+|Active Nav states using [Laravel Requests](https://laravel.com/docs/5.8/requests)|
+|Uses Laravel built in [mail](https://laravel.com/docs/6.0/mail) services|
+|Uses [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar) Package for local debugging|
+|Admin with [Laravel-Modules](https://github.com/nWidart/laravel-modules)|
+
+| Users, Permissions, Roles Features  |
 | :------------ |
 |Built in migrations with ability to publish and modify your own.|
 |Built in seed with ability to publish and modify your own.|
-|Roles with levels and relationships to users, permissions|
-|Permissions with relationships to users and levels|
-|Soft deletes with full restore and destroy|
-|Optional CRUD of Roles and Permissions|
-|Lots of [configuration](#configuration) options|
-|All Extendable from [.env](#environment-file)
+|User with relationships to roles, permissions|
+|Roles with relationships to users, permissions|
+|Permissions with relationships to users and roles|
+|CRUD of Users, Roles and Permissions|
+|Gates, Policies, Events, Notifications|
+|Register, Email Confirmation, Credetials Change with Email Notifications|
+
+| Resume Features |
+| :------------ |
+|Built in migrations with ability to publish and modify your own.|
+|Built in seed with ability to publish and modify your own.|
+|Resume with many relationships|
+|Resume with contacts, addresses, skills, trainings, educations, experiences|
+|Gates, Policies, Events, Notifications|
+|CRUD of all defined Entities|
+|Datatables|
+|FrontEnd Resume View|
+
+| Addresses and Contacts Features |
+| :------------ |
+|Built in migrations with ability to publish and modify your own.|
+|Built in seed with ability to publish and modify your own.|
+|Address with many relationships|
+|Entities can have addresses, emails, phones how many they need|
 
 ## Installation
 This package is very easy to set up. There are only couple of steps.
 
 ### Composer
-From your projects root folder in terminal run:
-
-Laravel 5.8 and up use:
-
+1. Run `git clone https://github.com/MaxLovesWeb/AdminPanel laraveladmin`
+2. Create a MySQL database for the project
+    * ```mysql -u root -p```, if using Vagrant: ```mysql -u homestead -psecret```
+    * ```create database admin;```
+    * ```\q```
+3. From the projects root run `cp .env.example .env`
+4. Configure your `.env` file
+5. Run `composer install` from the projects root folder
+6. From the projects root folder run:
 ```
-    composer require jeremykenedy/laravel-roles
+php artisan vendor:publish
 ```
-
-Laravel 5.7 and below use:
-
-```
-    composer require jeremykenedy/laravel-roles:1.4.0
-```
-
-* Note: The major difference is that Laravel's users table migration out the box changed from `$table->increments('id');` to `$table->bigIncrements('id');` in Laravel 5.8.
-
-### Service Provider
-* Laravel 5.5 and up
-Uses package auto discovery feature, no need to edit the `config/app.php` file.
-
-* Laravel 5.4 and below
-Add the package to your application service providers in `config/app.php` file.
-
-```php
-'providers' => [
-
-    ...
-
-    /**
-     * Third Party Service Providers...
-     */
-    jeremykenedy\LaravelRoles\RolesServiceProvider::class,
-
-],
-```
-
-### Publish All Assets
-```bash
-    php artisan vendor:publish --tag=laravelroles
-```
-
-### Publish Specific Assets
-```bash
-    php artisan vendor:publish --tag=laravelroles-config
-    php artisan vendor:publish --tag=laravelroles-migrations
-    php artisan vendor:publish --tag=laravelroles-seeds
-```
+7. From the projects root folder run `php artisan key:generate`
+8. From the projects root folder run `php artisan migrate`
+9. From the projects root folder run `composer dump-autoload`
+10. From the projects root folder run `php artisan db:seed`
 
 ### HasRoleAndPermission Trait And Contract
 
