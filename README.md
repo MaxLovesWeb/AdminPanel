@@ -1,8 +1,5 @@
 # Laravel Admin Panel
 
-[![Total Downloads](https://poser.pugx.org/maxLovesWeb/AdminPanel/d/total.svg)](https://github.com/MaxLovesWeb/AdminPanel)
-
-
 #### Table of contents
 - [About](#about)
 - [Features](#features)
