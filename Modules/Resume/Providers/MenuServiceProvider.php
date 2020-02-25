@@ -26,8 +26,8 @@ class MenuServiceProvider extends ServiceProvider
             ]);
             $event->menu->add([
                 'text' => 'Create New',
-                'url' => route('resume.create', ['user' => Auth::user()]),
-                'can' => 'create-resume'
+                'url' => route('resume.index'),
+                'can' => 'viewAny-resume'
             ]);
 
         });
