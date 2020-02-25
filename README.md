@@ -65,6 +65,18 @@ php artisan vendor:publish
 ![Login Page](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/login.png?raw=true "Login") Login
 ![Registration](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/register.png?raw=true "Register") Registration
 ![Verify Email](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/verify-email.png?raw=true "Verify Email") Verify Email after registration, update credentials data
+![Confirm Password](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/password-confirm-before-important-request.png?raw=true "Confirm Pass") Confirm Password if for example important request
+![Resume Edit](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/resume-edit-create.png?raw=true "Resume Edit") Resume Edit
+![Resume Show](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/show-resume-example.png?raw=true "Resume Template") Resume Template
+![Users](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/users.png?raw=true "Show All Users") Show All Users
+![Show User](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/show-user.png?raw=true "Show User") Show User
+![Roles](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/permissions.png?raw=true "Roles") Roles
+![Show Role](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/show-role.png?raw=true "Show Role") Show Role
+![Permissions](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/permissions.png?raw=true "Permissions") Permissions
+![Show Permission](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/show-permission.png?raw=true "Show Permission") Show Permission
+![Confirm Delete](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/confirm-delete-with-modal-window.png?raw=true "Confirm Delete") Confirm Delete
+![Flash Message](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/success-flash-message.png?raw=true " Session Flash Message") Session Flash Message
+![Sync Relation](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/sync-relations.png?raw=true "Sync Relation Example") Sync Relation Example
 
 ## License
 This package is free software distributed under the terms of the [MIT license](https://opensource.org/licenses/MIT)!
