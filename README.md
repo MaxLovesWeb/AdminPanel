@@ -9,7 +9,7 @@
 - [License](#license)
 
 ## About
-A set of packages for handling user, roles, permissions, resume with addresses and contacts.
+Laravel 6 admin panel for manage Users, Roles, Permissions, Companies, Addresses, Contacts, creating and editing Resume. This project is educational project...
 
 ## Tools
 * [Composer](https://getcomposer.org/)
