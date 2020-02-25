@@ -38,6 +38,8 @@ class AddressesServiceProvider extends ServiceProvider
         $this->app->register(RelationServiceProvider::class);
         $this->app->register(ValidatorServiceProvider::class);
         $this->app->register(EventServiceProvider::class);
+        $this->app->register(MenuServiceProvider::class);
+
     }
 
     /**

@@ -15,6 +15,7 @@
 Route::middleware(['auth', 'verified'])->group(function () {
 
 
+    Route::resource('contacts', 'ContactController');
 
     Route::namespace('Datatables')->group(function () {
 
