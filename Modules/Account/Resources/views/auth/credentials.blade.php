@@ -17,7 +17,7 @@
                             <a class="nav-link active" id="update-identifier-tab" data-toggle="pill" href="#update-identifier" role="tab" aria-controls="update-identifier" aria-selected="true">{{ __('account::auth.identifier') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="update-password-tab" data-toggle="pill" href="#update-password" role="tab" aria-controls="update-password" aria-selected="false">{{ __('aaccount::auth.password') }}</a>
+                            <a class="nav-link" id="update-password-tab" data-toggle="pill" href="#update-password" role="tab" aria-controls="update-password" aria-selected="false">{{ __('account::auth.password') }}</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="credentials-tab-content">
