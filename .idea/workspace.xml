@@ -310,9 +310,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="468">
-                <caret line="65" column="97" selection-start-line="65" selection-start-column="89" selection-end-line="65" selection-end-column="97" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="519">
+                <caret line="68" column="134" selection-start-line="68" selection-start-column="134" selection-end-line="68" selection-end-column="134" />
               </first_editor>
               <second_editor />
             </state>
@@ -448,9 +448,9 @@
         <option value="$PROJECT_DIR$/Modules/Template/Resources/views/page/left-sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/modules/template/page/left-sidebar.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Resume/Resources/views/edit.blade.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" />
         <option value="$PROJECT_DIR$/Modules/Resume/Providers/MenuServiceProvider.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -750,7 +750,7 @@
       <workItem from="1582353676887" duration="30261000" />
       <workItem from="1582446322309" duration="31508000" />
       <workItem from="1582535950589" duration="24582000" />
-      <workItem from="1582628522070" duration="4990000" />
+      <workItem from="1582628522070" duration="5246000" />
     </task>
     <servers />
   </component>
@@ -787,10 +787,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="473790000" />
+    <option name="totallyTimeSpent" value="474046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49750414" visible="true" weight="0.20628998" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1111,9 +1112,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="468">
-            <caret line="65" column="97" selection-start-line="65" selection-start-column="89" selection-end-line="65" selection-end-column="97" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="519">
+            <caret line="68" column="134" selection-start-line="68" selection-start-column="134" selection-end-line="68" selection-end-column="134" />
           </first_editor>
           <second_editor />
         </state>

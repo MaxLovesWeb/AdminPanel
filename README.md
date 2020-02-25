@@ -66,6 +66,8 @@ php artisan vendor:publish
 ![Registration](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/register.png?raw=true "Register") Registration
 ![Verify Email](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/verify-email.png?raw=true "Verify Email") Verify Email after registration, update credentials data
 ![Confirm Password](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/password-confirm-before-important-request.png?raw=true "Confirm Pass") Confirm Password if for example important request
+![Create Address](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/create-address.png?raw=true "Create Address") Create Address
+![Show Address](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/show-address.png?raw=true "Show Address") Show Address
 ![Resume Edit](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/resume-edit-create.png?raw=true "Resume Edit") Resume Edit
 ![Resume Show](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/show-resume-example.png?raw=true "Resume Template") Resume Template
 ![Users](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/users.png?raw=true "Show All Users") Show All Users
