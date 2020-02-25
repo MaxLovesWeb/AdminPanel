@@ -62,7 +62,7 @@ php artisan vendor:publish
 
 
 ## Screen Shots
-![Login Page](https://github.com/MaxLovesWeb/AdminPanel/tree/master/public/screenshots/login.JPG)
+![Login Page](https://github.com/MaxLovesWeb/AdminPanel/blob/master/public/screenshots/login.png)
 
 ## License
 This package is free software distributed under the terms of the [MIT license](https://opensource.org/licenses/MIT)!
